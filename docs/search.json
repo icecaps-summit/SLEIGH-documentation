@@ -1,0 +1,289 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SLEIGH Documentation",
+    "section": "",
+    "text": "Introduction\n\n\n\nThe SLEIGH’s first deployment at Summit Station in May 2023.\n\n\nThis documentation provides information on the instrument platform for NSF’s Arctic Observing Network (AON) ICECAPS-MELT project. The Integrated Characterization of Energy, Clouds, Atmospheric state, and Precipitation at Summit (ICECAPS) is a long-term experiment that has been conducted at Summit Station, Greenland since April 2010. The MEasurements along Langrangian Transects (MELT) is the most recent sub-project of ICECAPS, which was funded for 2022-2024.\nThe instrument platform is called the SLEIGH - Surface-Layer Environmental Instruments for Greenland Hydrology.\nThe SLEIGH includes the following instruments:\n\n\n\nInstrument\nAcronym\n\n\n\n\nCincoze computer\nCincoze\n\n\nAutomated Surface Flux Station\nASFS\n\n\nGround Penetrating Radar\nGPR\n\n\nMicro Rain Radar (MRR)\nMRR\n\n\nMicrowave Radiometer\nMWR\n\n\nSIMB3 thermistor string\nSIMB3\n\n\nVaisala (CL61) Depolarization Lidar\nCL61\n\n\n\nNote that the Cincoze is the main computer system that controls the platform. All of the other instruments interface to it. In addition to controlling the platform, the Cincoze handles all of the raw data archival.\nThe ASFS itself is composed of a series of additional instruments:\n\n\n\nASFS Instruments\nAcronym\n\n\n\n\nBroadband Radiometers\nBRad\n\n\nMeteorological instrument (T,P,U)\nMet\n\n\nMetek Sonic Anemometer\nMetek\n\n\nLicor gas analyzer\nLicor\n\n\nGlobal Positioning System\nGPS\n\n\nFlux plates\nFPlt",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#startup-and-shutdown-of-the-platform",
+    "href": "getting-started.html#startup-and-shutdown-of-the-platform",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Startup\nTo power on (start up) the instrument platform, ensure that it is plugged into AC 110-V power. Then remove the cover of the gray platform control box, and press the power button on the Cincoze computer. The image below shows the front of the Cincoze computer with the small silver power button in the upper right. Once the power button is pressed, the icon on the button should turn green.\n\n\n\nThe front of the Cincoze computer with power off; power icon is not green\n\n\n\n\nShutdown\nTo power off (shutdown) the instrument platform, log onto the Cincoze computer using the instructions in Logging into the Cincoze computer below and type\npoweroff\nType the iceman password, if prompted.",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#ethernet-access",
+    "href": "getting-started.html#ethernet-access",
+    "title": "Getting Started",
+    "section": "Ethernet Access",
+    "text": "Ethernet Access\nBefore connecting to the platform through the Cincoze computer, one will have to have a direct ethernet connection to the Cincoze. This may be accomplished usijg one of several different setups:\n\nRemote connection during Summer 2023\nThere are several steps to connect remotely (in summer 2023) to the platform at Summit Summit. Therefore, these steps are shown here.\n\n\nSkylink satellie link\nTBD\n\n\nMissionLink satellite link\nTBD\n\n\nSummit Station network\nTo connect to the Cincoze via the network at Summit Station, one must first log into local network at Summit. There are a couple of different possibilities for how to do this:\n\nFirst remotely log into another computer that is already connected to the Summit Station network (e.g., dataman).\nConnect to the local wifi network while at Summit Station.\n\n\n\nVerizon HotSpot\nThe ICECAPS-MELT project has a Verizon HotSpot that will be connected to the instrument platform when it is deployed in Boulder, Colorado. Researchers will be able to connect to this hotspot using a cellular connection and then log in to have a direct internet connection to the platform. The login credentials are:\n\nSSID: icecaps\np: RavenBound\n\n\n\n\n\n\n\nWarning\n\n\n\nTypically one must NOT be connected to a virtual private network (VPN) when trying to access the Cincoze computer.",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#sec-loggingIn",
+    "href": "getting-started.html#sec-loggingIn",
+    "title": "Getting Started",
+    "section": "Logging into the Cincoze computer",
+    "text": "Logging into the Cincoze computer\nOnce you are connected to a device that has a direct connection to the Cincoze, type the following command to SSH to the Cincoze:\nssh iceman@xxx.xxx.xxx.xxx\nwhere xxx.xxx.xxx.xxx can be found in the following table:\n\n\n\nConnection\nIP address\n\n\n\n\nSkylink\n???.???.???.???\n\n\nMissionLink\n???.???.???.???\n\n\nSummit\n192.168.98.50\n\n\nVerizon\n???.???.???.???\n\n\n\nEnter the password for the iceman account, if prompted. This should log you into the Cincoze. The Cincoze uses a Linux-based operation system, so one can issue normal Linux commands from the Cincoze prompt.\n\n\n\n\n\n\nWarning\n\n\n\nBe careful when executing Linux commands on the Cincoze computer.",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#checking-the-system-status",
+    "href": "getting-started.html#checking-the-system-status",
+    "title": "Getting Started",
+    "section": "Checking the System Status",
+    "text": "Checking the System Status\nThe platform is operated using System Services in Linux.\n\nTo view all of the system services running on the Cincoze, type:\nsystemctl status | less\n\n\n\n\n\n\n\nNote\n\n\n\nThe addition of \"| less\" allows one to scroll up and down.\n\n\n\nTo view the status of only those processes run by the iceman user (assuming that you’re logged in as iceman), type:\nsystemctl --user status | less\nTo view the status of a particular process, type:\nsystemctl --user status mrr\n\nTo see a full list of the various processes running on the Cincoze to support the platform, see",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#internal-network",
+    "href": "getting-started.html#internal-network",
+    "title": "Getting Started",
+    "section": "Internal Network",
+    "text": "Internal Network\nOnce you’re logged onto the Cincoze computer, you can connect to other instruments using the IP addresses listed below:\n\n\n\nDevice\nLocal IP\n\n\n\n\nCincoze Computer\n192.168.1.10\n\n\nSkylink Certus Modem\n192.168.111.1\n\n\nWindows VM\n192.168.1.166\n\n\nCR1000X Logger\n192.168.1.120\n\n\nLicor 7500DS Gas Analyzer\n192.168.1.15\n\n\nSmart Flux\n192.168.1.221\n\n\nPhoenix EEM-MA370 Energy Meter\n192.168.1.32\n\n\nMODBUS relay for logger reboot\n192.168.1.97\n\n\nAPC power supply\n192.168.1.11\n\n\nGround Penetrating Radar\n192.168.1.161\n\n\nMetek MRR-Pro\n192.168.1.20\n\n\nVaisala CL61 data\n192.168.1.111\n\n\nVaisala CL61 maintenance\n172.17.0.2\n\n\n\nCurrently, one must use the sshpass command to connect. Below is an example command to connect to the MRR from the Cincoze computer\nsshpass -p \"password-for-mrr\" ssh mrruser@192.168.1.20",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "getting-started.html#retrieving-data",
+    "href": "getting-started.html#retrieving-data",
+    "title": "Getting Started",
+    "section": "Retrieving data",
+    "text": "Retrieving data\nBelow is a description of the data directory on the Cincoze computer and the associated data filenames. The base directory is /home/iceman/data/. The data in the sub-directories contain near data from the various platform instruments that is copied to the Cincoze in near-real time.\n├── home\n│   ├── iceman\n│   │   ├── data\n│   |   |   ├── asfs\n│   |   |   |    ├── raw\n│   |   |   |    |   ├── crd\n│   |   |   |    |   |   ├── icecaps_asfs_fast_YYYYMMDDHHMM.dat \n│   |   |   |    |   |   ├── icecaps_asfs_sci_YYYYMMDDHHMM.dat \n\n│   |   |   ├── batts\n│   |   |   |    ├── level0\n│   |   |   |    |   ├── lynk_bms_candump_YYYYMMDD.log\n│   |   |   |    ├── level1\n│   |   |   |    |   ├── BatteryAlarms_YYYYMMDD.csv\n│   |   |   |    |   ├── BatteryLimits_YYYYMMDD.csv\n│   |   |   |    |   ├── BatteryMeasurements_YYYYMMDD.csv\n│   |   |   |    |   ├── BatteryStatus_YYYYMMDD.csv\n\n│   |   |   ├── blesensors\n│   |   |   |    ├── ble_temperatures_YYYYMMDD.log\n\n│   |   |   ├── cl61\n│   |   |   |    ├── live_YYYYMMDD_HHMMSS.nc\n\n│   |   |   ├── energymeter\n│   |   |   |    ├── energymeter.sled.level0.1sec.YYYYMMDD.HHMMSS.nc\n\n│   |   |   ├── mrr\n│   |   |   |    ├── YYYYMM\n│   |   |   |    |   ├── YYYYMMDD\n│   |   |   |    |   |   ├── YYYYMMDD.log\n│   |   |   |    |   |   ├── YYYYMMDD_HH0000.nc\n\n│   |   |   ├── mwr\n│   |   |   |    ├── level0\n│   |   |   |    |   |   ├── YYMMDDHH.BRT\n│   |   |   |    |   |   ├── YYMMDDHH.HKD\n│   |   |   |    |   |   ├── YYMMDDHH.MET\n│   |   |   |    |   |   ├── YYMMDDHH.BRT.NC\n│   |   |   |    |   |   ├── YYMMDDHH.HKD.NC\n│   |   |   |    |   |   ├── YYMMDDHH.MET.NC\n│   |   |   |    ├── vmdata\n\n│   |   |   ├── pics\n│   |   |   |    ├── Allsky\n│   |   |   |    |   ├── SKY_YYYYMMDD_HHMMSS.jpg\n│   |   |   |    |   |   ├── small\n│   |   |   |    |   |   |   ├── SKY_YYYYMMDD_HHMMSS_lowres.jpg\n│   |   |   |    ├── Overview\n│   |   |   |    |   ├── FAR_YYYYMMDD_HHMMSS.jpg\n│   |   |   |    |   |   ├── small\n│   |   |   |    |   |   |   ├── FAR_YYYYMMDD_HHMMSS_lowres.jpg\n│   |   |   |    ├── Radiation\n│   |   |   |    |   ├── RAD_YYYYMMDD_HHMMSS.jpg\n│   |   |   |    |   |   ├── small\n│   |   |   |    |   |   |   ├── RAD_YYYYMMDD_HHMMSS_lowres.jpg\n│   |   |   |    ├── SLEIGHMonitor\n│   |   |   |    |   ├── SLEIGH_YYYYMMDD_HHMMSS.jpg\n│   |   |   |    |   |   ├── small\n│   |   |   |    |   |   |   ├── SLEIGH_YYYYMMDD_HHMMSS_lowres.jpg\n\n│   |   |   ├── power\n│   |   |   |    ├── level1\n│   |   |   |    |   ├── victron_cerbo_data_YYYYMMDD.csv\n\nTo sychronize data from the Cincoze computer to your local computer, one can use the Linux rsync command.\n# Example for syncing the entire CL61 data\nrsync -av --rsh=ssh iceman@192.168.98.50:/home/iceman/data/cl61/ /Users/vonw/data/icecaps/platform/cl61\n\nTo copy a subset of data from the Cincoze to your local computer, one can use sftp.\n# Example for copying energy data for a given day; single file.\nrsync -av --rsh=ssh iceman@192.168.98.50:/home/iceman/data/energymeter/energymeter.sled.level0.1sec.20230517.000000.nc /Users/vonw/data/icecaps/platform/energymeter\n\n\n\n\n\n\nNote\n\n\n\nNote that the IP address used in the above rsync commands will vary depending on what mode of ethernet access one is using (SkyLink, MissionLink, Summit Station, Verizon Hotspot, ...)\n\n\nTo synchonize data from instruments to the Cincoze, one can also use the rsync command, but one must include the sshpass command:\n# Example for copying data from the MRR to the Cincoze for data archival\nrsync -avz --progress --partial -e 'sshpass -p \"metek\" ssh' mrruser@192.168.1.20:\n/media/mmcblk0p1/data/ /home/iceman/data/mrr",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "services.html#using-the-system-journal",
+    "href": "services.html#using-the-system-journal",
+    "title": "Services",
+    "section": "",
+    "text": "Note\n\n\n\nThe system journal is described here.\n\n\n\njournalctl --user -b -u mrr\n\njournalctl --since=\"2023-05-10 12:00:00\" | grep mrr",
+    "crumbs": [
+      "Services"
+    ]
+  },
+  {
+    "objectID": "configuration.html#windows-virtual-machine-windows-vm",
+    "href": "configuration.html#windows-virtual-machine-windows-vm",
+    "title": "Configuration",
+    "section": "",
+    "text": "ssh -L 5901:localhost:5901 iceman@192.168.98.50\n\nlocalhost:5901\n\n\n\nAutomated Surface Flux Station (ASFS)\n\n\nMicro Rain Radar (MRR)\n\nHow to set “comment” and “site_name” using MRR GUI on VM\n\n\n\nMicrowave Radiometer (MWR)",
+    "crumbs": [
+      "Configuration"
+    ]
+  },
+  {
+    "objectID": "configuration.html#command-line-interface-cli",
+    "href": "configuration.html#command-line-interface-cli",
+    "title": "Configuration",
+    "section": "Command Line Interface (CLI)",
+    "text": "Command Line Interface (CLI)\n\nGround Penetrating Radar (GPR)\n\n\nSIMB3 thermistor string (SIMB3)\n\n\nVaisala (CL61) Depolarization Lidar (CL61)\n\nHow to set latitude and longitude using maintenance port via the CLI",
+    "crumbs": [
+      "Configuration"
+    ]
+  },
+  {
+    "objectID": "configuration.html#apc-internet-enabled-power-strip",
+    "href": "configuration.html#apc-internet-enabled-power-strip",
+    "title": "Configuration",
+    "section": "APC Internet-Enabled Power Strip",
+    "text": "APC Internet-Enabled Power Strip\nThe instrument platform uses an APC internet-enabled power strip to turn certain instruments on and off. The table below lists the instruments and which port of the power strip it uses. The Cincoze computer has a Linux script that can be used to turn any of the port on or off.\n\n\n\nPort\nInstrument\n\n\n\n\n1\n\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\nVaisala CL61\n\n\n7\n\n\n\n8\nMicro Rain Radar",
+    "crumbs": [
+      "Configuration"
+    ]
+  },
+  {
+    "objectID": "protocol.html#waldenicecaps-melt---instrument-platform",
+    "href": "protocol.html#waldenicecaps-melt---instrument-platform",
+    "title": "Protocol for Summit Station",
+    "section": "",
+    "text": "Primary contact: Von Walden, v.walden@wsu.edu, 208-301-4699\nSecondary contact: Michael Gallagher, michael.r.gallagher@noaa.gov\n\n\nHow often:\n\nDaily:\n\nVisual inspection of instrument platform\nInspection of MRR antenna; NO cleaning\nConfirmation that data is being archived on dataman computer\n\nWeekly:\n\nNone.\n\n\n\n\nClean requirements:\nNone.\n\n\nSupplies needed:\nNone.\n\n\nIntroduction:\nThe ICECAPS-MELT instrument platform is designed to measure both atmospheric and sub-surface properties of the Greenland Ice Sheet. It was designed to be an autonomous instrument, so the science team anticipates that the platform will not need much attention throughout its summer at Summit. The manual for the platform can be accessed via a web browser on the ICECAPS dataman computer at file:///home/dataman/Documentation/platform/index.html. (Note that Firefox on dataman has a link to this site on its toolbar.) A hard-copy of the manual has been supplied to the current MSF technician.\nThe platform is operated by simply turning it on. It is powered up by turning on the Cincoze computer inside the platform control box (large gray plastic box installed in the middle of the platform). This prodecure is explained in the manual.\nThe platform is currently installed to the southwest of the MSF building.\n\n\nProcedure:\n\nDaily Checks\n\nVisually inspect the platform. If any significant drifting has occurred, take a photo and store this on dataman.\nInspect the MRR antenna. DO NOT clean the antenna but make a note in the Excel logbook of the percentage of the antenna that is covered by snow and/or ice.\nEnsure that data is being archived from the instrument platform onto the dataman computer.\n\n\n\nPower Up/Power Down\n\nThe Startup procedure is shown in the attached manual on page 5.\nThe Shutdown procedure is shown in the attached manual on page 5. (Note that one must log into the Cincoze computer to properly shutdown the platform. The login procedure is shown on pages 7 and 8 of the attached manual.)\n\n\n\nRetro:\n\nThe instrument platform will be completely retro’d by our science team in August 2023.\n\n\n\nConsumable Resupply Items:\n\nThere are no consumable supplied for the instrument platform.",
+    "crumbs": [
+      "Protocol for Summit Station"
+    ]
+  },
+  {
+    "objectID": "manuals.html",
+    "href": "manuals.html",
+    "title": "Manuals",
+    "section": "",
+    "text": "Automated Surface Flux Station (ASFS)",
+    "crumbs": [
+      "Manuals"
+    ]
+  },
+  {
+    "objectID": "manuals.html#automated-surface-flux-station-asfs",
+    "href": "manuals.html#automated-surface-flux-station-asfs",
+    "title": "Manuals",
+    "section": "",
+    "text": "User Guide - TBD",
+    "crumbs": [
+      "Manuals"
+    ]
+  },
+  {
+    "objectID": "manuals.html#ground-penetrating-radar-gpr",
+    "href": "manuals.html#ground-penetrating-radar-gpr",
+    "title": "Manuals",
+    "section": "Ground Penetrating Radar (GPR)",
+    "text": "Ground Penetrating Radar (GPR)\n\nUser Guide",
+    "crumbs": [
+      "Manuals"
+    ]
+  },
+  {
+    "objectID": "manuals.html#micro-rain-radar-mrr",
+    "href": "manuals.html#micro-rain-radar-mrr",
+    "title": "Manuals",
+    "section": "Micro Rain Radar (MRR)",
+    "text": "Micro Rain Radar (MRR)\n\nUser Guide\nTheory\nTutorial\nImproved Mrr Processing Tool - IMProToo",
+    "crumbs": [
+      "Manuals"
+    ]
+  },
+  {
+    "objectID": "manuals.html#microwave-radiometer-mwr",
+    "href": "manuals.html#microwave-radiometer-mwr",
+    "title": "Manuals",
+    "section": "[Microwave Radiometer (MWR)",
+    "text": "[Microwave Radiometer (MWR)\n\nUser Guide",
+    "crumbs": [
+      "Manuals"
+    ]
+  },
+  {
+    "objectID": "manuals.html#vaisala-depolarization-lidar-vdl",
+    "href": "manuals.html#vaisala-depolarization-lidar-vdl",
+    "title": "Manuals",
+    "section": "Vaisala Depolarization Lidar (VDL)",
+    "text": "Vaisala Depolarization Lidar (VDL)\n\nUser Guide\nInstallation Guide"
+  },
+  {
+    "objectID": "remote.html#ssh-connection",
+    "href": "remote.html#ssh-connection",
+    "title": "Remote Connection during Summer 2023",
+    "section": "",
+    "text": "Obtain SSH keys\nFor easy remote login to the platform (Cincoze) computer, one needs two sets of SSH keys; one for dataman and another for iceman (Cincoze). Please contact Michael Gallagher; he will be able to supply the keys.\n\n\nSet up config file for SSH\nAdd the following to your config file in your ~/.ssh directory on your local computer.\nHost dataman\n    User dataman\n    Hostname 72.2.235.46\n    Port 26022\n    PubkeyAuthentication yes\n    IdentitiesOnly yes\n    IdentityFile ~/.ssh/id_rsa_buoy\n    ProxyJump gaia\n\nHost iceman\n    User iceman\n    Hostname 192.168.98.50\n    ForwardX11 yes\n    ForwardAgent yes\n    IdentitiesOnly yes\n    IdentityFile ~/.ssh/id_ed_iceman\n    ProxyJump dataman\nHost dataman\n    User dataman\n    HostName 72.2.235.46\n    Port 26022\n    PubkeyAuthentication yes\n    IdentitiesOnly yes\n    IdentityFile ~/.ssh/id_rsa_buoy\n    ProxyJump gaia\n\nHost iceman\n  User iceman\n  Hostname localhost   \n  Port 5901\n  ProxyJump oracle\n  IdentitiesOnly yes\n  IdentityFile ~/.ssh/id_ed_iceman\n\nHost oracle\n  User flux\n  Hostname 158.101.13.249\n  Port 22   \n  ForwardAgent yes\n  IdentitiesOnly yes\n  IdentityFile ~/.ssh/id_ed_iceman\n\n\n\n\n\n\n\nNote\n\n\n\nNote that the necessary SSH keys are: - ~/.ssh/id_rsa_buoy - ~/.ssh/id_ed_iceman\n\n\n\n\n\n\n\n\nCaution\n\n\n\nNote that you will have to set the line ProxyJump gaia to use the name of your local computer. gaia is Von Walden’s linux workstation at WSU.\n\n\n\n\nConnect to dataman\nUsing the settings above, one can now connect to dataman by typing:\nssh dataman\n\n\nConnect to iceman (Cincoze)\nUsing the settings above, note that the connection to iceman uses a ProxyJump to dataman (at Summit). One can connect directly to iceman by typing:\nssh iceman",
+    "crumbs": [
+      "Remote Connection during Summer 2023"
+    ]
+  },
+  {
+    "objectID": "remote.html#connecting-to-the-cincoze-vm-using-vnc",
+    "href": "remote.html#connecting-to-the-cincoze-vm-using-vnc",
+    "title": "Remote Connection during Summer 2023",
+    "section": "Connecting to the Cincoze VM using vnc",
+    "text": "Connecting to the Cincoze VM using vnc\n\nOpen a terminal window on your local computer and type:\nssh -L 5901:localhost:5901 iceman\nThis will set up forwarding from port 5901 to port 5901 on your local computer.\nOpen your VNC client on your local computer and connect to\nlocalhost:5901\nIf the VNC connection works properly, you should be prompted to enter the password for iceman.\n\nList of web servers to connect to using Microsoft Edge Browser\n\n\n\nIP address\nWeb Server\n\n\n\n\n192.168.1.20:8001\nMETEK MRR Pro Webcontrol\n\n\n192.168.1.20/#Home\nMRRPro92: System Configuration",
+    "crumbs": [
+      "Remote Connection during Summer 2023"
+    ]
+  },
+  {
+    "objectID": "remote.html#connecting-to-web-servers",
+    "href": "remote.html#connecting-to-web-servers",
+    "title": "Remote Connection during Summer 2023",
+    "section": "Connecting to Web Servers",
+    "text": "Connecting to Web Servers",
+    "crumbs": [
+      "Remote Connection during Summer 2023"
+    ]
+  },
+  {
+    "objectID": "remote.html#connection-to-the-jupyter-server",
+    "href": "remote.html#connection-to-the-jupyter-server",
+    "title": "Remote Connection during Summer 2023",
+    "section": "Connection to the Jupyter Server",
+    "text": "Connection to the Jupyter Server\nThere is a Jupyter Notebook server running on the Cincoze computer. It runs on port 8888, which is the default port used by Jupyter.\n\nTo avoid, conflicting with a possible Jupyter server on your local computer, type the following command on your local computer to forward the Jupyter server to another port on your local computer:\nssh -L 7777:localhost:8888 iceman\nTo keep this SSH connection active, type top in the terminal running SSH once you’re logged in to iceman. This provides a more responsive web browser experience.\nNow connect to the Jupyter Server on the Cincoze by navigating your local browser to\nlocalhost:7777\n\nPlease note that this connection can take a long time (minutes). But once you’re logged into the Jupyter Server, your browser will be much more responsive.",
+    "crumbs": [
+      "Remote Connection during Summer 2023"
+    ]
+  },
+  {
+    "objectID": "remote.html",
+    "href": "remote.html",
+    "title": "Remote Connection during Summer 2023",
+    "section": "",
+    "text": "SSH connection",
+    "crumbs": [
+      "Remote Connection during Summer 2023"
+    ]
+  },
+  {
+    "objectID": "remote.html#setting-up-the-windows-vm-on-the-cincoze",
+    "href": "remote.html#setting-up-the-windows-vm-on-the-cincoze",
+    "title": "Remote Connection during Summer 2023",
+    "section": "Setting up the Windows VM on the Cincoze",
+    "text": "Setting up the Windows VM on the Cincoze\nFrom Michael G. on 11/29/2023:\n\nThere are two ways to use qemu. Without assistance and using libvirt. For the VM I'm using bare qemu without any virtualization management. It's a bit harder to set up (no gui) but it's lower level and much easier to run as a service or modify. There are three key files.\n\n~/.config/systemd/user/qemu@.service\n~/.config/qemu/windows.conf\n/data/vm/windows_vm.qcow\n\nYou start the VM, or shut it down, with \"systemctl --user start qemu@windows.service\"... the @windows part specifies the config file that's written above. FYI, the config uses a tap-bridge connection to run a \"parallel\" virtual NIC so that the VM appears as if it were a separate machine on the network. This is much easier than trying to port forward anything you need, although there is a qemu conf file in there that shows how to do port forward stuff. For a laptop that generally works better because you can only run a tap-bridge with an ethernet interface, not wifi.\n\nFinally FYI, something about my tap-bridge config broke with the updated OS and I need to figure that out. I just noticed it. I'll try to fix that soon.\n\n\"Connecting\" to the VM remotely can be done with vncviewer or with remote desktop. This is pretty straightforward using ssh port forwarding. The VNC server is on the Linux side (192.168.1.10:5901) and the remote desktop is on the VM side once I fix the tap-bridge (192.168.1.166).",
+    "crumbs": [
+      "Remote Connection during Summer 2023"
+    ]
+  },
+  {
+    "objectID": "getting-started.html",
+    "href": "getting-started.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Startup and Shutdown of the Platform",
+    "crumbs": [
+      "Getting Started"
+    ]
+  },
+  {
+    "objectID": "services.html",
+    "href": "services.html",
+    "title": "Services",
+    "section": "",
+    "text": "Using the System Journal\nSome useful commands for accessing information from the system journal are:\nwhich is an example that lists all the activity of the mrr service since the last boot, and\nwhich lists all the activity of the mrr service since 10 May 2023 at 12 UTC.",
+    "crumbs": [
+      "Services"
+    ]
+  },
+  {
+    "objectID": "configuration.html",
+    "href": "configuration.html",
+    "title": "Configuration",
+    "section": "",
+    "text": "Windows Virtual Machine (Windows VM)\nTo configure certain instruments, it is necessary to login into a Windows virtual machine that is setup on the Cincoze computer. To do this from your local computer, you will use a VNC viewer. Before connecting via VNC, you will need to execute the following command to forward the port from the VM to your local computer:\nThis will create an SSH tunnel from your local computer to the Cincoze computer, and then log you in to the Cincoze. Enter the password for the iceman account, if prompted. Once you’re logged in, use a VNC client on your local computer to make a VNC connection to:\nEnter the password for the iceman account again, if prompted. Your VNC client should then show the desktop of the VM on the Cincoze.\nOnce you have access to the Windows VM desktop, you will be able to configure the ASFS, MRR and MWR as described below.",
+    "crumbs": [
+      "Configuration"
+    ]
+  },
+  {
+    "objectID": "manuals.html#vaisala-cl61-depolarization-lidar-cl61",
+    "href": "manuals.html#vaisala-cl61-depolarization-lidar-cl61",
+    "title": "Manuals",
+    "section": "Vaisala CL61 Depolarization Lidar (CL61)",
+    "text": "Vaisala CL61 Depolarization Lidar (CL61)\n\nUser Guide\nInstallation Guide",
+    "crumbs": [
+      "Manuals"
+    ]
+  },
+  {
+    "objectID": "protocol.html",
+    "href": "protocol.html",
+    "title": "Protocol for Summit Station",
+    "section": "",
+    "text": "Walden/ICECAPS-MELT - Instrument Platform",
+    "crumbs": [
+      "Protocol for Summit Station"
+    ]
+  }
+]
