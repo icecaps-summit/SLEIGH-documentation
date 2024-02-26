@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The ICECAPS-MELT Platform - Manuals</title>
+<title>SLEIGH Documentation - Manuals</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./protocol.html" rel="prev">
+<link href="./data-summaries.html" rel="next">
+<link href="./remote.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -95,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">The ICECAPS-MELT Platform</a> 
+      <a href="./">SLEIGH Documentation</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -119,12 +120,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./remote.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Remote Connection during Summer 2023</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./services.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Services</span></a>
   </div>
@@ -137,14 +132,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./protocol.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Protocol for Summit Station</span></a>
+  <a href="./remote.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Remote Connection</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manuals.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Manuals</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Summaries</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./santa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SANTA</span></a>
   </div>
 </li>
     </ul>
@@ -157,11 +164,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#automated-surface-flux-station-asfs" id="toc-automated-surface-flux-station-asfs" class="nav-link active" data-scroll-target="#automated-surface-flux-station-asfs">Automated Surface Flux Station (ASFS)</a></li>
+  <li><a href="#sleigh" id="toc-sleigh" class="nav-link active" data-scroll-target="#sleigh">SLEIGH</a>
+  <ul class="collapse">
+  <li><a href="#automated-surface-flux-station-asfs" id="toc-automated-surface-flux-station-asfs" class="nav-link" data-scroll-target="#automated-surface-flux-station-asfs">Automated Surface Flux Station (ASFS)</a></li>
   <li><a href="#ground-penetrating-radar-gpr" id="toc-ground-penetrating-radar-gpr" class="nav-link" data-scroll-target="#ground-penetrating-radar-gpr">Ground Penetrating Radar (GPR)</a></li>
   <li><a href="#micro-rain-radar-mrr" id="toc-micro-rain-radar-mrr" class="nav-link" data-scroll-target="#micro-rain-radar-mrr">Micro Rain Radar (MRR)</a></li>
-  <li><a href="#microwave-radiometer-mwr" id="toc-microwave-radiometer-mwr" class="nav-link" data-scroll-target="#microwave-radiometer-mwr">[Microwave Radiometer (MWR)</a></li>
+  <li><a href="#microwave-radiometer-mwr" id="toc-microwave-radiometer-mwr" class="nav-link" data-scroll-target="#microwave-radiometer-mwr">Microwave Radiometer (MWR)</a></li>
   <li><a href="#vaisala-cl61-depolarization-lidar-cl61" id="toc-vaisala-cl61-depolarization-lidar-cl61" class="nav-link" data-scroll-target="#vaisala-cl61-depolarization-lidar-cl61">Vaisala CL61 Depolarization Lidar (CL61)</a></li>
+  </ul></li>
+  <li><a href="#mvp" id="toc-mvp" class="nav-link" data-scroll-target="#mvp">MVP</a>
+  <ul class="collapse">
+  <li><a href="#orange-pi" id="toc-orange-pi" class="nav-link" data-scroll-target="#orange-pi">Orange Pi</a></li>
+  <li><a href="#batteries" id="toc-batteries" class="nav-link" data-scroll-target="#batteries">Batteries</a></li>
+  <li><a href="#solar-panels" id="toc-solar-panels" class="nav-link" data-scroll-target="#solar-panels">Solar Panels</a></li>
+  <li><a href="#wind-turbines" id="toc-wind-turbines" class="nav-link" data-scroll-target="#wind-turbines">Wind Turbines</a></li>
+  <li><a href="#victron-cerbo-gx" id="toc-victron-cerbo-gx" class="nav-link" data-scroll-target="#victron-cerbo-gx">Victron Cerbo GX</a></li>
+  <li><a href="#victron-maximum-power-point-tracking-15070-mppt" id="toc-victron-maximum-power-point-tracking-15070-mppt" class="nav-link" data-scroll-target="#victron-maximum-power-point-tracking-15070-mppt">Victron Maximum Power Point Tracking 150/70 (MPPT)</a></li>
+  <li><a href="#lynx-ii-battery-management-system-bms" id="toc-lynx-ii-battery-management-system-bms" class="nav-link" data-scroll-target="#lynx-ii-battery-management-system-bms">Lynx II Battery Management System (BMS)</a></li>
+  <li><a href="#plus-dimension-load-leveler" id="toc-plus-dimension-load-leveler" class="nav-link" data-scroll-target="#plus-dimension-load-leveler">Plus Dimension Load Leveler</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -187,20 +208,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="automated-surface-flux-station-asfs" class="level2">
-<h2 class="anchored" data-anchor-id="automated-surface-flux-station-asfs">Automated Surface Flux Station (ASFS)</h2>
+<section id="sleigh" class="level2">
+<h2 class="anchored" data-anchor-id="sleigh">SLEIGH</h2>
+<section id="automated-surface-flux-station-asfs" class="level3">
+<h3 class="anchored" data-anchor-id="automated-surface-flux-station-asfs">Automated Surface Flux Station (ASFS)</h3>
 <ul>
 <li>User Guide - TBD</li>
 </ul>
 </section>
-<section id="ground-penetrating-radar-gpr" class="level2">
-<h2 class="anchored" data-anchor-id="ground-penetrating-radar-gpr">Ground Penetrating Radar (GPR)</h2>
+<section id="ground-penetrating-radar-gpr" class="level3">
+<h3 class="anchored" data-anchor-id="ground-penetrating-radar-gpr">Ground Penetrating Radar (GPR)</h3>
 <ul>
 <li><a href="manuals/ICECAPSsnowRadar.pdf">User Guide</a></li>
 </ul>
 </section>
-<section id="micro-rain-radar-mrr" class="level2">
-<h2 class="anchored" data-anchor-id="micro-rain-radar-mrr">Micro Rain Radar (MRR)</h2>
+<section id="micro-rain-radar-mrr" class="level3">
+<h3 class="anchored" data-anchor-id="micro-rain-radar-mrr">Micro Rain Radar (MRR)</h3>
 <ul>
 <li><a href="manuals/MRR-PRO-Manual.pdf">User Guide</a></li>
 <li><a href="manuals/MRR-PRO products.pdf">Theory</a></li>
@@ -208,20 +231,52 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/maahn/IMProToo">Improved Mrr Processing Tool - IMProToo</a></li>
 </ul>
 </section>
-<section id="microwave-radiometer-mwr" class="level2">
-<h2 class="anchored" data-anchor-id="microwave-radiometer-mwr">[Microwave Radiometer (MWR)</h2>
+<section id="microwave-radiometer-mwr" class="level3">
+<h3 class="anchored" data-anchor-id="microwave-radiometer-mwr">Microwave Radiometer (MWR)</h3>
 <ul>
 <li><a href="manuals/RPG_MWR_STD_Software_Manual G5.pdf">User Guide</a></li>
 </ul>
 </section>
-<section id="vaisala-cl61-depolarization-lidar-cl61" class="level2">
-<h2 class="anchored" data-anchor-id="vaisala-cl61-depolarization-lidar-cl61">Vaisala CL61 Depolarization Lidar (CL61)</h2>
+<section id="vaisala-cl61-depolarization-lidar-cl61" class="level3">
+<h3 class="anchored" data-anchor-id="vaisala-cl61-depolarization-lidar-cl61">Vaisala CL61 Depolarization Lidar (CL61)</h3>
 <ul>
 <li><a href="manuals/CL61 User Guide M212475EN-D.pdf">User Guide</a></li>
 <li><a href="manuals/CL61 Installation Guide M212474EN-D.pdf">Installation Guide</a></li>
 </ul>
+</section>
+</section>
+<section id="mvp" class="level2">
+<h2 class="anchored" data-anchor-id="mvp">MVP</h2>
+<section id="orange-pi" class="level3">
+<h3 class="anchored" data-anchor-id="orange-pi">Orange Pi</h3>
+</section>
+<section id="batteries" class="level3">
+<h3 class="anchored" data-anchor-id="batteries">Batteries</h3>
+</section>
+<section id="solar-panels" class="level3">
+<h3 class="anchored" data-anchor-id="solar-panels">Solar Panels</h3>
+</section>
+<section id="wind-turbines" class="level3">
+<h3 class="anchored" data-anchor-id="wind-turbines">Wind Turbines</h3>
+</section>
+<section id="victron-cerbo-gx" class="level3">
+<h3 class="anchored" data-anchor-id="victron-cerbo-gx">Victron Cerbo GX</h3>
+</section>
+<section id="victron-maximum-power-point-tracking-15070-mppt" class="level3">
+<h3 class="anchored" data-anchor-id="victron-maximum-power-point-tracking-15070-mppt">Victron Maximum Power Point Tracking 150/70 (MPPT)</h3>
+<ul>
+<li>150 stands for 150 V maximum voltage</li>
+<li>70 stands for 70 amps maximum current</li>
+</ul>
+</section>
+<section id="lynx-ii-battery-management-system-bms" class="level3">
+<h3 class="anchored" data-anchor-id="lynx-ii-battery-management-system-bms">Lynx II Battery Management System (BMS)</h3>
+</section>
+<section id="plus-dimension-load-leveler" class="level3">
+<h3 class="anchored" data-anchor-id="plus-dimension-load-leveler">Plus Dimension Load Leveler</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -614,11 +669,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./protocol.html" class="pagination-link  aria-label=" protocol="" for="" summit="" station"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Protocol for Summit Station</span>
+      <a href="./remote.html" class="pagination-link  aria-label=" remote="" connection"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Remote Connection</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./data-summaries.html" class="pagination-link" aria-label="Data Summaries">
+        <span class="nav-page-text">Data Summaries</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

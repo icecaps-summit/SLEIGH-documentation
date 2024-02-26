@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The ICECAPS-MELT Platform - Remote Connection during Summer 2023</title>
+<title>SLEIGH Documentation - Remote Connection</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./services.html" rel="next">
-<link href="./getting-started.html" rel="prev">
+<link href="./manuals.html" rel="next">
+<link href="./configuration.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote.html">Remote Connection during Summer 2023</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote.html">Remote Connection</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -96,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">The ICECAPS-MELT Platform</a> 
+      <a href="./">SLEIGH Documentation</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -120,12 +120,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./remote.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Remote Connection during Summer 2023</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./services.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Services</span></a>
   </div>
@@ -138,14 +132,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./protocol.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Protocol for Summit Station</span></a>
+  <a href="./remote.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Remote Connection</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manuals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manuals</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Summaries</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./santa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SANTA</span></a>
   </div>
 </li>
     </ul>
@@ -177,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Remote Connection during Summer 2023</h1>
+<h1 class="title">Remote Connection</h1>
 </div>
 
 
@@ -205,8 +211,9 @@ ul.task-list li input[type="checkbox"] {
 <p>Add the following to your config file in your ~/.ssh directory on your local computer.</p>
 <pre><code>Host dataman
     User dataman
-    Hostname 72.2.235.46
-    Port 26022
+    # ....Contact Michael Gallagher for IP address and port number
+    Hostname xxx.xxx.xxx.xxx
+    Port xxxx
     PubkeyAuthentication yes
     IdentitiesOnly yes
     IdentityFile ~/.ssh/id_rsa_buoy
@@ -222,8 +229,9 @@ Host iceman
     ProxyJump dataman</code></pre>
 <pre><code>Host dataman
     User dataman
-    HostName 72.2.235.46
-    Port 26022
+    # ....Contact Michael Gallagher for IP address and port number
+    Hostname xxx.xxx.xxx.xxx
+    Port xxxx
     PubkeyAuthentication yes
     IdentitiesOnly yes
     IdentityFile ~/.ssh/id_rsa_buoy
@@ -737,13 +745,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./getting-started.html" class="pagination-link  aria-label=" getting="" started"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Getting Started</span>
+      <a href="./configuration.html" class="pagination-link  aria-label=" configuration"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Configuration</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./services.html" class="pagination-link" aria-label="Services">
-        <span class="nav-page-text">Services</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./manuals.html" class="pagination-link" aria-label="Manuals">
+        <span class="nav-page-text">Manuals</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

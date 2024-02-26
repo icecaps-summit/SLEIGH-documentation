@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The ICECAPS-MELT Platform - Protocol for Summit Station</title>
+<title>SLEIGH Documentation - SANTA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./manuals.html" rel="next">
-<link href="./configuration.html" rel="prev">
+<link href="./data-summaries.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./protocol.html">Protocol for Summit Station</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./santa.html">SANTA</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -96,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">The ICECAPS-MELT Platform</a> 
+      <a href="./">SLEIGH Documentation</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -120,12 +119,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./remote.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Remote Connection during Summer 2023</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./services.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Services</span></a>
   </div>
@@ -138,14 +131,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./protocol.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Protocol for Summit Station</span></a>
+  <a href="./remote.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Remote Connection</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manuals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manuals</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-summaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Summaries</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./santa.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">SANTA</span></a>
   </div>
 </li>
     </ul>
@@ -158,13 +163,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#waldenicecaps-melt---instrument-platform" id="toc-waldenicecaps-melt---instrument-platform" class="nav-link active" data-scroll-target="#waldenicecaps-melt---instrument-platform">Walden/ICECAPS-MELT - Instrument Platform</a>
+  <li><a href="#access" id="toc-access" class="nav-link active" data-scroll-target="#access">Access</a></li>
+  <li><a href="#data-storage" id="toc-data-storage" class="nav-link" data-scroll-target="#data-storage">Data Storage</a></li>
+  <li><a href="#data-transfer" id="toc-data-transfer" class="nav-link" data-scroll-target="#data-transfer">Data Transfer</a></li>
+  <li><a href="#website-hosting" id="toc-website-hosting" class="nav-link" data-scroll-target="#website-hosting">Website Hosting</a>
   <ul class="collapse">
-  <li><a href="#how-often" id="toc-how-often" class="nav-link" data-scroll-target="#how-often">How often:</a></li>
-  <li><a href="#clean-requirements" id="toc-clean-requirements" class="nav-link" data-scroll-target="#clean-requirements">Clean requirements:</a></li>
-  <li><a href="#supplies-needed" id="toc-supplies-needed" class="nav-link" data-scroll-target="#supplies-needed">Supplies needed:</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction:</a></li>
-  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure:</a></li>
+  <li><a href="#dashboard-update-pipeline" id="toc-dashboard-update-pipeline" class="nav-link" data-scroll-target="#dashboard-update-pipeline">Dashboard Update Pipeline</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -174,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Protocol for Summit Station</h1>
+<h1 class="title">SANTA</h1>
 </div>
 
 
@@ -191,69 +195,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="waldenicecaps-melt---instrument-platform" class="level2">
-<h2 class="anchored" data-anchor-id="waldenicecaps-melt---instrument-platform">Walden/ICECAPS-MELT - Instrument Platform</h2>
-<ul>
-<li>Primary contact: Von Walden, v.walden@wsu.edu, 208-301-4699</li>
-<li>Secondary contact: Michael Gallagher, michael.r.gallagher@noaa.gov</li>
-</ul>
-<section id="how-often" class="level3">
-<h3 class="anchored" data-anchor-id="how-often">How often:</h3>
-<ul>
-<li>Daily:
-<ul>
-<li>Visual inspection of instrument platform</li>
-<li>Inspection of MRR antenna; NO cleaning</li>
-<li>Confirmation that data is being archived on dataman computer</li>
-</ul></li>
-<li>Weekly:
-<ul>
-<li>None.</li>
-</ul></li>
-</ul>
+<p>The <strong>S</strong>leigh <strong>A</strong>ccess <strong>N</strong>ode for data <strong>T</strong>ransfer and <strong>A</strong>nalysis (SANTA) is a VM set up as part of the ICECAPS external tenancy on the NERC’s JASMIN computer.</p>
+<section id="access" class="level2">
+<h2 class="anchored" data-anchor-id="access">Access</h2>
 </section>
-<section id="clean-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="clean-requirements">Clean requirements:</h3>
-<p>None.</p>
+<section id="data-storage" class="level2">
+<h2 class="anchored" data-anchor-id="data-storage">Data Storage</h2>
 </section>
-<section id="supplies-needed" class="level3">
-<h3 class="anchored" data-anchor-id="supplies-needed">Supplies needed:</h3>
-<p>None.</p>
+<section id="data-transfer" class="level2">
+<h2 class="anchored" data-anchor-id="data-transfer">Data Transfer</h2>
 </section>
-<section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction:</h3>
-<p>The ICECAPS-MELT instrument platform is designed to measure both atmospheric and sub-surface properties of the Greenland Ice Sheet. It was designed to be an autonomous instrument, so the science team anticipates that the platform will not need much attention throughout its summer at Summit. The manual for the platform can be accessed via a web browser on the ICECAPS dataman computer at file:///home/dataman/Documentation/platform/index.html. (Note that Firefox on dataman has a link to this site on its toolbar.) A hard-copy of the manual has been supplied to the current MSF technician.</p>
-<p>The platform is operated by simply turning it on. It is powered up by turning on the Cincoze computer inside the platform control box (large gray plastic box installed in the middle of the platform). This prodecure is explained in the manual.</p>
-<p>The platform is currently installed to the southwest of the MSF building.</p>
-</section>
-<section id="procedure" class="level3">
-<h3 class="anchored" data-anchor-id="procedure">Procedure:</h3>
-<section id="daily-checks" class="level4">
-<h4 class="anchored" data-anchor-id="daily-checks">Daily Checks</h4>
-<ul>
-<li>Visually inspect the platform. If any significant drifting has occurred, take a photo and store this on dataman.</li>
-<li>Inspect the MRR antenna. DO NOT clean the antenna but make a note in the Excel logbook of the percentage of the antenna that is covered by snow and/or ice.</li>
-<li>Ensure that data is being archived from the instrument platform onto the dataman computer.</li>
-</ul>
-</section>
-<section id="power-uppower-down" class="level4">
-<h4 class="anchored" data-anchor-id="power-uppower-down">Power Up/Power Down</h4>
-<ul>
-<li>The Startup procedure is shown in the attached manual on page 5.</li>
-<li>The Shutdown procedure is shown in the attached manual on page 5. (Note that one must log into the Cincoze computer to properly shutdown the platform. The login procedure is shown on pages 7 and 8 of the attached manual.)</li>
-</ul>
-</section>
-<section id="retro" class="level4">
-<h4 class="anchored" data-anchor-id="retro">Retro:</h4>
-<ul>
-<li>The instrument platform will be completely retro’d by our science team in August 2023.</li>
-</ul>
-</section>
-<section id="consumable-resupply-items" class="level4">
-<h4 class="anchored" data-anchor-id="consumable-resupply-items">Consumable Resupply Items:</h4>
-<ul>
-<li>There are no consumable supplied for the instrument platform.</li>
-</ul>
+<section id="website-hosting" class="level2">
+<h2 class="anchored" data-anchor-id="website-hosting">Website Hosting</h2>
+<p>We have a website! <a href="http://www.icecapsmelt.org">http://www.icecapsmelt.org</a></p>
+<section id="dashboard-update-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="dashboard-update-pipeline">Dashboard Update Pipeline</h3>
+<ol type="1">
+<li>Perform <code>git pull</code> on dashboard repo to obtain the latest data visualisation code.</li>
+<li>Ensure that a <code>data_dir.txt</code> file in the root of the repo exists, and is contained in the repo’s <code>.gitignore</code>. This will allow different users of the repository to securely link to locally stored data.</li>
+</ol>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>e.g. example data_dir.txt on SANTA</strong></pre>
+</div>
+<pre data-filename="e.g. example data_dir.txt on SANTA"><code>/data</code></pre>
+</div>
+<ol start="3" type="1">
+<li><code>quarto render</code> will render the dashboard, which will use <code>data_dir.txt</code> to point to the most recently generated data. The render location can be set to the hosted website’s location on SANTA. This will automatically update a static quarto render to display the latest available data.</li>
+</ol>
+<p>There are a few considerations to implement this procedure: - We need to decide on a timeframe after which the <code>quarto render</code> is reran to keep the website up to date. 15 minutes would ensure that as a minimum time delay between a data downlink and it being publicly viewable. - We need a way to ensure that data isn’t read as its being written from the SLEIGH. This would be disasterous, as the data partition that SANTA uses is no-parallel-write and this could corrupt data if read and write calls are made at the same time.</p>
+<section id="solution-1" class="level4">
+<h4 class="anchored" data-anchor-id="solution-1">Solution #1</h4>
+<p>Push the data to a seperate directory (e.g.&nbsp;<code>/data/current_downlink</code>), from which a simple <code>mv</code> command is applied, only once the data has been safely downloaded and checked.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>e.g. data transfer pipeline</strong></pre>
+</div>
+<pre data-filename="e.g. data transfer pipeline"><code>data on SLEIGH -&gt; /data/current_downlink on SANTA -&gt; /data/hourly_summaries on SANTA
+                ^                                 ^
+              Iridium                            mv</code></pre>
+</div>
 
 
 </section>
@@ -650,14 +631,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./configuration.html" class="pagination-link  aria-label=" configuration"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Configuration</span>
+      <a href="./data-summaries.html" class="pagination-link  aria-label=" data="" summaries"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Summaries</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./manuals.html" class="pagination-link" aria-label="Manuals">
-        <span class="nav-page-text">Manuals</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

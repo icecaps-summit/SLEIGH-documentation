@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>SLEIGH Documentation - Getting Started</title>
+<title>SLEIGH Documentation - Data Summaries</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./services.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./santa.html" rel="next">
+<link href="./manuals.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./getting-started.html">Getting Started</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-summaries.html">Data Summaries</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -114,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getting-started.html" class="sidebar-item-text sidebar-link active">
+  <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Started</span></a>
   </div>
 </li>
@@ -144,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-summaries.html" class="sidebar-item-text sidebar-link">
+  <a href="./data-summaries.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Summaries</span></a>
   </div>
 </li>
@@ -164,23 +193,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#startup-and-shutdown-of-the-platform" id="toc-startup-and-shutdown-of-the-platform" class="nav-link active" data-scroll-target="#startup-and-shutdown-of-the-platform">Startup and Shutdown of the Platform</a>
+  <li><a href="#notation" id="toc-notation" class="nav-link active" data-scroll-target="#notation">Notation</a></li>
+  <li><a href="#cl61" id="toc-cl61" class="nav-link" data-scroll-target="#cl61">cl61</a>
   <ul class="collapse">
-  <li><a href="#startup" id="toc-startup" class="nav-link" data-scroll-target="#startup">Startup</a></li>
-  <li><a href="#shutdown" id="toc-shutdown" class="nav-link" data-scroll-target="#shutdown">Shutdown</a></li>
+  <li><a href="#dimensions" id="toc-dimensions" class="nav-link" data-scroll-target="#dimensions">Dimensions</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   </ul></li>
-  <li><a href="#ethernet-access" id="toc-ethernet-access" class="nav-link" data-scroll-target="#ethernet-access">Ethernet Access</a>
+  <li><a href="#mwr" id="toc-mwr" class="nav-link" data-scroll-target="#mwr">MWR</a>
   <ul class="collapse">
-  <li><a href="#remote-connection-during-summer-2023" id="toc-remote-connection-during-summer-2023" class="nav-link" data-scroll-target="#remote-connection-during-summer-2023">Remote connection during Summer 2023</a></li>
-  <li><a href="#skylink-satellie-link" id="toc-skylink-satellie-link" class="nav-link" data-scroll-target="#skylink-satellie-link">Skylink satellie link</a></li>
-  <li><a href="#missionlink-satellite-link" id="toc-missionlink-satellite-link" class="nav-link" data-scroll-target="#missionlink-satellite-link">MissionLink satellite link</a></li>
-  <li><a href="#summit-station-network" id="toc-summit-station-network" class="nav-link" data-scroll-target="#summit-station-network">Summit Station network</a></li>
-  <li><a href="#verizon-hotspot" id="toc-verizon-hotspot" class="nav-link" data-scroll-target="#verizon-hotspot">Verizon HotSpot</a></li>
+  <li><a href="#dimensions-1" id="toc-dimensions-1" class="nav-link" data-scroll-target="#dimensions-1">Dimensions</a></li>
+  <li><a href="#variables-1" id="toc-variables-1" class="nav-link" data-scroll-target="#variables-1">Variables</a></li>
   </ul></li>
-  <li><a href="#sec-loggingIn" id="toc-sec-loggingIn" class="nav-link" data-scroll-target="#sec-loggingIn">Logging into the Cincoze computer</a></li>
-  <li><a href="#checking-the-system-status" id="toc-checking-the-system-status" class="nav-link" data-scroll-target="#checking-the-system-status">Checking the System Status</a></li>
-  <li><a href="#internal-network" id="toc-internal-network" class="nav-link" data-scroll-target="#internal-network">Internal Network</a></li>
-  <li><a href="#retrieving-data" id="toc-retrieving-data" class="nav-link" data-scroll-target="#retrieving-data">Retrieving data</a></li>
+  <li><a href="#energymeter" id="toc-energymeter" class="nav-link" data-scroll-target="#energymeter">Energymeter</a>
+  <ul class="collapse">
+  <li><a href="#dimensions-2" id="toc-dimensions-2" class="nav-link" data-scroll-target="#dimensions-2">Dimensions</a></li>
+  <li><a href="#variables-2" id="toc-variables-2" class="nav-link" data-scroll-target="#variables-2">Variables</a></li>
+  </ul></li>
+  <li><a href="#mrr" id="toc-mrr" class="nav-link" data-scroll-target="#mrr">MRR</a>
+  <ul class="collapse">
+  <li><a href="#dimensions-3" id="toc-dimensions-3" class="nav-link" data-scroll-target="#dimensions-3">Dimensions</a></li>
+  <li><a href="#variables-3" id="toc-variables-3" class="nav-link" data-scroll-target="#variables-3">Variables</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -189,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Getting Started</h1>
+<h1 class="title">Data Summaries</h1>
 </div>
 
 
@@ -206,309 +239,565 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This chapter describes some basic tasks related to operating the platform and how to copy data.</p>
-<section id="startup-and-shutdown-of-the-platform" class="level2">
-<h2 class="anchored" data-anchor-id="startup-and-shutdown-of-the-platform">Startup and Shutdown of the Platform</h2>
-<section id="startup" class="level3">
-<h3 class="anchored" data-anchor-id="startup">Startup</h3>
-<p>To power on (start up) the instrument platform, ensure that it is plugged into AC 110-V power. Then remove the cover of the gray platform control box, and press the power button on the Cincoze computer. The image below shows the front of the Cincoze computer with the small silver power button in the upper right. Once the power button is pressed, the icon on the button should turn green.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CincozeFront.png" class="img-fluid figure-img"></p>
-<figcaption>The front of the Cincoze computer with power off; power icon is not green</figcaption>
-</figure>
-</div>
-</section>
-<section id="shutdown" class="level3">
-<h3 class="anchored" data-anchor-id="shutdown">Shutdown</h3>
-<p>To power off (shutdown) the instrument platform, log onto the Cincoze computer using the instructions in <a href="#sec-loggingIn" class="quarto-xref"><span>Logging into the Cincoze computer</span></a> below and type</p>
-<pre><code>poweroff</code></pre>
-<p>Type the iceman password, if prompted. (Contact either Von or Michael for SLEIGH passwords.)</p>
-</section>
-</section>
-<section id="ethernet-access" class="level2">
-<h2 class="anchored" data-anchor-id="ethernet-access">Ethernet Access</h2>
-<p>Before connecting to the platform through the Cincoze computer, one will have to have a direct ethernet connection to the Cincoze. This may be accomplished usijg one of several different setups:</p>
-<section id="remote-connection-during-summer-2023" class="level3">
-<h3 class="anchored" data-anchor-id="remote-connection-during-summer-2023">Remote connection during Summer 2023</h3>
-<p>There are several steps to connect remotely (in summer 2023) to the platform at Summit Summit. Therefore, these steps are shown <a href="./remote.html">here</a>.</p>
-</section>
-<section id="skylink-satellie-link" class="level3">
-<h3 class="anchored" data-anchor-id="skylink-satellie-link">Skylink satellie link</h3>
-<p>TBD</p>
-</section>
-<section id="missionlink-satellite-link" class="level3">
-<h3 class="anchored" data-anchor-id="missionlink-satellite-link">MissionLink satellite link</h3>
-<p>TBD</p>
-</section>
-<section id="summit-station-network" class="level3">
-<h3 class="anchored" data-anchor-id="summit-station-network">Summit Station network</h3>
-<p>To connect to the Cincoze via the network at Summit Station, one must first log into local network at Summit. There are a couple of different possibilities for how to do this:</p>
+<p>This chapter will describe the summarization process applied to the data, prior to its transfer via Iridium satellite network to SANTA (<strong>S</strong>LEIGH <strong>A</strong>ccess <strong>N</strong>ode for data <strong>T</strong>ransfer and <strong>A</strong>nalysis).</p>
+<p><strong>Note:</strong> the data summarisation is a work in process. If a particular instrument isn’t described, or the variables for a given instrument won’t be sufficient to assess its performance, get in touch with [who’s details, if anyone’s, shall we give out on a public website…].</p>
+<section id="notation" class="level2">
+<h2 class="anchored" data-anchor-id="notation">Notation</h2>
+<p>The variables reorded by the instruments will be described in tables below, and the descriptions for the reducing of the data will take the form:</p>
 <ul>
-<li>First remotely log into another computer that is already connected to the Summit Station network (e.g., dataman).</li>
-<li>Connect to the local wifi network while at Summit Station.</li>
+<li><p>The variable name will be described in the <code>var</code> collumn, as it is given in the .nc, .dat or .csv files onboard iceman.</p></li>
+<li><p>The dimensions for each variable will be described in the <code>dims</code> collumn. For each instrument, the resolution and length of the original dimensions will be described.</p></li>
+<li><p>The data reductions will aggregate data along these dimensions to produce new dimensions, described for each variable in <code>new_dims</code>. The resolution and size of these dimensions will also be described.</p></li>
+<li><p>The function(s) used to aggregate the data from <code>dims</code> to <code>new_dims</code> will be described in the collumn <code>fn</code>.</p></li>
+<li><p>A brief description of the use of these reduced variables will be given in the <code>details</code> collumn, as well as any other supporting information.</p></li>
 </ul>
 </section>
-<section id="verizon-hotspot" class="level3">
-<h3 class="anchored" data-anchor-id="verizon-hotspot">Verizon HotSpot</h3>
-<p>The ICECAPS-MELT project has a Verizon HotSpot that will be connected to the instrument platform when it is deployed in Boulder, Colorado. Researchers will be able to connect to this hotspot using a cellular connection and then log in to have a direct internet connection to the platform. The login credentials are:</p>
-<ul>
-<li>SSID: icecaps</li>
-<li>p: RavenBound</li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<pre><code>Typically one must NOT be connected to a virtual private network (VPN) when trying to access the Cincoze computer.</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="sec-loggingIn" class="level2">
-<h2 class="anchored" data-anchor-id="sec-loggingIn">Logging into the Cincoze computer</h2>
-<p>Once you are connected to a device that has a direct connection to the Cincoze, type the following command to SSH to the Cincoze:</p>
-<pre><code>ssh iceman@xxx.xxx.xxx.xxx</code></pre>
-<p>where xxx.xxx.xxx.xxx can be found in the following table:</p>
-<table class="table">
+<section id="cl61" class="level2">
+<h2 class="anchored" data-anchor-id="cl61">cl61</h2>
+<section id="dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions">Dimensions</h3>
+<table class="table-striped table-bordered table">
 <thead>
 <tr class="header">
-<th>Connection</th>
-<th>IP address</th>
+<th>dimension</th>
+<th>resolution</th>
+<th>length</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Skylink</td>
-<td>???.???.???.???</td>
+<td>time</td>
+<td><em>FILL</em></td>
+<td>(unlimitted)</td>
 </tr>
 <tr class="even">
-<td>MissionLink</td>
-<td>???.???.???.???</td>
+<td>layer</td>
+<td>1</td>
+<td>5</td>
 </tr>
 <tr class="odd">
-<td>Summit</td>
-<td>192.168.98.50</td>
-</tr>
-<tr class="even">
-<td>Verizon</td>
-<td>???.???.???.???</td>
+<td>time’</td>
+<td>15 minutes</td>
+<td>96 per day</td>
 </tr>
 </tbody>
 </table>
-<p>Enter the password for the iceman account, if prompted. This should log you into the Cincoze. The Cincoze uses a Linux-based operation system, so one can issue normal Linux commands from the Cincoze prompt.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<pre><code>Be careful when executing Linux commands on the Cincoze computer.</code></pre>
-</div>
-</div>
 </section>
-<section id="checking-the-system-status" class="level2">
-<h2 class="anchored" data-anchor-id="checking-the-system-status">Checking the System Status</h2>
-<p>The platform is operated using System Services in Linux.</p>
-<ul>
-<li><p>To view all of the system services running on the Cincoze, type:</p>
-<pre><code>systemctl status | less</code></pre></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<pre><code>The addition of "| less" allows one to scroll up and down.</code></pre>
-</div>
-</div>
-<ul>
-<li><p>To view the status of only those processes run by the iceman user (assuming that you’re logged in as iceman), type:</p>
-<pre><code>systemctl --user status | less</code></pre></li>
-<li><p>To view the status of a particular process, type:</p>
-<pre><code>systemctl --user status mrr</code></pre>
-<ul>
-<li>To see a full list of the various processes running on the Cincoze to support the platform, see</li>
-</ul></li>
-</ul>
-</section>
-<section id="internal-network" class="level2">
-<h2 class="anchored" data-anchor-id="internal-network">Internal Network</h2>
-<p>Once you’re logged onto the Cincoze computer, you can connect to other instruments using the IP addresses listed below:</p>
-<table class="table">
+<section id="variables" class="level3">
+<h3 class="anchored" data-anchor-id="variables">Variables</h3>
+<table class="table-striped table-bordered table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 54%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Device</th>
-<th>Local IP</th>
+<th>var</th>
+<th>dims</th>
+<th>new_dims</th>
+<th>fn</th>
+<th>units</th>
+<th>details</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Cincoze Computer</td>
-<td>192.168.1.10</td>
+<td>cloud_base_heights</td>
+<td>time, layer</td>
+<td>time’, layer</td>
+<td>mean, std</td>
+<td>m</td>
+<td>The 15-minute mean and standard deviation of the cloud base height for each detected cloud layer</td>
 </tr>
 <tr class="even">
-<td>Skylink Certus Modem</td>
-<td>192.168.111.1</td>
+<td>cloud_thickness</td>
+<td>time, layer</td>
+<td>time’, layer</td>
+<td>mean, std</td>
+<td>m</td>
+<td>The 15-minute mean and standard deviation of the cloud geometric thickness for each detected cloud layer</td>
 </tr>
 <tr class="odd">
-<td>Windows VM</td>
-<td>192.168.1.166</td>
+<td>beta_att_sum</td>
+<td>time</td>
+<td>time’</td>
+<td>median, std</td>
+<td><span class="math inline">\(10^{-4}\)</span> sr<span class="math inline">\(^{-1}\)</span></td>
+<td>The 15-miunte median and standard deviation of the vertically-integrated backscatter coefficient</td>
 </tr>
 <tr class="even">
-<td>CR1000X Logger</td>
-<td>192.168.1.120</td>
+<td>tilt_angle</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>°</td>
+<td>15-minute mean and standard deviation of the instrument zenith angle (from vertical)</td>
 </tr>
 <tr class="odd">
-<td>Licor 7500DS Gas Analyzer</td>
-<td>192.168.1.15</td>
+<td>precipitation_detection</td>
+<td>time</td>
+<td>time’</td>
+<td>sum</td>
+<td>1</td>
+<td>The number of recorded profiles in which precipitation was detected</td>
 </tr>
 <tr class="even">
-<td>Smart Flux</td>
-<td>192.168.1.221</td>
+<td>fog_detection</td>
+<td>time</td>
+<td>time’</td>
+<td>sum</td>
+<td>1</td>
+<td>The number of recorded profiles within which fog was detected</td>
 </tr>
 <tr class="odd">
-<td>Phoenix EEM-MA370 Energy Meter</td>
-<td>192.168.1.32</td>
-</tr>
-<tr class="even">
-<td>MODBUS relay for logger reboot</td>
-<td>192.168.1.97</td>
-</tr>
-<tr class="odd">
-<td>APC power supply</td>
-<td>192.168.1.11</td>
-</tr>
-<tr class="even">
-<td>Ground Penetrating Radar</td>
-<td>192.168.1.161</td>
-</tr>
-<tr class="odd">
-<td>Metek MRR-Pro</td>
-<td>192.168.1.20</td>
-</tr>
-<tr class="even">
-<td>Vaisala CL61 data</td>
-<td>192.168.1.111</td>
-</tr>
-<tr class="odd">
-<td>Vaisala CL61 maintenance</td>
-<td>172.17.0.2</td>
+<td>time</td>
+<td>time</td>
+<td>time’</td>
+<td>count</td>
+<td>1</td>
+<td>The number of recorded profiles per 15-minute window. A proxy for instrument uptime</td>
 </tr>
 </tbody>
 </table>
-<p>Currently, one must use the <code>sshpass</code> command to connect. Below is an example command to connect to the MRR from the Cincoze computer</p>
-<pre><code>sshpass -p "password-for-mrr" ssh mrruser@192.168.1.20</code></pre>
 </section>
-<section id="retrieving-data" class="level2">
-<h2 class="anchored" data-anchor-id="retrieving-data">Retrieving data</h2>
-<p>Below is a description of the data directory on the Cincoze computer and the associated data filenames. The base directory is /home/iceman/data/. The data in the sub-directories contain near data from the various platform instruments that is copied to the Cincoze in near-real time.</p>
-<pre><code>├── home
-│   ├── iceman
-│   │   ├── data
-│   |   |   ├── asfs
-│   |   |   |    ├── raw
-│   |   |   |    |   ├── crd
-│   |   |   |    |   |   ├── icecaps_asfs_fast_YYYYMMDDHHMM.dat 
-│   |   |   |    |   |   ├── icecaps_asfs_sci_YYYYMMDDHHMM.dat 
+</section>
+<section id="mwr" class="level2">
+<h2 class="anchored" data-anchor-id="mwr">MWR</h2>
+<section id="dimensions-1" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions-1">Dimensions</h3>
+<table class="table-striped table-bordered table">
+<thead>
+<tr class="header">
+<th>dimension</th>
+<th>resolution</th>
+<th>length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td><em>FILL</em></td>
+<td>(unlimitted)</td>
+</tr>
+<tr class="even">
+<td>number_frequencies</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>time’</td>
+<td>15 minutes</td>
+<td>96 per day</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="variables-1" class="level3">
+<h3 class="anchored" data-anchor-id="variables-1">Variables</h3>
+<section id="brt" class="level4">
+<h4 class="anchored" data-anchor-id="brt">BRT</h4>
+<table class="table-striped table-bordered table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>var</th>
+<th>dims</th>
+<th>new_dims</th>
+<th>fn</th>
+<th>units</th>
+<th>details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td>time</td>
+<td>time’</td>
+<td>count</td>
+<td>1</td>
+<td>The number of data records every 15 minutes. Proxy for instrument uptime</td>
+</tr>
+<tr class="even">
+<td>RF</td>
+<td>time</td>
+<td>time’</td>
+<td>sum</td>
+<td>1</td>
+<td>The number of data points where the rain flag is present</td>
+</tr>
+<tr class="odd">
+<td>TBs</td>
+<td>time, number_frequencies</td>
+<td>time’, number_frequencies</td>
+<td>mean, std</td>
+<td>K</td>
+<td>15-minute mean and standard deviation of the brightness temperatures at each recorded frequency</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hkd" class="level4">
+<h4 class="anchored" data-anchor-id="hkd">HKD</h4>
+<table class="table-striped table-bordered table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>var</th>
+<th>dims</th>
+<th>new_dims</th>
+<th>fn</th>
+<th>units</th>
+<th>details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td>time</td>
+<td>time’</td>
+<td>count</td>
+<td>1</td>
+<td>The number of data records every 15 minutes, proxy for instrument uptime</td>
+</tr>
+<tr class="even">
+<td>ALFL</td>
+<td>time</td>
+<td>time’</td>
+<td>sum</td>
+<td>1</td>
+<td>Sum of <strong>AL</strong>arm <strong>FL</strong>ags, indicating critical system status</td>
+</tr>
+<tr class="odd">
+<td>AT1_T</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>K</td>
+<td>Ambient target 1 temperature</td>
+</tr>
+<tr class="even">
+<td>AT2_T</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>K</td>
+<td>Ambient target 2 termperature</td>
+</tr>
+<tr class="odd">
+<td>Rec1_T</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>K</td>
+<td>Receiver 1 temperature</td>
+</tr>
+<tr class="even">
+<td>Rec2_T</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>K</td>
+<td>Receiver 2 temperature</td>
+</tr>
+<tr class="odd">
+<td>Rec1_Stab</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>K</td>
+<td>Receiver 1 temperature stability</td>
+</tr>
+<tr class="even">
+<td>Rec2_Stab</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>K</td>
+<td>Receiver 2 temperature stability</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="met" class="level4">
+<h4 class="anchored" data-anchor-id="met">MET</h4>
+<table class="table-striped table-bordered table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>var</th>
+<th>dims</th>
+<th>new_dims</th>
+<th>fn</th>
+<th>units</th>
+<th>details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td>time</td>
+<td>time’</td>
+<td>count</td>
+<td>1</td>
+<td>The number of data records every 15 minutes, proxy for instrument uptime</td>
+</tr>
+<tr class="even">
+<td>Surf_P</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>hPa</td>
+<td>15-minute mean and standard deviation of surface pressure</td>
+</tr>
+<tr class="odd">
+<td>Surf_T</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>K</td>
+<td>15-minute mean and standard deviation of surface temperature</td>
+</tr>
+<tr class="even">
+<td>Surf_RH</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std</td>
+<td>%</td>
+<td>15-minute mean and standard deviation of surface relative humidity</td>
+</tr>
+<tr class="odd">
+<td>RF</td>
+<td>time</td>
+<td>time’</td>
+<td>sum</td>
+<td>1</td>
+<td>The number of data points where the rain flag is present, should match RF from the BRT data stream</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="energymeter" class="level2">
+<h2 class="anchored" data-anchor-id="energymeter">Energymeter</h2>
+<section id="dimensions-2" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions-2">Dimensions</h3>
+<table class="table-striped table-bordered table">
+<thead>
+<tr class="header">
+<th>dimension</th>
+<th>resolution</th>
+<th>length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td><em>FILL</em></td>
+<td>(unlimitted)</td>
+</tr>
+<tr class="even">
+<td>time’</td>
+<td>15 minutes</td>
+<td>96 per day</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="variables-2" class="level3">
+<h3 class="anchored" data-anchor-id="variables-2">Variables</h3>
+<table class="table-striped table-bordered table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>var</th>
+<th>dims</th>
+<th>new_dims</th>
+<th>fn</th>
+<th>units</th>
+<th>details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td>time</td>
+<td>time’</td>
+<td>count</td>
+<td>1</td>
+<td>The number of data records per 15 minute period, proxy for instrument uptime</td>
+</tr>
+<tr class="even">
+<td>ac_voltage</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std, min, max, median</td>
+<td>V</td>
+<td>Statistics for the 15-minute distribution of instantaneous supplied voltage</td>
+</tr>
+<tr class="odd">
+<td>ac_current</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std, min, max, median</td>
+<td>A</td>
+<td>Statistics for the 15-minute distribution of instantaneous supplied current</td>
+</tr>
+<tr class="even">
+<td>ac_active_power</td>
+<td>time</td>
+<td>time’</td>
+<td>mean, std, min, max, median</td>
+<td>W</td>
+<td>Statistics for the 15-minute distribution of instantaneous supplied current</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="mrr" class="level2">
+<h2 class="anchored" data-anchor-id="mrr">MRR</h2>
+<section id="dimensions-3" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions-3">Dimensions</h3>
+<table class="table-striped table-bordered table">
+<thead>
+<tr class="header">
+<th>dimension</th>
+<th>resolution</th>
+<th>length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td><em>FILL, 10 s?</em></td>
+<td>(unlimitted)</td>
+</tr>
+<tr class="even">
+<td>range</td>
+<td>35 m</td>
+<td>128</td>
+</tr>
+<tr class="odd">
+<td>time’</td>
+<td>15 minutes</td>
+<td>96 per day</td>
+</tr>
+<tr class="even">
+<td>range’</td>
+<td>280 m</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="variables-3" class="level3">
+<h3 class="anchored" data-anchor-id="variables-3">Variables</h3>
+<table class="table-striped table-bordered table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>var</th>
+<th>dims</th>
+<th>new_dims</th>
+<th>fn</th>
+<th>units</th>
+<th>details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td>time</td>
+<td>time’</td>
+<td>count</td>
+<td>1</td>
+<td>Number of data records per 15 minute period, proxy for instrument uptime</td>
+</tr>
+<tr class="even">
+<td>Z</td>
+<td>time, range</td>
+<td>time’, range’</td>
+<td>median, std</td>
+<td>dBZ</td>
+<td>Log-reflectivity</td>
+</tr>
+<tr class="odd">
+<td>VEL</td>
+<td>time, range</td>
+<td>time’, range’</td>
+<td>median, std</td>
+<td>m s<span class="math inline">\(^{-1}\)</span></td>
+<td>Doppler velocity</td>
+</tr>
+<tr class="even">
+<td>WIDTH</td>
+<td>time, range</td>
+<td>time’, range’</td>
+<td>median, std</td>
+<td>m s<span class="math inline">\(^{-1}\)</span></td>
+<td>Doppler spectrum width</td>
+</tr>
+<tr class="odd">
+<td>RR</td>
+<td>time, range</td>
+<td>time’</td>
+<td>mean</td>
+<td>mm hr<span class="math inline">\(^{-1}\)</span></td>
+<td>Mean rainfall rate throughout the collumn</td>
+</tr>
+<tr class="even">
+<td>LWC</td>
+<td>time, range</td>
+<td>time’</td>
+<td>mean( sum[range] )</td>
+<td>g m<span class="math inline">\(^{-2}\)</span></td>
+<td>Mean liquid water path</td>
+</tr>
+</tbody>
+</table>
 
-│   |   |   ├── batts
-│   |   |   |    ├── level0
-│   |   |   |    |   ├── lynk_bms_candump_YYYYMMDD.log
-│   |   |   |    ├── level1
-│   |   |   |    |   ├── BatteryAlarms_YYYYMMDD.csv
-│   |   |   |    |   ├── BatteryLimits_YYYYMMDD.csv
-│   |   |   |    |   ├── BatteryMeasurements_YYYYMMDD.csv
-│   |   |   |    |   ├── BatteryStatus_YYYYMMDD.csv
 
-│   |   |   ├── blesensors
-│   |   |   |    ├── ble_temperatures_YYYYMMDD.log
-
-│   |   |   ├── cl61
-│   |   |   |    ├── live_YYYYMMDD_HHMMSS.nc
-
-│   |   |   ├── energymeter
-│   |   |   |    ├── energymeter.sled.level0.1sec.YYYYMMDD.HHMMSS.nc
-
-│   |   |   ├── mrr
-│   |   |   |    ├── YYYYMM
-│   |   |   |    |   ├── YYYYMMDD
-│   |   |   |    |   |   ├── YYYYMMDD.log
-│   |   |   |    |   |   ├── YYYYMMDD_HH0000.nc
-
-│   |   |   ├── mwr
-│   |   |   |    ├── level0
-│   |   |   |    |   |   ├── YYMMDDHH.BRT
-│   |   |   |    |   |   ├── YYMMDDHH.HKD
-│   |   |   |    |   |   ├── YYMMDDHH.MET
-│   |   |   |    |   |   ├── YYMMDDHH.BRT.NC
-│   |   |   |    |   |   ├── YYMMDDHH.HKD.NC
-│   |   |   |    |   |   ├── YYMMDDHH.MET.NC
-│   |   |   |    ├── vmdata
-
-│   |   |   ├── pics
-│   |   |   |    ├── Allsky
-│   |   |   |    |   ├── SKY_YYYYMMDD_HHMMSS.jpg
-│   |   |   |    |   |   ├── small
-│   |   |   |    |   |   |   ├── SKY_YYYYMMDD_HHMMSS_lowres.jpg
-│   |   |   |    ├── Overview
-│   |   |   |    |   ├── FAR_YYYYMMDD_HHMMSS.jpg
-│   |   |   |    |   |   ├── small
-│   |   |   |    |   |   |   ├── FAR_YYYYMMDD_HHMMSS_lowres.jpg
-│   |   |   |    ├── Radiation
-│   |   |   |    |   ├── RAD_YYYYMMDD_HHMMSS.jpg
-│   |   |   |    |   |   ├── small
-│   |   |   |    |   |   |   ├── RAD_YYYYMMDD_HHMMSS_lowres.jpg
-│   |   |   |    ├── SLEIGHMonitor
-│   |   |   |    |   ├── SLEIGH_YYYYMMDD_HHMMSS.jpg
-│   |   |   |    |   |   ├── small
-│   |   |   |    |   |   |   ├── SLEIGH_YYYYMMDD_HHMMSS_lowres.jpg
-
-│   |   |   ├── power
-│   |   |   |    ├── level1
-│   |   |   |    |   ├── victron_cerbo_data_YYYYMMDD.csv</code></pre>
-<hr>
-<p>To sychronize data from the Cincoze computer to your local computer, one can use the Linux <code>rsync</code> command.</p>
-<pre><code># Example for syncing the entire CL61 data
-rsync -av --rsh=ssh iceman@192.168.98.50:/home/iceman/data/cl61/ /Users/vonw/data/icecaps/platform/cl61</code></pre>
-<hr>
-<p>To copy a subset of data from the Cincoze to your local computer, one can use <code>sftp</code>.</p>
-<pre><code># Example for copying energy data for a given day; single file.
-rsync -av --rsh=ssh iceman@192.168.98.50:/home/iceman/data/energymeter/energymeter.sled.level0.1sec.20230517.000000.nc /Users/vonw/data/icecaps/platform/energymeter</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<pre><code>Note that the IP address used in the above rsync commands will vary depending on what mode of ethernet access one is using (SkyLink, MissionLink, Summit Station, Verizon Hotspot, ...)</code></pre>
-</div>
-</div>
-<p>To synchonize data from instruments to the Cincoze, one can also use the <code>rsync</code> command, but one must include the <code>sshpass</code> command:</p>
-<pre><code># Example for copying data from the MRR to the Cincoze for data archival
-rsync -avz --progress --partial -e 'sshpass -p "metek" ssh' mrruser@192.168.1.20:
-/media/mmcblk0p1/data/ /home/iceman/data/mrr</code></pre>
-
-
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -901,13 +1190,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link  aria-label=" introduction"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./manuals.html" class="pagination-link  aria-label=" manuals"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Manuals</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./services.html" class="pagination-link" aria-label="Services">
-        <span class="nav-page-text">Services</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./santa.html" class="pagination-link" aria-label="SANTA">
+        <span class="nav-page-text">SANTA</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

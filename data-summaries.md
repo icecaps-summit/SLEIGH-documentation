@@ -2,6 +2,8 @@
 
 This chapter will describe the summarization process applied to the data, prior to its transfer via Iridium satellite network to SANTA (**S**LEIGH **A**ccess **N**ode for data **T**ransfer and **A**nalysis).
 
+**Note:** the data summarisation is a work in process. If a particular instrument isn't described, or the variables for a given instrument won't be sufficient to assess its performance, get in touch with \[who's details, if anyone's, shall we give out on a public website...\].
+
 ## Notation
 
 The variables reorded by the instruments will be described in tables below, and the descriptions for the reducing of the data will take the form:
