@@ -250,11 +250,21 @@
     ]
   },
   {
+    "objectID": "data-summaries.html#general-process",
+    "href": "data-summaries.html#general-process",
+    "title": "Data Summaries",
+    "section": "General process",
+    "text": "General process\n\nLoad the data (note, load_ not open_) ELABORATE\nReduce the variables in consideration to those that will be sent off.\nSort the data in time, and select only data that occurs after epoch.\n\nThis step is important, as in testing with the cl61 data, some timestamps (5/1430 for 20220220) took on the value of epoch (19700101:000000), which, when resampling, caused every 15 minute interval since 1970 to be considered (must returning Null values).\n\nresample the variables in time (15 minutes) and apply reducing function (mean, median, etc)\nMerge the resampled variables into a single dataset\nsave it\nhope it worked…",
+    "crumbs": [
+      "Data Summaries"
+    ]
+  },
+  {
     "objectID": "data-summaries.html#cl61",
     "href": "data-summaries.html#cl61",
     "title": "Data Summaries",
     "section": "cl61",
-    "text": "cl61\n\nDimensions\n\n\n\ndimension\nresolution\nlength\n\n\n\n\ntime\nFILL\n(unlimitted)\n\n\nlayer\n1\n5\n\n\ntime’\n15 minutes\n96 per day\n\n\n\n\n\nVariables\n\n\n\n\n\n\n\n\n\n\n\nvar\ndims\nnew_dims\nfn\nunits\ndetails\n\n\n\n\ncloud_base_heights\ntime, layer\ntime’, layer\nmean, std\nm\nThe 15-minute mean and standard deviation of the cloud base height for each detected cloud layer\n\n\ncloud_thickness\ntime, layer\ntime’, layer\nmean, std\nm\nThe 15-minute mean and standard deviation of the cloud geometric thickness for each detected cloud layer\n\n\nbeta_att_sum\ntime\ntime’\nmedian, std\n\\(10^{-4}\\) sr\\(^{-1}\\)\nThe 15-miunte median and standard deviation of the vertically-integrated backscatter coefficient\n\n\ntilt_angle\ntime\ntime’\nmean, std\n°\n15-minute mean and standard deviation of the instrument zenith angle (from vertical)\n\n\nprecipitation_detection\ntime\ntime’\nsum\n1\nThe number of recorded profiles in which precipitation was detected\n\n\nfog_detection\ntime\ntime’\nsum\n1\nThe number of recorded profiles within which fog was detected\n\n\ntime\ntime\ntime’\ncount\n1\nThe number of recorded profiles per 15-minute window. A proxy for instrument uptime",
+    "text": "cl61\n\nDimensions\n\n\n\ndimension\nresolution\nlength\n\n\n\n\ntime\nFILL\n(unlimitted)\n\n\nlayer\n1\n5\n\n\ntime’\n15 minutes\n96 per day\n\n\n\n\n\nVariables\n\n\n\n\n\n\n\n\n\n\n\nvar\ndims\nnew_dims\nfn\nunits\ndetails\n\n\n\n\ncloud_base_heights\ntime, layer\ntime’, layer\nmean, std\nm\nThe 15-minute mean and standard deviation of the cloud base height for each detected cloud layer\n\n\ncloud_thickness\ntime, layer\ntime’, layer\nmean, std\nm\nThe 15-minute mean and standard deviation of the cloud geometric thickness for each detected cloud layer\n\n\nbeta_att_sum\ntime\ntime’\nmedian, std\n\\(10^{-4}\\) sr\\(^{-1}\\)\nThe 15-miunte median and standard deviation of the vertically-integrated backscatter coefficient\n\n\ntilt_angle\ntime\ntime’\nmean, std\n°\n15-minute mean and standard deviation of the instrument zenith angle (from vertical)\n\n\nprecipitation_detection\ntime\ntime’\nsum\n1\nThe number of recorded profiles in which precipitation was detected\n\n\nfog_detection\ntime\ntime’\nsum\n1\nThe number of recorded profiles within which fog was detected\n\n\ntime\ntime\ntime’\ncount\n1\nThe number of recorded profiles per 15-minute window. A proxy for instrument uptime\n\n\n\nNote, to produce time_count, the fog_detection variable is resampled and then counted. This should be completely identical, and is done simply to appease the whims of xarray.",
     "crumbs": [
       "Data Summaries"
     ]

@@ -194,6 +194,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#notation" id="toc-notation" class="nav-link active" data-scroll-target="#notation">Notation</a></li>
+  <li><a href="#general-process" id="toc-general-process" class="nav-link" data-scroll-target="#general-process">General process</a></li>
   <li><a href="#cl61" id="toc-cl61" class="nav-link" data-scroll-target="#cl61">cl61</a>
   <ul class="collapse">
   <li><a href="#dimensions" id="toc-dimensions" class="nav-link" data-scroll-target="#dimensions">Dimensions</a></li>
@@ -251,6 +252,21 @@ window.Quarto = {
 <li><p>The function(s) used to aggregate the data from <code>dims</code> to <code>new_dims</code> will be described in the collumn <code>fn</code>.</p></li>
 <li><p>A brief description of the use of these reduced variables will be given in the <code>details</code> collumn, as well as any other supporting information.</p></li>
 </ul>
+</section>
+<section id="general-process" class="level2">
+<h2 class="anchored" data-anchor-id="general-process">General process</h2>
+<ol type="1">
+<li>Load the data (note, load_ not open_) <strong>ELABORATE</strong></li>
+<li>Reduce the variables in consideration to those that will be sent off.</li>
+<li>Sort the data in time, and select only data that occurs after epoch.</li>
+</ol>
+<p>This step is important, as in testing with the cl61 data, some timestamps (5/1430 for 20220220) took on the value of epoch (19700101:000000), which, when resampling, caused every 15 minute interval since 1970 to be considered (must returning Null values).</p>
+<ol start="4" type="1">
+<li>resample the variables in time (15 minutes) and apply reducing function (mean, median, etc)</li>
+<li>Merge the resampled variables into a single dataset</li>
+<li>save it</li>
+<li>hope it worked…</li>
+</ol>
 </section>
 <section id="cl61" class="level2">
 <h2 class="anchored" data-anchor-id="cl61">cl61</h2>
@@ -363,6 +379,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<p><strong>Note</strong>, to produce <code>time_count</code>, the <code>fog_detection</code> variable is resampled and then counted. This should be completely identical, and is done simply to appease the whims of xarray.</p>
 </section>
 </section>
 <section id="mwr" class="level2">

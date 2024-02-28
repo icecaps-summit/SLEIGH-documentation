@@ -18,6 +18,19 @@ The variables reorded by the instruments will be described in tables below, and 
 
 + A brief description of the use of these reduced variables will be given in the `details` collumn, as well as any other supporting information.
 
+## General process
+
+1. Load the data (note, load_ not open_)   **ELABORATE**
+2. Reduce the variables in consideration to those that will be sent off.
+3. Sort the data in time, and select only data that occurs after epoch.
+
+This step is important, as in testing with the cl61 data, some timestamps (5/1430 for 20220220) took on the value of epoch (19700101:000000), which, when resampling, caused every 15 minute interval since 1970 to be considered (must returning Null values).
+
+4. resample the variables in time (15 minutes) and apply reducing function (mean, median, etc)
+5. Merge the resampled variables into a single dataset
+6. save it
+7. hope it worked...
+
 
 ## cl61
 
@@ -40,6 +53,8 @@ The variables reorded by the instruments will be described in tables below, and 
 | fog_detection | time | time' | sum | 1 | The number of recorded profiles within which fog was detected |
 | time | time | time' | count | 1 | The number of recorded profiles per 15-minute window. A proxy for instrument uptime |
 : {.striped .bordered}
+
+**Note**, to produce `time_count`, the `fog_detection` variable is resampled and then counted. This should be completely identical, and is done simply to appease the whims of xarray.
 
 
 
