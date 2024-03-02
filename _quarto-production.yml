@@ -1,33 +1,6 @@
-project:
-  type: book
-  output-dir: docs
-
-book:
-  title: "SLEIGH Documentation"
-  author: "Michael R. Gallagher and Von P. Walden and Andrew S. Martin"
-  date: "CURRENTDATEDATE"
-  date-format: "DD MMM YYYY"
-  chapters:
-    - index.md
-    - getting-started.md
-    - services.md
-    - configuration.md
-    - remote.md
-    - manuals.md
-    - data-summaries.md
-    - santa.md
-
 website:
   page-footer: 
     left: "Rendered at CURRENTDATETIME"
     right: "Rendered from git commit CURRENTGITCOMMIT"
 
-format:
-  html:
-    theme: cosmo
-  pdf:
-    documentclass: scrreprt
-    output-file: icecaps-melt-platform.pdf
-
-format-links: [pdf]
 
