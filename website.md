@@ -3,6 +3,13 @@
 SANTA hosts the website [icecapsmelt.org](http://www.icecapsmelt.org), from which the data dashboard and documentation will be available.
 
 
+## Landing page
+
+The landing page (currently very very much a work in progress) will be rendered from the [icecaps-summit:icecapsmeltorg](https://github.com/icecaps-summit/icecapsmeltorg) under the `landing_page` directory.
+
+The page will be rendered via quarto as a simple `index.html` file which can be copied into the root of the website directory.
+
+
 ## Data dashboard
 
 
