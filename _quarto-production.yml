@@ -4,8 +4,8 @@ project:
 
 book:
   title: "SLEIGH Documentation"
-  author: "Michael R. Gallagher and Von P. Walden"
-  date: "21 May 2023"
+  author: "Michael R. Gallagher and Von P. Walden and Andrew S. Martin"
+  date: "CURRENTDATE"
   date-format: "DD MMM YYYY"
   chapters:
     - index.md
@@ -25,7 +25,9 @@ website:
 format:
   html:
     theme: cosmo
-
+  pdf:
+    documentclass: scrreprt
+    output-file: icecaps-melt-platform.pdf
 
 format-links: [pdf]
 
