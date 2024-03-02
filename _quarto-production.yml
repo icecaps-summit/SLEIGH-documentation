@@ -1,3 +1,6 @@
+book:
+  date: "CURRENTDATEDATE"
+
 website:
   page-footer: 
     left: "Rendered at CURRENTDATETIME"
