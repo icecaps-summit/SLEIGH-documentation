@@ -5,7 +5,7 @@ project:
 book:
   title: "SLEIGH Documentation"
   author: "Michael R. Gallagher and Von P. Walden and Andrew S. Martin"
-  date: "CURRENTDATE"
+  date: "CURRENTDATEDATE"
   date-format: "DD MMM YYYY"
   chapters:
     - index.md
