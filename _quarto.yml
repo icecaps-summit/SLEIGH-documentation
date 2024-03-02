@@ -16,6 +16,7 @@ book:
     - manuals.md
     - data-summaries.md
     - santa.md
+    - website.md
 
 format:
   html:
