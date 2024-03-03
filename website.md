@@ -20,10 +20,3 @@ The latest live version of the documentation can be found at [icecapsmelt.org/do
 The service to automatically update the live documentation pages can be found at the github repo [icecaps-summit:icecapsmeltorg](https://github.com/icecaps-summit/icecapsmeltorg).
 
 The service consists of a timer and service file. The timer file triggers on systemd every 15 minutes (with a random 5 minute extension to this) and will call to the service file. This then runs the bash script specified in the repository given above. The script simply pulls in the latest version of the documentation from the main branch, replaces text in the `_quarto-production.yml` to state when the render occurred and for which git commit, renders the website using quarto and then copies it to the website directories.
-
-
-
-Boop beep
-====================
-Beep boop
-(this is a test of the auto-updating website...)
