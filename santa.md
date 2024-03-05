@@ -5,6 +5,14 @@ The **S**leigh **A**ccess **N**ode for data **T**ransfer and **A**nalysis (SANTA
 SANTA can be accessed at the ip address `192.171.169.156`, please ensure that you have an account with a specified ssh key setup beforehand. In order to set this up, please contact Andrew Martin, or Ryan Neely.
 
 
+## User mamba install
+
+By default, users have no installed version of conda. You can install a personal version of the miniforge mamba installation via the command:
+```bash
+bash /home/Miniforge3-Linux-x86_64.sh
+```
+
+
 
 ## Data Transfer
 
