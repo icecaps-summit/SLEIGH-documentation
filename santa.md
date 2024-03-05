@@ -17,10 +17,10 @@ Currently, data transfer happens from the SLEIGH to SANTA from the MVPi, and aft
 Prior to being sent, the summarised `.nc` files and summary log `.txt` files are tarred together using the `tar` utility. The specific command used to achieve this is:
 
 ```bash
-txcz=$(tar -c -I "xz -9 -T0" -f $argv[1] $argv[2..-1])
+txzc=$(tar -c -I "xz -9 -T0" -f $argv[1] $argv[2..-1])
 ```
 
-This runs the tar compression using the `xz` compression algoriithm, with the highest compression flag (`-9`). The file provided as the first argument to `txcz` will be the created archive, and the folloowing arguments are the files to be tarred.
+This runs the tar compression using the `xz` compression algoriithm, with the highest compression flag (`-9`). The file provided as the first argument to `txzc` will be the created archive, and the folloowing arguments are the files to be tarred.
 
 The `split` utility is then used to reduce the file size further so that any individual file sent is only 5 KiB in size:
 
@@ -43,7 +43,7 @@ cd /data/daily_summaries/YYYYMMDD
 cat split/* > summary.tar
 ```
 
-Next, the decompression algorithm needs to be performed, specifically using the same compression dictionary settings as were provided in the `txcz` compression command:
+Next, the decompression algorithm needs to be performed, specifically using the same compression dictionary settings as were provided in the `txzc` compression command:
 
 ```bash
 tar -x -I "xz -9 -T0" -f summary.tar
