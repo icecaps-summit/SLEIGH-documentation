@@ -1079,9 +1079,94 @@ head -n 6 data/asfs/raw/crd/icecaps_asfs_fast_202307292200.dat
 
 
 #### Sci
+enjoy:
 | var | dims | new_dims | fn | units | details
 |-|-|-|-|-|------|
-
+TIMESTAMP | time | time' | count | TS | |
+scantime | time | time' | mean, std |  | |
+PTemp_Avg | time | time' | mean | degC | |
+batt_volt_Avg | time | time' | mean | V | |
+amp_meter_12vdc_Avg | time | time' | mean | A | |
+watts_on_12vdc_Avg | time | time' | mean | W | |
+vaisala_RH_Avg | time | time' | mean | % | |
+vaisala_RH_Std | time | time' | std | % | |
+vaisala_T_Avg | time | time' | mean | degC | |
+vaisala_T_Std | time | time' | std | degC | |
+vaisala_P_Avg | time | time' | mean | hPa | |
+vaisala_P_Std | time | time' | std | hPa | |
+metek_x_Avg(1) | time | time' | mean | m/s | |
+metek_x_Std(1) | time | time' | std | m/s | |
+metek_y_Avg(1) | time | time' | mean | m/s | |
+metek_y_Std(1) | time | time' | std | m/s | |
+metek_z_Avg(1) | time | time' | mean | m/s | |
+metek_z_Std(1) | time | time' | std | m/s | |
+metek_T_Avg(1) | time | time' | mean | degC | |
+metek_T_Std(1) | time | time' | std | degC | |
+sr30_swu_DegC_Avg | time | time' | mean | degC | |
+sr30_swu_DegC_Std | time | time' | std | degC | |
+sr30_swu_IrrC_Avg | time | time' | mean | Wm2 | |
+sr30_swu_IrrC_Std | time | time' | std | Wm2 | |
+sr30_swu_Irr_Avg | time | time' | mean | Wm2 | |
+sr30_swu_Irr_Std | time | time' | std | Wm2 | |
+sr30_swd_DegC_Avg | time | time' | mean | degC | |
+sr30_swd_DegC_Std | time | time' | std | degC | |
+sr30_swd_IrrC_Avg | time | time' | mean | Wm2 | |
+sr30_swd_IrrC_Std | time | time' | std | Wm2 | |
+sr30_swd_Irr_Avg | time | time' | mean | Wm2 | |
+sr30_swd_Irr_Std | time | time' | std | Wm2 | |
+spn1_tot_Avg | time | time' | mean | Wm2 | |
+spn1_tot_Std | time | time' | std | Wm2 | |
+spn1_dif_Avg | time | time' | mean | Wm2 | |
+spn1_dif_Std | time | time' | std | Wm2 | |
+ir20_lwu_DegC_Avg | time | time' | mean | degC | |
+ir20_lwu_DegC_Std | time | time' | std | degC | |
+ir20_lwu_Wm2_Avg | time | time' | mean | Wm2 | |
+ir20_lwu_Wm2_Std | time | time' | std | Wm2 | |
+ir20_lwu_mV_Avg | time | time' | mean | mV | |
+ir20_lwu_mV_Std | time | time' | std | mV | |
+ir20_lwd_DegC_Avg | time | time' | mean | degC | |
+ir20_lwd_DegC_Std | time | time' | std | degC | |
+ir20_lwd_Wm2_Avg | time | time' | mean | Wm2 | |
+ir20_lwd_Wm2_Std | time | time' | std | Wm2 | |
+ir20_lwd_mV_Avg | time | time' | mean | mV | |
+ir20_lwd_mV_Std | time | time' | std | mV | |
+snowd_current_Avg | time | time' | mean | mA | |
+snowd_current_Std | time | time' | std | mA | |
+snowd_dist_Avg | time | time' | mean | m | |
+snowd_dist_Std | time | time' | std | m | |
+apogee_body_T_Avg | time | time' | mean | degC | |
+apogee_body_T_Std | time | time' | std | degC | |
+apogee_targ_T_Avg | time | time' | mean | degC | |
+apogee_targ_T_Std | time | time' | std | degC | |
+fp_A_mV_Avg | time | time' | mean | mV | |
+fp_A_mV_Std | time | time' | std | mV | |
+fp_A_Wm2_Avg | time | time' | mean | Wm2 | |
+fp_A_Wm2_Std | time | time' | std | Wm2 | |
+fp_B_mV_Avg | time | time' | mean | mV | |
+fp_B_mV_Std | time | time' | std | mV | |
+fp_B_Wm2_Avg | time | time' | mean | Wm2 | |
+fp_B_Wm2_Std | time | time' | std | Wm2 | |
+sr50_dist_Avg | time | time' | mean | m | |
+sr50_dist_Std | time | time' | std | m | |
+sr50_qc_Avg | time | time' | mean | code | |
+licor_co2_out_Avg | time | time' | mean | mg/m3 | |
+licor_co2_out_Std | time | time' | std | mg/m3 | |
+licor_h2o_out_Avg | time | time' | mean | g/m3 | |
+licor_h2o_out_Std | time | time' | std | g/m3 | |
+licor_t_out_Avg | time | time' | mean | degC | |
+licor_t_out_Std | time | time' | std | degC | |
+licor_co2_str_out_Avg | time | time' | mean |  | |
+licor_co2_str_out_Std | time | time' | std |  | |
+metek_InclX_Avg(1) | time | time' | mean | deg | |
+metek_InclY_Avg(1) | time | time' | mean | deg | |
+sr30_swd_tilt_Avg | time | time' | mean | deg | |
+sr30_swu_tilt_Avg | time | time' | mean | deg | |
+sr30_swu_fantach_Avg | time | time' | mean | Hz | |
+sr30_swu_heatA_Avg | time | time' | mean | mA | |
+sr30_swd_fantach_Avg | time | time' | mean | Hz | |
+sr30_swd_heatA_Avg | time | time' | mean | mA | |
+ir20_lwu_fan_Avg | time | time' | mean | mV | |
+ir20_lwd_fan_Avg | time | time' | mean | mV | |
 : {.striped .bordered}
 ##### ncdump
 ::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
