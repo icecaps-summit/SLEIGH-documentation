@@ -14,7 +14,7 @@ book:
     - configuration.md
     - remote.md
     - manuals.md
-    - data-summaries.md
+    - data-summaries.qmd
     - santa.md
     - website.md
     - dashboard.md

@@ -1196,7 +1196,74 @@ head -n 6 data/asfs/raw/crd/icecaps_asfs_sci_202307292200.dat
 ```
 :::
 
+
+
+
+
+## blesensors
+
+This instrument records data in a `.log` format where each line is a dictionary containing a timestamp, which "box" the measurement comes from and then the temperature, humidity and battery measurements. I don't love this data format, but its a lot better than csv.
+
+### Dimensions
+
+### Variables
+
+### ncdump
+
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+head data/blesensors/ble_temperatures_20240306.log -n 9
+
+
+{"time":"2024-03-06 00:00:01","name":"box3","temperature":19.7,"humidity":17,"battery":100}
+{"time":"2024-03-06 00:00:31","name":"box2","temperature":11.9,"humidity":27,"battery":100}
+{"time":"2024-03-06 00:00:32","name":"box1","temperature":17.2,"humidity":20,"battery":100}
+{"time":"2024-03-06 00:00:35","name":"box3","temperature":19.7,"humidity":17,"battery":100}
+{"time":"2024-03-06 00:01:01","name":"box2","temperature":11.9,"humidity":27,"battery":100}
+{"time":"2024-03-06 00:01:03","name":"box3","temperature":19.7,"humidity":17,"battery":100}
+{"time":"2024-03-06 00:01:31","name":"box3","temperature":19.7,"humidity":17,"battery":100}
+{"time":"2024-03-06 00:01:31","name":"box2","temperature":11.9,"humidity":27,"battery":100}
+{"time":"2024-03-06 00:01:32","name":"box1","temperature":17.2,"humidity":20,"battery":100}
+```
+:::
+
+## OGRE
+
+### Dimensions
+
+### Variables
+
+### ncdump
+
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+placeholder
+```
+:::
+
+
+## SIMBA
+
+### Dimensions
+
+### Variables
+
+### ncdump
+
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+placeholder
+```
+:::
+
+
 # end
+
+Wow, thanks for making it all the way down here, you must be either interested in the SIMBA instrument or ***really*** bored. Anyway, here's a ranking of all the original data storage formats:
+
+1\. Anything thats not `.csv`
+
+$\infty$. `.csv`
 
 <!---  NCDUMP BASIC CODE
 
