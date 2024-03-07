@@ -1062,9 +1062,9 @@ licor_diag_out | time | time' | mean, min, max | 1 | |
 
 : {.striped .bordered}
 
-##### ncdump
+##### head
 
-::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+::: {.callout-note collapse='true' appearance='minimal' title='head'}
 ```
 head -n 6 data/asfs/raw/crd/icecaps_asfs_fast_202307292200.dat 
 
@@ -1179,9 +1179,9 @@ ir20_lwu_fan_Avg | time | time' | mean | mV | |
 ir20_lwd_fan_Avg | time | time' | mean | mV | |
 : {.striped .bordered}
 
-##### ncdump
+##### head
 
-::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+::: {.callout-note collapse='true' appearance='minimal' title='head'}
 ```
 head -n 6 data/asfs/raw/crd/icecaps_asfs_sci_202307292200.dat
 
@@ -1208,9 +1208,9 @@ This instrument records data in a `.log` format where each line is a dictionary 
 
 ### Variables
 
-### ncdump
+### head
 
-::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+::: {.callout-note collapse='true' appearance='minimal' title='head'}
 ```
 head data/blesensors/ble_temperatures_20240306.log -n 9
 
@@ -1261,7 +1261,9 @@ placeholder
 
 Wow, thanks for making it all the way down here, you must be either interested in the SIMBA instrument or ***really*** bored. Anyway, here's a ranking of all the original data storage formats:
 
-1\. Anything thats not `.csv`
+1\. Anything that comes in a well-specified binary format
+
+2\. `.log` files
 
 $\infty$. `.csv`
 
