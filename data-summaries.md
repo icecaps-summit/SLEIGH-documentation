@@ -1061,7 +1061,9 @@ licor_pr_out | time | time' | mean, std | Pa | |
 licor_diag_out | time | time' | mean, min, max | 1 | |
 
 : {.striped .bordered}
+
 ##### ncdump
+
 ::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
 ```
 head -n 6 data/asfs/raw/crd/icecaps_asfs_fast_202307292200.dat 
@@ -1079,7 +1081,15 @@ head -n 6 data/asfs/raw/crd/icecaps_asfs_fast_202307292200.dat
 
 
 #### Sci
+
+::: {.callout-note}
+
+As of writing this, the manual is't on [Manuals](http://www.icecapsmelt.org/documentation/manuals.html), so I have little idea what all of these variables do. For the sake of convenience, I'm going to start by summarising all of them, and if we need to cut it down we can then start discussing which variables to remove.
+
+:::
+
 enjoy:
+
 | var | dims | new_dims | fn | units | details
 |-|-|-|-|-|------|
 TIMESTAMP | time | time' | count | TS | |
@@ -1168,7 +1178,9 @@ sr30_swd_heatA_Avg | time | time' | mean | mA | |
 ir20_lwu_fan_Avg | time | time' | mean | mV | |
 ir20_lwd_fan_Avg | time | time' | mean | mV | |
 : {.striped .bordered}
+
 ##### ncdump
+
 ::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
 ```
 head -n 6 data/asfs/raw/crd/icecaps_asfs_sci_202307292200.dat
