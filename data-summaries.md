@@ -2,7 +2,9 @@
 
 This chapter will describe the summarization process applied to the data, prior to its transfer via Iridium satellite network to SANTA (**S**LEIGH **A**ccess **N**ode for data **T**ransfer and **A**nalysis).
 
-**Note:** the data summarisation is a work in process. If a particular instrument isn't described, or the variables for a given instrument won't be sufficient to assess its performance, get in touch with \[who's details, if anyone's, shall we give out on a public website...\].
+The output of `ncdump` commands are also provided at the end of each instrument's section, to display what variables are contained in the original files.
+
+**Note:** the data summarisation is a work in process. If a particular instrument isn't described, or the variables for a given instrument won't be sufficient to assess its performance, get in touch with Andrew Martin.
 
 ## Notation
 
@@ -41,8 +43,8 @@ The variables reorded by the instruments will be described in tables below, and 
 | time | time | time' | count | 1 | The number of recorded profiles per 15-minute window. A proxy for instrument uptime |
 : {.striped .bordered}
 
-::: {.callout-note collapse="true" appearance="minimal"}
 ### ncdump
+::: {.callout-note collapse="true" appearance="minimal" title='ncdump'}
 ```
 ncdump -h live_20240214_144450.nc
 
@@ -431,6 +433,72 @@ group: status {
 | TBs | time, number_frequencies | time', number_frequencies | mean, std | K | 15-minute mean and standard deviation of the brightness temperatures at each recorded frequency |
 : {.striped .bordered}
 
+
+##### ncdump
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+ncdump -h 23100921.BRT.NC
+
+netcdf \23100921.BRT {
+dimensions:
+	number_frequencies = 8 ;
+	time = UNLIMITED ; // (3359 currently)
+variables:
+	int file_code ;
+		file_code:long_name = "four byte code identifying file type and version" ;
+	int Rad_ID ;
+		Rad_ID:long_name = "radiometer model ID" ;
+		Rad_ID:comment = "RPG-HUMPRO-U90" ;
+	int time(time) ;
+		time:long_name = "sample time" ;
+		time:units = "seconds since 1.1.2001, 00:00:00" ;
+		time:comment = "time is UTC" ;
+	int RSFactor ;
+		RSFactor:long_name = "rapid sampling multiplier (1 / 2 / 4)" ;
+		RSFactor:units = "unitless" ;
+		RSFactor:Comment = "Sampling interval: 1: 1 sec, 2: 0.5 sec , 4: 0.25 sec" ;
+	int IntSampCnt ;
+		IntSampCnt:long_name = "Number of Integration Samples" ;
+		IntSampCnt:units = "unitless" ;
+	float Freq(number_frequencies) ;
+		Freq:long_name = "Channel Center Frequency" ;
+		Freq:units = "GHz" ;
+	float Min_TBs(number_frequencies) ;
+		Min_TBs:long_name = "Minimum TBs in File" ;
+		Min_TBs:units = "K" ;
+	float Max_TBs(number_frequencies) ;
+		Max_TBs:long_name = "Maximum TBs in File" ;
+		Max_TBs:units = "K" ;
+	int RF(time) ;
+		RF:long_name = "Rain Flag" ;
+		RF:Info = "0 = No Rain, 1 = Raining" ;
+	float ElAng(time) ;
+		ElAng:long_name = "Elevation Viewing Angle" ;
+		ElAng:comment = "-90 is blackbody view, 0 is horizontal view (red arrow), 90 is zenith view, 180 is horizontal view (2nd quadrant)" ;
+		ElAng:units = "degrees (-90 - 180)" ;
+	float AziAng(time) ;
+		AziAng:long_name = "Azimuth Viewing Angle" ;
+		AziAng:units = "DEG (0 DEG - 360 DEG)" ;
+	float TBs(time, number_frequencies) ;
+		TBs:long_name = "TB Map" ;
+		TBs:units = "K" ;
+
+// global attributes:
+		:netCDF_Convention = " CF-1.0" ;
+		:Radiometer_Location = " University of Madison" ;
+		:Radiometer_System = " RPG-HATPRO" ;
+		:Serial_Number = " R-DPR-19/007" ;
+		:Station_Altitude = " 200" ;
+		:Station_Longitude = " 85?43\'55\'\' West" ;
+		:Station_Latitude = " 43?22\'42\'\' North" ;
+		:Comment = " " ;
+		:Radiometer_Software_Version = "V9.69" ;
+		:Host-PC_Software_Version = "V9.69" ;
+}
+
+```
+:::
+
 #### HKD
 
 | var | dims | new_dims | fn | units | details |
@@ -443,8 +511,90 @@ group: status {
 | Rec2_T | time | time' | mean, std | K | Receiver 2 temperature |
 | Rec1_Stab | time | time' | mean, std | K | Receiver 1 temperature stability |
 | Rec2_Stab | time | time' | mean, std | K | Receiver 2 temperature stability |
-
 : {.striped .bordered}
+
+
+##### ncdump
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+ncdump -h 23100920.HKD.NC
+
+netcdf \23100920.HKD {
+dimensions:
+	time = UNLIMITED ; // (3464 currently)
+variables:
+	int file_code ;
+		file_code:long_name = "four byte code identifying file type and version" ;
+	int Rad_ID ;
+		Rad_ID:long_name = "radiometer model ID" ;
+		Rad_ID:comment = "RPG-HUMPRO-U90" ;
+	int time(time) ;
+		time:long_name = "sample time" ;
+		time:units = "seconds since 1.1.2001, 00:00:00" ;
+		time:comment = "time is UTC" ;
+	int RSFactor ;
+		RSFactor:long_name = "rapid sampling multiplier (1 / 2 / 4)" ;
+		RSFactor:units = "unitless" ;
+		RSFactor:Comment = "Sampling interval: 1: 1 sec, 2: 0.5 sec , 4: 0.25 sec" ;
+	int EnaFl ;
+		EnaFl:long_name = "HKD Enable Flags" ;
+		EnaFl:units = "unitless" ;
+	int AlFl(time) ;
+		AlFl:long_name = "Alarm Flag indicating critical system status" ;
+		AlFl:comment = "0: Radiometer HW-Status OK, 1: HW-Problem has occurred" ;
+	float GPSLong(time) ;
+		GPSLong:long_name = "GPS longitude" ;
+		GPSLong:units = "Degrees.Minutes East" ;
+		GPSLong:Format = "DDMM.mmmm, D=Degree, M=Minute" ;
+	float GPSLat(time) ;
+		GPSLat:long_name = "GPS latitude" ;
+		GPSLat:units = "Degrees.Minutes North" ;
+		GPSLat:Format = "DDMM.mmmm, D=Degree, M=Minute" ;
+	float AT1_T(time) ;
+		AT1_T:long_name = "Ambient Target Sensor1 Temperature" ;
+		AT1_T:units = "K" ;
+	float AT2_T(time) ;
+		AT2_T:long_name = "Ambient Target Sensor2 Temperature" ;
+		AT2_T:units = "K" ;
+	float Rec1_T(time) ;
+		Rec1_T:long_name = "Receiver1 Temperature" ;
+		Rec1_T:units = "K" ;
+	float Rec2_T(time) ;
+		Rec2_T:long_name = "Receiver2 Temperature" ;
+		Rec2_T:units = "K" ;
+	float Rec1_Stab(time) ;
+		Rec1_Stab:long_name = "Receiver1 Temperature Stability" ;
+		Rec1_Stab:units = "K" ;
+	float Rec2_Stab(time) ;
+		Rec2_Stab:long_name = "Receiver2 Temperature Stability" ;
+		Rec2_Stab:units = "K" ;
+	int FreeMem(time) ;
+		FreeMem:long_name = "Free Disk Memory" ;
+		FreeMem:unit = "kBytes" ;
+	int QualFl(time) ;
+		QualFl:long_name = "Quality Flags Bit Field" ;
+		QualFl:units = "unitless" ;
+		QualFl:comment = "meaning of the quality bits can be found in appendix A of the operational manual" ;
+	int StatFl(time) ;
+		StatFl:long_name = "Radiometer Status Flags" ;
+		StatFl:units = "unitless" ;
+		StatFl:comment = "meaning of the status flags can be found in appendix A of the operational manual" ;
+
+// global attributes:
+		:netCDF_Convention = " CF-1.0" ;
+		:Radiometer_Location = " University of Madison" ;
+		:Radiometer_System = " RPG-HATPRO" ;
+		:Serial_Number = " R-DPR-19/007" ;
+		:Station_Altitude = " 200" ;
+		:Station_Longitude = " 85?43\'55\'\' West" ;
+		:Station_Latitude = " 43?22\'42\'\' North" ;
+		:Comment = " " ;
+		:Radiometer_Software_Version = "V9.69" ;
+		:Host-PC_Software_Version = "V9.69" ;
+}
+
+```
+:::
 
 #### MET
 
@@ -456,6 +606,80 @@ group: status {
 | Surf_RH | time | time' | mean, std | % | 15-minute mean and standard deviation of surface relative humidity |
 | RF |  time | time' | sum | 1 | The number of data points where the rain flag is present, should match RF from the BRT data stream |
 : {.striped .bordered}
+
+
+##### ncdump
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+ncdump -h 23100919.MET.NC
+
+netcdf \23100919.MET {
+dimensions:
+	time = UNLIMITED ; // (3469 currently)
+variables:
+	int file_code ;
+		file_code:long_name = "four byte code identifying file type and version" ;
+	int Rad_ID ;
+		Rad_ID:long_name = "radiometer model ID" ;
+		Rad_ID:comment = "RPG-HUMPRO-U90" ;
+	int time(time) ;
+		time:long_name = "sample time" ;
+		time:units = "seconds since 1.1.2001, 00:00:00" ;
+		time:comment = "time is UTC" ;
+	int RSFactor ;
+		RSFactor:long_name = "rapid sampling multiplier (1 / 2 / 4)" ;
+		RSFactor:units = "unitless" ;
+		RSFactor:Comment = "Sampling interval: 1: 1 sec, 2: 0.5 sec , 4: 0.25 sec" ;
+	int IntSampCnt ;
+		IntSampCnt:long_name = "Number of Integration Samples" ;
+		IntSampCnt:units = "unitless" ;
+	float Min_P ;
+		Min_P:long_name = "Minimum Barometric Pressure in File" ;
+		Min_P:units = "hPa" ;
+	float Max_P ;
+		Max_P:long_name = "Maximum Barometric Pressure in File" ;
+		Max_P:units = "hPa" ;
+	float Surf_P(time) ;
+		Surf_P:long_name = "Surface Barometric Pressure" ;
+		Surf_P:units = "hPa" ;
+	float Min_T ;
+		Min_T:long_name = "Minimum Environmental Temperature in File" ;
+		Min_T:units = "K" ;
+	float Max_T ;
+		Max_T:long_name = "Maximum Environmental Temperature in File" ;
+		Max_T:units = "K" ;
+	float Surf_T(time) ;
+		Surf_T:long_name = "Surface Temperature" ;
+		Surf_T:units = "K" ;
+	float Min_RH ;
+		Min_RH:long_name = "Minimum Relative Humidity in File" ;
+		Min_RH:units = "%" ;
+	float Max_RH ;
+		Max_RH:long_name = "Maximum Relative Humidity in File" ;
+		Max_RH:units = "%" ;
+	float Surf_RH(time) ;
+		Surf_RH:long_name = "Surface Relative Humidity" ;
+		Surf_RH:units = "%" ;
+	int RF(time) ;
+		RF:long_name = "Rain Flag" ;
+		RF:Info = "0 = No Rain, 1 = Raining" ;
+
+// global attributes:
+		:netCDF_Convention = " CF-1.0" ;
+		:Radiometer_Location = " University of Madison" ;
+		:Radiometer_System = " RPG-HATPRO" ;
+		:Serial_Number = " R-DPR-19/007" ;
+		:Station_Altitude = " 200" ;
+		:Station_Longitude = " 85?43\'55\'\' West" ;
+		:Station_Latitude = " 43?22\'42\'\' North" ;
+		:Comment = " " ;
+		:Radiometer_Software_Version = "V9.69" ;
+		:Host-PC_Software_Version = "V9.69" ;
+}
+
+
+```
+:::
 
 
 ## Energymeter
@@ -477,7 +701,69 @@ group: status {
 : {.striped .bordered}
 
 
+### ncdump
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+ncdump -h energymeter.sled.level0.1sec.20240214.000000.nc 
 
+netcdf energymeter.sled.level0.1sec.20240214.000000 {
+dimensions:
+	time = 86400 ;
+variables:
+	int64 time(time) ;
+		time:units = "seconds since 2024-02-14 00:00:00" ;
+		time:calendar = "proleptic_gregorian" ;
+	double ac_voltage(time) ;
+		ac_voltage:units = "volts" ;
+		ac_voltage:long_name = "measured voltage of 120v AC supplied power" ;
+		ac_voltage:instrument = "EEM-MA370" ;
+		ac_voltage:cf_name = "" ;
+		ac_voltage:missing_value = -9999. ;
+		ac_voltage:max_val = 120.38037 ;
+		ac_voltage:min_val = 102.43096 ;
+		ac_voltage:avg_val = 115.42120684661 ;
+		ac_voltage:perc_missing = 39.15 ;
+	double ac_current(time) ;
+		ac_current:units = "amps" ;
+		ac_current:long_name = "instantaneous current supplied by 120v AC source" ;
+		ac_current:instrument = "EEM-MA370" ;
+		ac_current:cf_name = "" ;
+		ac_current:missing_value = -9999. ;
+		ac_current:max_val = 10.92572 ;
+		ac_current:min_val = 2.57099 ;
+		ac_current:avg_val = 3.39363464334627 ;
+		ac_current:perc_missing = 39.15 ;
+	double ac_active_power(time) ;
+		ac_active_power:units = "watts" ;
+		ac_active_power:long_name = "instantaneous active power supplied by 120v AC source" ;
+		ac_active_power:instrument = "EEM-MA370" ;
+		ac_active_power:cf_name = "" ;
+		ac_active_power:missing_value = -9999. ;
+		ac_active_power:max_val = 1158.18237 ;
+		ac_active_power:min_val = 282.35516 ;
+		ac_active_power:avg_val = 374.549455659857 ;
+		ac_active_power:perc_missing = 39.15 ;
+
+// global attributes:
+		:date_created = "2024-02-14 00:00:11.186317" ;
+		:level = "0" ;
+		:title = "energy meter measurements made on ICECAPS autonomous platform" ;
+		:contact = "Michael Gallagher, University of Colorado, michael.r.gallagher@noaa.gov" ;
+		:instituion = "CIRES, University of Colorado and NOAA Physical Sciences Laboratory" ;
+		:file_creator = "Michael Gallagher" ;
+		:creator_email = "michael.r.gallagher@noaa.gov" ;
+		:funding = "" ;
+		:source = "Observations made at Summit Station summer 2023 prototype deployment" ;
+		:system = "THE UNNAMED PLATFORM" ;
+		:keywords = "" ;
+		:conventions = "" ;
+		:code_version = "0.01beta" ;
+		:modbus_register_ac_voltage = 32774 ;
+		:modbus_register_ac_current = 32782 ;
+		:modbus_register_ac_active_power = 32790 ;
+}
+```
+:::
 
 
 ## MRR
@@ -501,3 +787,263 @@ group: status {
 | RR | time, range | time' | mean | mm hr$^{-1}$ | Mean rainfall rate throughout the collumn |
 | LWC | time, range | time' | mean( sum\[range\] ) | g m$^{-2}$ | Mean liquid water path |
 : {.striped .bordered}
+
+### ncdump
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+ncdump -h 20240213_190000.nc
+
+netcdf \20240213_190000 {
+dimensions:
+	time = UNLIMITED ; // (360 currently)
+	range = 128 ;
+	sweep = 1 ;
+	string_length = 128 ;
+	n_spectra = 128 ;
+	spectrum_n_samples = 64 ;
+variables:
+	int volume_number ;
+	char time_coverage_start(string_length) ;
+	char time_coverage_end(string_length) ;
+	char time_reference(string_length) ;
+	char instrument_type(string_length) ;
+	double transfer_function(range) ;
+	double calibration_constant ;
+	double latitude ;
+		latitude:units = "degrees_north" ;
+	double longitude ;
+		longitude:units = "degrees_east" ;
+	double altitude ;
+		altitude:units = "meters" ;
+	double doppler_shift_spectrum ;
+	int sweep_number(sweep) ;
+	char sweep_mode(sweep, string_length) ;
+	float fixed_angle(sweep) ;
+	int sweep_start_ray_index(sweep) ;
+	int sweep_end_ray_index(sweep) ;
+	float range(range) ;
+		range:standard\ name = "projection_range_coordinate" ;
+		range:long_name = "range_to_measurement_volume" ;
+		range:units = "meters" ;
+		range:spacing_is_constant = "true" ;
+		range:meters_to_center_of_first_gate = 0.f ;
+		range:meters_between_gates = 35.f ;
+		range:axis = "radial_range_coordinate" ;
+	double time(time) ;
+		time:standard\ name = "time" ;
+		time:long_name = "time_in_seconds_since_volume_start" ;
+		time:units = "seconds since 1970-01-01T00:00:00Z" ;
+		time:calendar = "standard" ;
+	float elevation(time) ;
+		elevation:standard\ name = "ray_elevation_angle" ;
+		elevation:long_name = "elevation_angle_from_horizontal_plane" ;
+		elevation:units = "degrees" ;
+		elevation:axis = "radial_elevation_coordinate" ;
+	float azimuth(time) ;
+		azimuth:standard\ name = "ray_azimuth_angle" ;
+		azimuth:long_name = "azimuth_angle_from_true_north" ;
+		azimuth:units = "degrees" ;
+		azimuth:axis = "radial_azimuth_coordinate" ;
+	float Za(time, range) ;
+		Za:standard_name = "log_attenuated_reflectivity" ;
+		Za:long_name = "" ;
+		Za:units = "dBZ" ;
+		Za:_FillValue = NaNf ;
+		Za:coordinates = "elevation azimuth range" ;
+		Za:field_folds = "false" ;
+		Za:fold_limit_lower = 0.f ;
+		Za:fold_limit_upper = 0.f ;
+		Za:thresholding_xml = "" ;
+		Za:legend_xml = "" ;
+		Za:is_discreet = "false" ;
+	double Z(time, range) ;
+		Z:standard_name = "log_reflectivity" ;
+		Z:long_name = "" ;
+		Z:units = "dBZ" ;
+		Z:_FillValue = NaN ;
+		Z:coordinates = "elevation azimuth range" ;
+		Z:field_folds = "false" ;
+		Z:fold_limit_lower = 0.f ;
+		Z:fold_limit_upper = 0.f ;
+		Z:thresholding_xml = "" ;
+		Z:legend_xml = "" ;
+		Z:is_discreet = "false" ;
+	double Zea(time, range) ;
+		Zea:standard_name = "attenuated_equivalent_reflectivity_factor" ;
+		Zea:long_name = "" ;
+		Zea:units = "dBZ" ;
+		Zea:_FillValue = NaN ;
+		Zea:coordinates = "elevation azimuth range" ;
+		Zea:field_folds = "false" ;
+		Zea:fold_limit_lower = 0.f ;
+		Zea:fold_limit_upper = 0.f ;
+		Zea:thresholding_xml = "" ;
+		Zea:legend_xml = "" ;
+		Zea:is_discreet = "false" ;
+	double Ze(time, range) ;
+		Ze:standard_name = "equivalent_reflectivity_factor" ;
+		Ze:long_name = "" ;
+		Ze:units = "dBZ" ;
+		Ze:_FillValue = NaN ;
+		Ze:coordinates = "elevation azimuth range" ;
+		Ze:field_folds = "false" ;
+		Ze:fold_limit_lower = 0.f ;
+		Ze:fold_limit_upper = 0.f ;
+		Ze:thresholding_xml = "" ;
+		Ze:legend_xml = "" ;
+		Ze:is_discreet = "false" ;
+	double RR(time, range) ;
+		RR:standard_name = "rainfall_rate" ;
+		RR:long_name = "" ;
+		RR:units = "mm h-1" ;
+		RR:_FillValue = NaN ;
+		RR:coordinates = "elevation azimuth range" ;
+		RR:field_folds = "false" ;
+		RR:fold_limit_lower = 0.f ;
+		RR:fold_limit_upper = 0.f ;
+		RR:thresholding_xml = "" ;
+		RR:legend_xml = "" ;
+		RR:is_discreet = "false" ;
+	double LWC(time, range) ;
+		LWC:standard_name = "mass_concentration_of_liquid_water_in_air" ;
+		LWC:long_name = "" ;
+		LWC:units = "g m-3" ;
+		LWC:_FillValue = NaN ;
+		LWC:coordinates = "elevation azimuth range" ;
+		LWC:field_folds = "false" ;
+		LWC:fold_limit_lower = 0.f ;
+		LWC:fold_limit_upper = 0.f ;
+		LWC:thresholding_xml = "" ;
+		LWC:legend_xml = "" ;
+		LWC:is_discreet = "false" ;
+	double PIA(time, range) ;
+		PIA:standard_name = "path_integrated_rain_attenuation" ;
+		PIA:long_name = "" ;
+		PIA:units = "dB" ;
+		PIA:_FillValue = NaN ;
+		PIA:coordinates = "elevation azimuth range" ;
+		PIA:field_folds = "false" ;
+		PIA:fold_limit_lower = 0.f ;
+		PIA:fold_limit_upper = 0.f ;
+		PIA:thresholding_xml = "" ;
+		PIA:legend_xml = "" ;
+		PIA:is_discreet = "false" ;
+	float VEL(time, range) ;
+		VEL:standard_name = "radial_velocity_of_scatterers_towards_instrument" ;
+		VEL:long_name = "" ;
+		VEL:units = "m s-1" ;
+		VEL:_FillValue = NaNf ;
+		VEL:coordinates = "elevation azimuth range" ;
+		VEL:field_folds = "true" ;
+		VEL:fold_limit_lower = -0.f ;
+		VEL:fold_limit_upper = 11.89033f ;
+		VEL:thresholding_xml = "" ;
+		VEL:legend_xml = "" ;
+		VEL:is_discreet = "false" ;
+	double WIDTH(time, range) ;
+		WIDTH:standard_name = "doppler_spectrum_width" ;
+		WIDTH:long_name = "" ;
+		WIDTH:units = "m/s" ;
+		WIDTH:_FillValue = NaN ;
+		WIDTH:coordinates = "elevation azimuth range" ;
+		WIDTH:field_folds = "false" ;
+		WIDTH:fold_limit_lower = 0.f ;
+		WIDTH:fold_limit_upper = 0.f ;
+		WIDTH:thresholding_xml = "" ;
+		WIDTH:legend_xml = "" ;
+		WIDTH:is_discreet = "false" ;
+	double ML(time, range) ;
+		ML:standard_name = "melting_layer" ;
+		ML:long_name = "" ;
+		ML:units = "" ;
+		ML:_FillValue = NaN ;
+		ML:coordinates = "elevation azimuth range" ;
+		ML:field_folds = "false" ;
+		ML:fold_limit_lower = 0.f ;
+		ML:fold_limit_upper = 0.f ;
+		ML:thresholding_xml = "" ;
+		ML:legend_xml = "" ;
+		ML:is_discreet = "false" ;
+	float SNR(time, range) ;
+		SNR:standard_name = "signal_to_noise_ratio" ;
+		SNR:long_name = "" ;
+		SNR:units = "dB" ;
+		SNR:_FillValue = NaNf ;
+		SNR:coordinates = "elevation azimuth range" ;
+		SNR:field_folds = "false" ;
+		SNR:fold_limit_lower = 0.f ;
+		SNR:fold_limit_upper = 0.f ;
+		SNR:thresholding_xml = "" ;
+		SNR:legend_xml = "" ;
+		SNR:is_discreet = "false" ;
+	int index_spectra(time, range) ;
+		index_spectra:standard_name = "index variable spectra" ;
+		index_spectra:long_name = "" ;
+		index_spectra:units = "" ;
+		index_spectra:_FillValue = -2147483648 ;
+		index_spectra:coordinates = "elevation azimuth range" ;
+		index_spectra:field_folds = "false" ;
+		index_spectra:fold_limit_lower = 0.f ;
+		index_spectra:fold_limit_upper = 0.f ;
+		index_spectra:thresholding_xml = "" ;
+		index_spectra:legend_xml = "" ;
+		index_spectra:is_discreet = "true" ;
+	double spectrum_raw(time, n_spectra, spectrum_n_samples) ;
+		spectrum_raw:standard\ name = "log_attenuated_power" ;
+		spectrum_raw:long_name = "" ;
+		spectrum_raw:units = "dB" ;
+		spectrum_raw:_FillValue = NaN ;
+		spectrum_raw:coordinates = "elevation azimuth range" ;
+		spectrum_raw:index_var_name = "" ;
+		spectrum_raw:block_avg_length = 0 ;
+		spectrum_raw:is_spectrum = "true" ;
+	double N(time, n_spectra, spectrum_n_samples) ;
+		N:standard\ name = "drop_size_distribution" ;
+		N:long_name = "" ;
+		N:units = "1" ;
+		N:_FillValue = NaN ;
+		N:coordinates = "elevation azimuth range" ;
+		N:index_var_name = "" ;
+		N:block_avg_length = 0 ;
+		N:is_spectrum = "true" ;
+	double D(n_spectra, spectrum_n_samples) ;
+		D:standard\ name = "drop_sizes" ;
+		D:long_name = "" ;
+		D:units = "1" ;
+		D:_FillValue = NaN ;
+		D:coordinates = "elevation azimuth range" ;
+		D:index_var_name = "" ;
+		D:block_avg_length = 0 ;
+		D:is_spectrum = "true" ;
+
+// global attributes:
+		:Conventions = "CF/Radial" ;
+		:version = "1.3" ;
+		:title = "METEK MRR Pro 1.2.5 Data" ;
+		:institution = "" ;
+		:references = "" ;
+		:source = "" ;
+		:history = "" ;
+		:comment = "Data Validation and Co-Location at Summit Station Greenland" ;
+		:instrument_name = "METEK MRR Pro 1.2.5, ID: MRRPro92, METEK Serial Number:  0515028928, Software:  MRR Pro 1.2.5" ;
+		:site_name = "ICECAPS-Melt Summit" ;
+		:field_names = "Za,Z,Zea,Ze,RR,LWC,PIA,VEL,WIDTH,SNR,spectrum_reflectivity,N" ;
+}
+```
+:::
+
+
+<!---  NCDUMP BASIC CODE
+
+
+
+
+### ncdump
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+```
+```
+:::
+
+
+
+-->
