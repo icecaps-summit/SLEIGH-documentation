@@ -107,23 +107,27 @@ The platform is operated using System Services in Linux.
 
 ## Internal Network
 
-Once you're logged onto the Cincoze computer, you can connect to other instruments using the IP addresses listed below:
+Once you're logged onto the Cincoze computer (iceman), you can connect to other instruments using the IP addresses listed below.
+Note that these addresses are defined in /etc/hosts on iceman.
 
-| Device                         | Local IP      |
-|--------------------------------|---------------|
-| Cincoze Computer               | 192.168.1.10  |
-| Skylink Certus Modem           | 192.168.111.1 |
-| Windows VM                     | 192.168.1.166 |
-| CR1000X Logger                 | 192.168.1.120 |
-| Licor 7500DS Gas Analyzer      | 192.168.1.15  |
-| Smart Flux                     | 192.168.1.221 |
-| Phoenix EEM-MA370 Energy Meter | 192.168.1.32  |
-| MODBUS relay for logger reboot | 192.168.1.97  |
-| APC power supply               | 192.168.1.11  |
-| Ground Penetrating Radar       | 192.168.1.161 |
-| Metek MRR-Pro                  | 192.168.1.20  |
-| Vaisala CL61 data              | 192.168.1.111 |
-| Vaisala CL61 maintenance       | 172.17.0.2    |
+| Device                         | Local IP      | IP name       |
+|--------------------------------|---------------|---------------|
+| Cincoze Computer               | 192.168.1.10  | cincoze       |
+| Skylink Certus Modem           | 192.168.111.1 | certus        |
+| Windows VM                     | 192.168.1.166 | vm            |
+| CR1000X Logger                 | 192.168.1.120 | logger        |
+| Licor 7500DS Gas Analyzer      | 192.168.1.15  | licor         |
+| Smart Flux                     | 192.168.1.221 |               |
+| Phoenix EEM-MA370 Energy Meter | 192.168.1.32  | energymeter   |
+| MODBUS relay for logger reboot | 192.168.1.97  | mvpmodbus     |
+| APC power supply               | 192.168.1.11  | apc           |
+| Ground Penetrating Radar       | 192.168.1.161 | gpr           |
+| Metek MRR-Pro                  | 192.168.1.20  | mrr           |
+| Vaisala CL61 data              | 192.168.1.111 | ceilodata     |
+| Vaisala CL61 maintenance       | 172.17.0.2    | ceiloadmin    |
+| Cerbo GX controller            | 192.168.1.3   | cerbo         |
+| MVP Orange Pi computer         | 192.168.1.199 | mvpi          |
+| RPG MW Radiometer (MWR)        | 192.168.1.77  | mwr           |
 
 Currently, one must use the ```sshpass``` command to connect. Below is an example command to connect to the MRR from the Cincoze computer
 
