@@ -44,9 +44,9 @@ The instrument platform uses an APC internet-enabled power strip to turn certain
 |------|------------------|
 |  1   |                  |
 |  2   |                  |
-|  3   |                  |
-|  4   |                  |
-|  5   |                  |
-|  6   | Vaisala CL61     |
+|  3   |  MWR power       |
+|  4   |  MWR heater      |
+|  5   |  MRR heater      |
+|  6   |  MRR power       |
 |  7   |                  |
-|  8   | Micro Rain Radar |
+|  8   |  CL61 power      |
