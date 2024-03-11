@@ -14,6 +14,7 @@ book:
     - configuration.md
     - remote.md
     - manuals.md
+    - snow-science.md
     - data-summaries.qmd
     - santa.md
     - website.md
