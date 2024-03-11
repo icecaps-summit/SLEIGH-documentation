@@ -23,6 +23,14 @@ The variables reorded by the instruments will be described in tables below, and 
 
 ## cl61
 
+## Location
+
+```
+data
+├── cl61
+    ├── live_YYYYmmdd_HHMMss.nc
+```
+
 ### Dimensions
 | dimension | resolution | length |
 |-----------|------------|--------|
@@ -412,6 +420,22 @@ group: status {
 
 ## MWR 
 
+## Location
+
+```
+data
+├── mwr
+    ├── level0
+    |   ├── YYmmddHH.BRT
+	|	├── YYmmddHH.BRT.NC
+	|	├── YYmmddHH.HKD
+	|	├── YYmmddHH.HKD.NC
+	|   ├── YYmmddHH.MET
+	|	├── YYmmddHH.MET.NC
+	|
+	├── vmdata
+```
+
 ### Dimensions
 
 | dimension | resolution | length |
@@ -684,6 +708,15 @@ variables:
 
 ## Energymeter
 
+## Location
+
+```
+data
+├── energymeter
+    ├── energymeter.sled.level0.1sec.YYYYmmdd.000000.nc
+```
+
+
 ### Dimensions
 | dimension | resolution | length |
 |-----------|------------|--------|
@@ -767,6 +800,16 @@ variables:
 
 
 ## MRR
+
+## Location
+
+```
+data
+├── mrr
+    ├── YYYYmm
+        ├── YYYYmmdd
+            ├── YYYYmmdd_HHMMSS.nc
+```
 
 ### Dimensions
 | dimension | resolution | length |
@@ -1037,6 +1080,17 @@ variables:
 
 The ASFS comes in tabularised `.dat` formats, and in two data streams, `fast` and `sci`. The head of two equivalent files for each datastream can be seen below.
 
+### Location
+
+```
+data
+├── asfs
+    ├── raw
+        ├── crd
+            ├── icecaps_asfs_fast_YYYYmmddHHMM.dat 
+            ├── icecaps_asfs_sci_YYYYmmddHHMM.dat 
+```
+
 ### Dimensions
 | dimension | resolution | length |
 |-----------|------------|--------|
@@ -1204,6 +1258,14 @@ head -n 6 data/asfs/raw/crd/icecaps_asfs_sci_202307292200.dat
 
 This instrument records data in a `.log` format where each line is a dictionary containing a timestamp, which "box" the measurement comes from and then the temperature, humidity and battery measurements. I don't love this data format, but its a lot better than csv.
 
+### Location
+
+```
+data
+├── blesenseors
+    ├── ble_temperatures_YYYYmmdd.log
+```
+
 ### Dimensions
 
 ### Variables
@@ -1229,6 +1291,14 @@ head data/blesensors/ble_temperatures_20240306.log -n 9
 
 ## OGRE
 
+### Location
+
+```
+data
+├── ogre
+    ├── ????????
+```
+
 ### Dimensions
 
 ### Variables
@@ -1243,6 +1313,14 @@ placeholder
 
 
 ## SIMBA
+
+### Location
+
+```
+data
+├── simba
+    ├── SAMS_SIMBA_RawStream_SummitSled_YYYYmmdd.HHMMSS.dat
+```
 
 ### Dimensions
 
