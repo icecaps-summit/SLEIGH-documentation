@@ -183,6 +183,9 @@ Below is a description of the data directory on the Cincoze computer and the ass
 │   |   |   |    |   |   ├── YYMMDDHH.MET.NC
 │   |   |   |    ├── vmdata
 
+│   |   |   ├── ogre
+│   |   |   |    ├── ?????????????????????????
+
 │   |   |   ├── pics
 │   |   |   |    ├── Allsky
 │   |   |   |    |   ├── SKY_YYYYMMDD_HHMMSS.jpg
@@ -204,6 +207,9 @@ Below is a description of the data directory on the Cincoze computer and the ass
 │   |   |   ├── power
 │   |   |   |    ├── level1
 │   |   |   |    |   ├── victron_cerbo_data_YYYYMMDD.csv
+
+|   |   |   ├── simba
+|   |   |   |    ├── SAMS_SIMBA_RawStream_SummitSled_YYYYmmdd.HHMMSS.dat
 ```
 
 ---
