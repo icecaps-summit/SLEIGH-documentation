@@ -42,12 +42,12 @@ data
 ### Variables
 | var | dims | new_dims | fn | units | details
 |-|-|-|-|-|------|
-| cloud_base_heights | time, layer | time', layer | mean, std | m | The 15-minute mean and standard deviation of the cloud base height for each detected cloud layer |
-| cloud_thickness | time, layer | time', layer | mean, std | m | The 15-minute mean and standard deviation of the cloud geometric thickness for each detected cloud layer |
-| beta_att_sum | time | time' | median, std | $10^{-4}$ sr$^{-1}$ | The 15-miunte median and standard deviation of the vertically-integrated backscatter coefficient |
-| tilt_angle | time | time' | mean, std | ° | 15-minute mean and standard deviation of the instrument zenith angle (from vertical) |
-| precipitation_detection | time | time' | sum | 1 | The number of recorded profiles in which precipitation was detected |
-| fog_detection | time | time' | sum | 1 | The number of recorded profiles within which fog was detected |
+| cloud_base_heights | time, layer | time', layer | mean, std, nullrate | m | The 15-minute mean and standard deviation of the cloud base height for each detected cloud layer |
+| cloud_thickness | time, layer | time', layer | mean, std, nullrate | m | The 15-minute mean and standard deviation of the cloud geometric thickness for each detected cloud layer |
+| beta_att_sum | time | time' | median, std, nullrate | $10^{-4}$ sr$^{-1}$ | The 15-miunte median and standard deviation of the vertically-integrated backscatter coefficient |
+| tilt_angle | time | time' | mean, std, nullrate | ° | 15-minute mean and standard deviation of the instrument zenith angle (from vertical) |
+| precipitation_detection | time | time' | sum, nullrate | 1 | The number of recorded profiles in which precipitation was detected |
+| fog_detection | time | time' | sum, nullrate | 1 | The number of recorded profiles within which fog was detected |
 | time | time | time' | count | 1 | The number of recorded profiles per 15-minute window. A proxy for instrument uptime |
 : {.striped .bordered}
 
