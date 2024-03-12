@@ -23,7 +23,7 @@ The variables reorded by the instruments will be described in tables below, and 
 
 ## cl61
 
-## Location
+### Location
 
 ```
 data
@@ -420,7 +420,7 @@ group: status {
 
 ## MWR 
 
-## Location
+### Location
 
 ```
 data
@@ -708,7 +708,7 @@ variables:
 
 ## Energymeter
 
-## Location
+### Location
 
 ```
 data
@@ -801,7 +801,7 @@ variables:
 
 ## MRR
 
-## Location
+### Location
 
 ```
 data
