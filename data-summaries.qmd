@@ -1291,7 +1291,7 @@ head data/blesensors/ble_temperatures_20240306.log -n 9
 
 ## OGRE
 
-::: {title='No data'}
+::: {.callout-note title='No data'}
 Currently, there is no available OGRE data. I will begin working on a data summary as soon as data is available on iceman.
 :::
 
@@ -1318,7 +1318,7 @@ placeholder
 
 ## SIMBA
 
-::: {title='No data'}
+::: {.callout-note title='No data'}
 Currently, there is no available SIMBA data. I will begin working on a data summary as soon as data is available on iceman.
 :::
 
