@@ -99,31 +99,31 @@ Navigate to this [link](https://www.redhat.com/sysadmin/linux-systemctl-manage-s
 | `dashboard.service` | Service that continuously runs a panel bokeh server to serve the data dashboard | `website_admin` |
 : {.striped .bordered}
 
-### `website_update_documentation.timer`
+### website_update_documentation.timer
 
 This is a system service that is enabled, and will trigger with the timestamps `*-*-* *:00,15,30,45:00` -- every 15 minutes. The unit that it triggers is `website_update_documentation.service`.
 
-### `website_update_documentation.service`
+### website_update_documentation.service
 
 This is a system service unit that is enabled and is triggered by `website_update_documentation.timer`. The unit is ran as the user `website_admin`, and it runs a bash script that pulls the latest documentation in the main branch of the documentation github repo, inserts the time of rendering and latest git commit to the footer, renders the website and copies it to the live website location on Santa.
 
-### `website_update_dashboard.timer`
+### website_update_dashboard.timer
 
 This is a system service that is enabled, and triggers with the timestamp `*-*-* *:00:00` -- the start of every hour. The unit is triggers is `website_update_dashboard.target`.
 
-### `website_update_dashboard.target`
+### website_update_dashboard.target
 
 This is a target unit created with the intention of allowing multiple systemd services to trigger when `website_update_dashboard.timer` triggers. The target simply installs with `website_update_dashboard.timer`, and uses `wants` and `after` to trigger `website_update_dashboard.service` and `website_restart_dashboard.service`.
 
-### `website_update_dashboard.service`
+### website_update_dashboard.service
 
 This is a oneshot system service unit that is enabled and triggered by `wesite_update_dashboard.target`. It runs as the `website_admin` user, and runs a bash script that simply downloads the latest commit on the main branch of the sleigh-dashboard github repo.
 
-### `website_restart_dashboard.service`
+### website_restart_dashboard.service
 
 This is a oneshot system service unit that is enabled and triggered by `website_update_dashboard.target`. It simply waits 10 seconds, which allows `website_update_dashboard.service` to finish executing, and then runs a systemctl restart command to restart `dashboard.service`.
 
-### `dashboard.service`
+### dashboard.service
 
 This is an always-restarting forking service, ran as `website_admin`, that is enabled upon startup. The service runs the panel data dashboard with the appropriate python environment.
 
