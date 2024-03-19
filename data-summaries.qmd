@@ -1076,7 +1076,749 @@ variables:
 :::
 
 
-## ASFS
+
+
+
+## ASFS -- actual
+
+This is a summary of the ASFS files created by MG, level1 processed .nc files (yay for binary formats).
+
+### Location
+
+```
+data
+├── asfs
+    ├── level0
+    |   ├── ...
+	|
+    ├── level1
+    |   ├── slow.level1.melt-sleighsfs.YYYYmmdd.HHMMSS.nc
+	|
+	├── raw/crd/...
+```
+
+### Dimensions
+| dimension | resolution | length |
+|-----------|------------|--------|
+| time | 1 Minute | 1440 per day |
+| time' | 15 minutes | 96 per day |
+: {.striped .bordered}
+
+### Variables
+
+::: {.callout-note}
+All of the variables in the .nc files are described below. However, only the _Avg values are considered (currently) in the summarisation process.
+:::
+
+| var | dims | new_dims | fn | units | details
+|-|-|-|-|-|------|
+time | time | time' | count | 1 | number of data records made in 15 minute period
+metek_InclX_Avg | ('time',) | ('time',)' | mean, std | deg | sensor inclinometer pitch angle |
+metek_InclY_Avg | ('time',) | ('time',)' | mean, std | deg | sensor inclinometer roll angle |
+PTemp_Avg | ('time',) | ('time',)' | mean, std | degC | logger electronics panel temperature |
+batt_volt_Avg | ('time',) | ('time',)' | mean, std | V | voltage of the power source supplying the logger |
+sr30_swu_DegC_Avg | ('time',) | ('time',)' | mean, std | degC | average case temperature of the downward-facing sensor during the 1 min averaging interval |
+sr30_swu_Irr_Avg | ('time',) | ('time',)' | mean, std | W/m2 | average irradiance of the downward-facing sensor during the 1 min averaging interval |
+sr30_swu_IrrC_Avg | ('time',) | ('time',)' | mean, std | W/m2 | average irradiance of the downward-facing sensor during the 1 min averaging interval |
+sr30_swd_DegC_Avg | ('time',) | ('time',)' | mean, std | degC | average case temperature of the upward-facing sensor during the 1 min averaging interval |
+sr30_swd_Irr_Avg | ('time',) | ('time',)' | mean, std | W/m2 | average irradiance of the upward-facing sensor during the 1 min averaging interval |
+sr30_swd_IrrC_Avg | ('time',) | ('time',)' | mean, std | W/m2 | average irradiance of the upward-facing sensor during the 1 min averaging interval |
+apogee_body_T_Avg | ('time',) | ('time',)' | mean, std | degC | average of the sensor body temperature during the 1 min averaging interval |
+apogee_targ_T_Avg | ('time',) | ('time',)' | mean, std | degC | average of the sensor target 8-14 micron brightness temperature during the 1 min averaging interval |
+sr50_dist_Avg | ('time',) | ('time',)' | mean, std | m | average of the uncorrected distance between the sensor and the surface during the 1 min averaging interval |
+sr50_qc_Avg | ('time',) | ('time',)' | mean, std | unitless | quality number of the distance measurement |
+vaisala_RH_Avg | ('time',) | ('time',)' | mean, std | % | average of the relative humidity during the 1 min averaging interval |
+vaisala_T_Avg | ('time',) | ('time',)' | mean, std | degC | average of the air temperature during the 1 min averaging interval |
+vaisala_P_Avg | ('time',) | ('time',)' | mean, std | hPa | average of the atmospheric pressure during the 1 min averaging interval |
+ir20_lwu_mV_Avg | ('time',) | ('time',)' | mean, std | mV | average thermopile voltage of the downward-facing sensor during the 1 min averaging interval |
+ir20_lwu_DegC_Avg | ('time',) | ('time',)' | mean, std | degC | average case temperature of the downward-facing sensor during the 1 min averaging interval |
+ir20_lwu_Wm2_Avg | ('time',) | ('time',)' | mean, std | W/m2 | average flux from the downward-facing sensor during the 1 min averaging interval |
+ir20_lwd_mV_Avg | ('time',) | ('time',)' | mean, std | mV | average thermopile voltage of the upward-facing sensor during the 1 min averaging interval |
+ir20_lwd_DegC_Avg | ('time',) | ('time',)' | mean, std | degC | average case temperature of the upward-facing sensor during the 1 min averaging interval |
+ir20_lwd_Wm2_Avg | ('time',) | ('time',)' | mean, std | W/m2 | average flux from the upward-facing sensor during the 1 min averaging interval |
+fp_A_mV_Avg | ('time',) | ('time',)' | mean, std | mV | average thermopile voltage during 1 min averaging interval |
+fp_A_Wm2_Avg | ('time',) | ('time',)' | mean, std | W/m2 | average flux during 1 min averaging interval |
+fp_B_mV_Avg | ('time',) | ('time',)' | mean, std | mV | average thermopile voltage during 1 min averaging interval |
+fp_B_Wm2_Avg | ('time',) | ('time',)' | mean, std | W/m2 | average flux during 1 min averaging interval |
+licor_co2_str_out_Avg | ('time',) | ('time',)' | mean, std | % | average CO2 signal strength diagnostic during 1 min averaging interval |
+sr30_swu_fantach_Avg | ('time',) | ('time',)' | mean, std | Hz | average fan speed of the downward-facing (SWU) pyranometer during 1 min averaging period |
+sr30_swu_heatA_Avg | ('time',) | ('time',)' | mean, std | mA | average case heating current of the downward-facing sensor during 1 min averaging period |
+sr30_swd_fantach_Avg | ('time',) | ('time',)' | mean, std | Hz | average fan speed of the upward-facing sensor during 1 min averaging period |
+sr30_swd_heatA_Avg | ('time',) | ('time',)' | mean, std | mA | average case heating current of the upward-facing sensor during 1 min averaging period |
+ir20_lwu_fan_Avg | ('time',) | ('time',)' | mean, std | mV | average fan voltage status signal of the downward-facing ventilator during the 1 min averaging period |
+ir20_lwd_fan_Avg | ('time',) | ('time',)' | mean, std | mV | average fan voltage status signal of the upward-facing ventilator during the 1 min averaging period |
+sr30_swu_tilt_Avg | ('time',) | ('time',)' | mean, std | deg | horizontal tilt of the downward-facing sensor |
+sr30_swd_tilt_Avg | ('time',) | ('time',)' | mean, std | deg | horizontal tilt of the upward-facing sensor |
+||||||
+||||||
+||||||
+||||||
+||||||
+||||||
+sr30_swu_DegC_Std | ('time',) | ('time',)' | mean, std | degC | standard deviation of the case of the downward-facing sensor during the 1 min averaging interval |
+sr30_swu_Irr_Std | ('time',) | ('time',)' | mean, std | W/m2 | standard deviation of the irradiance of the downward-facing sensor during the 1 min averaging interval |
+sr30_swu_IrrC_Std | ('time',) | ('time',)' | mean, std | W/m2 | standard deviation of the temperature-corrected irradiance of the downward-facing sensor during the 1 min averaging interval |
+sr30_swd_DegC_Std | ('time',) | ('time',)' | mean, std | degC | standard deviation of the case of the upward-facing sensor during the 1 min averaging interval |
+sr30_swd_Irr_Std | ('time',) | ('time',)' | mean, std | W/m2 | standard deviation of the irradiance of the upward-facing sensor during the 1 min averaging interval |
+sr30_swd_IrrC_Std | ('time',) | ('time',)' | mean, std | W/m2 | standard deviation of the temperature-corrected irradiance of the upward-facing sensor during the 1 min averaging interval |
+apogee_body_T_Std | ('time',) | ('time',)' | mean, std | degC | standard deviation of the infrared thermometer body temperature during the 1 min averaging interval |
+apogee_targ_T_Std | ('time',) | ('time',)' | mean, std | degC | standard deviation of the the sensor target 8-14 micron brightness temperature during the 1 min averaging interval |
+sr50_dist_Std | ('time',) | ('time',)' | mean, std | m | standard deviation of the uncorrected distance between the sensor and the surface during the 1 min averaging interval |
+vaisala_RH_Std | ('time',) | ('time',)' | mean, std | % | standard deviation of the relative humidity during the 1 min averaging interval |
+vaisala_T_Std | ('time',) | ('time',)' | mean, std | degC | standard deviation of the air temperature during the 1 min averaging interval |
+vaisala_P_Std | ('time',) | ('time',)' | mean, std | hPa | standard deviation of the atmospheric pressure during the 1 min averaging interval |
+ir20_lwu_mV_Std | ('time',) | ('time',)' | mean, std | mV | standard deviation of the thermopile voltage of the downward-facing sensor during the 1 min averaging interval |
+ir20_lwu_DegC_Std | ('time',) | ('time',)' | mean, std | degC | standard deviation of the case temperature of the downward-facing sensor during the 1 min averaging interval |
+ir20_lwu_Wm2_Std | ('time',) | ('time',)' | mean, std | W/m2 | standard deviation of the flux from the downward-facing sensor during the 1 min averaging interval |
+ir20_lwd_mV_Std | ('time',) | ('time',)' | mean, std | mV | standard deviation of the thermopile voltage of the upward-facing sensor during the 1 min averaging interval |
+ir20_lwd_DegC_Std | ('time',) | ('time',)' | mean, std | degC | standard deviation of the case temperature of the upward-facing sensor during the 1 min averaging interval |
+ir20_lwd_Wm2_Std | ('time',) | ('time',)' | mean, std | W/m2 | standard deviation of the flux from the sensor pyrgeometer during the 1 min averaging interval |
+fp_A_mV_Std | ('time',) | ('time',)' | mean, std | mV | standard deviation of the thermopile voltage during 1 min averaging interval |
+fp_A_Wm2_Std | ('time',) | ('time',)' | mean, std | W/m2 | standard deviation of the flux during 1 min averaging interval |
+fp_B_mV_Std | ('time',) | ('time',)' | mean, std | mV | standard deviation of the thermopile voltage during 1 min averaging interval |
+fp_B_Wm2_Std | ('time',) | ('time',)' | mean, std | W/m2 | standard deviation of the flux during 1 min averaging interval |
+licor_co2_str_out_Std | ('time',) | ('time',)' | mean, std | % | standard deviation of the CO2 signal strength diagnostic during 1 min averaging interval |
+wspd_u_mean | ('time',) | ('time',)' | mean, std | m/s | Metek u-component |
+wspd_v_mean | ('time',) | ('time',)' | mean, std | m/s | Metek v-component |
+wspd_w_mean | ('time',) | ('time',)' | mean, std | m/s | Metek w-component |
+wspd_vec_mean | ('time',) | ('time',)' | mean, std | m/s | average metek wind speed |
+wdir_vec_mean | ('time',) | ('time',)' | mean, std | degrees | average metek wind direction |
+
+: {.striped .bordered}
+
+### ncdump
+
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+
+```
+ncdump -h asfs/level1/slow.level1.melt-sleighsfs.20240315.000000.nc
+
+
+
+
+
+netcdf slow.level1.melt-sleighsfs.20240315.000000 {
+dimensions:
+	time = UNLIMITED ; // (1440 currently)
+variables:
+	int base_time ;
+		base_time:string = "2024-03-15T00:00:00.000000" ;
+		base_time:long_name = "Base time since Epoch" ;
+		base_time:units = "seconds since 1970-01-01T00:00:00.000000" ;
+		base_time:ancillary_variables = "time_offset" ;
+	double time(time) ;
+		time:units = "seconds since 2024-03-15T00:00:00.000000" ;
+		time:delta_t = "0000-00-00 00:01:00" ;
+		time:long_name = "Time offset from midnight" ;
+		time:calendar = "standard" ;
+	double time_offset(time) ;
+		time_offset:units = "seconds since 2024-03-15T00:00:00.000000" ;
+		time_offset:delta_t = "0000-00-00 00:01:00" ;
+		time_offset:long_name = "Time offset from base_time" ;
+		time_offset:calendar = "standard" ;
+	double metek_InclX_Avg(time) ;
+		metek_InclX_Avg:units = "deg" ;
+		metek_InclX_Avg:long_name = "sensor inclinometer pitch angle" ;
+		metek_InclX_Avg:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+		metek_InclX_Avg:methods = "inclination sensor embedded in anemometer sensor head; postive is anticlockwise about sonic east-west axis when viewing east to west; protocol RS-422" ;
+		metek_InclX_Avg:height = "4.62 m" ;
+		metek_InclX_Avg:location = "SLEIGH mast" ;
+		metek_InclX_Avg:percent_missing = 0. ;
+		metek_InclX_Avg:missing_value = -9999. ;
+	double metek_InclY_Avg(time) ;
+		metek_InclY_Avg:units = "deg" ;
+		metek_InclY_Avg:long_name = "sensor inclinometer roll angle" ;
+		metek_InclY_Avg:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+		metek_InclY_Avg:methods = "inclination sensor embedded in anemometer sensor head; postive is anticlockwise about sonic south-north axis when viewing south to north; protocol RS-422" ;
+		metek_InclY_Avg:height = "4.62 m" ;
+		metek_InclY_Avg:location = "SLEIGH mast" ;
+		metek_InclY_Avg:percent_missing = 0. ;
+		metek_InclY_Avg:missing_value = -9999. ;
+	double PTemp_Avg(time) ;
+		PTemp_Avg:units = "degC" ;
+		PTemp_Avg:long_name = "logger electronics panel temperature" ;
+		PTemp_Avg:instrument = "Campbell CR1000X" ;
+		PTemp_Avg:methods = "" ;
+		PTemp_Avg:height = "N/A" ;
+		PTemp_Avg:location = "logger box" ;
+		PTemp_Avg:percent_missing = 0. ;
+		PTemp_Avg:missing_value = -9999. ;
+	double batt_volt_Avg(time) ;
+		batt_volt_Avg:units = "V" ;
+		batt_volt_Avg:long_name = "voltage of the power source supplying the logger" ;
+		batt_volt_Avg:instrument = "CCampbell CR1000X" ;
+		batt_volt_Avg:methods = "" ;
+		batt_volt_Avg:height = "N/A" ;
+		batt_volt_Avg:location = "logger box" ;
+		batt_volt_Avg:percent_missing = 0. ;
+		batt_volt_Avg:missing_value = -9999. ;
+	double sr30_swu_DegC_Avg(time) ;
+		sr30_swu_DegC_Avg:units = "degC" ;
+		sr30_swu_DegC_Avg:long_name = "average case temperature of the downward-facing sensor during the 1 min averaging interval" ;
+		sr30_swu_DegC_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swu_DegC_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swu_DegC_Avg:height = "2.8 m" ;
+		sr30_swu_DegC_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_DegC_Avg:percent_missing = 0. ;
+		sr30_swu_DegC_Avg:missing_value = -9999. ;
+	double sr30_swu_DegC_Std(time) ;
+		sr30_swu_DegC_Std:units = "degC" ;
+		sr30_swu_DegC_Std:long_name = "standard deviation of the case of the downward-facing sensor during the 1 min averaging interval" ;
+		sr30_swu_DegC_Std:instrument = "Hukseflux SR30" ;
+		sr30_swu_DegC_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swu_DegC_Std:height = "2.8 m" ;
+		sr30_swu_DegC_Std:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_DegC_Std:percent_missing = 0. ;
+		sr30_swu_DegC_Std:missing_value = -9999. ;
+	double sr30_swu_Irr_Avg(time) ;
+		sr30_swu_Irr_Avg:units = "W/m2" ;
+		sr30_swu_Irr_Avg:long_name = "average irradiance of the downward-facing sensor during the 1 min averaging interval" ;
+		sr30_swu_Irr_Avg:instrument = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swu_Irr_Avg:methods = "RS-485" ;
+		sr30_swu_Irr_Avg:height = "2.8 m" ;
+		sr30_swu_Irr_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_Irr_Avg:percent_missing = 0. ;
+		sr30_swu_Irr_Avg:missing_value = -9999. ;
+	double sr30_swu_Irr_Std(time) ;
+		sr30_swu_Irr_Std:units = "W/m2" ;
+		sr30_swu_Irr_Std:long_name = "standard deviation of the irradiance of the downward-facing sensor during the 1 min averaging interval" ;
+		sr30_swu_Irr_Std:instrument = "Hukseflux SR30" ;
+		sr30_swu_Irr_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swu_Irr_Std:height = "2.8 m" ;
+		sr30_swu_Irr_Std:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_Irr_Std:percent_missing = 0. ;
+		sr30_swu_Irr_Std:missing_value = -9999. ;
+	double sr30_swu_IrrC_Avg(time) ;
+		sr30_swu_IrrC_Avg:units = "W/m2" ;
+		sr30_swu_IrrC_Avg:long_name = "average irradiance of the downward-facing sensor during the 1 min averaging interval" ;
+		sr30_swu_IrrC_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swu_IrrC_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swu_IrrC_Avg:height = "2.8 m" ;
+		sr30_swu_IrrC_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_IrrC_Avg:percent_missing = 0. ;
+		sr30_swu_IrrC_Avg:missing_value = -9999. ;
+	double sr30_swu_IrrC_Std(time) ;
+		sr30_swu_IrrC_Std:units = "W/m2" ;
+		sr30_swu_IrrC_Std:long_name = "standard deviation of the temperature-corrected irradiance of the downward-facing sensor during the 1 min averaging interval" ;
+		sr30_swu_IrrC_Std:instrument = "Hukseflux SR30" ;
+		sr30_swu_IrrC_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swu_IrrC_Std:height = "2.8 m" ;
+		sr30_swu_IrrC_Std:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_IrrC_Std:percent_missing = 0. ;
+		sr30_swu_IrrC_Std:missing_value = -9999. ;
+	double sr30_swd_DegC_Avg(time) ;
+		sr30_swd_DegC_Avg:units = "degC" ;
+		sr30_swd_DegC_Avg:long_name = "average case temperature of the upward-facing sensor during the 1 min averaging interval" ;
+		sr30_swd_DegC_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swd_DegC_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swd_DegC_Avg:height = "2.8 m" ;
+		sr30_swd_DegC_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_DegC_Avg:percent_missing = 0. ;
+		sr30_swd_DegC_Avg:missing_value = -9999. ;
+	double sr30_swd_DegC_Std(time) ;
+		sr30_swd_DegC_Std:units = "degC" ;
+		sr30_swd_DegC_Std:long_name = "standard deviation of the case of the upward-facing sensor during the 1 min averaging interval" ;
+		sr30_swd_DegC_Std:instrument = "Hukseflux SR30" ;
+		sr30_swd_DegC_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swd_DegC_Std:height = "2.8 m" ;
+		sr30_swd_DegC_Std:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_DegC_Std:percent_missing = 0. ;
+		sr30_swd_DegC_Std:missing_value = -9999. ;
+	double sr30_swd_Irr_Avg(time) ;
+		sr30_swd_Irr_Avg:units = "W/m2" ;
+		sr30_swd_Irr_Avg:long_name = "average irradiance of the upward-facing sensor during the 1 min averaging interval" ;
+		sr30_swd_Irr_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swd_Irr_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swd_Irr_Avg:height = "2.8 m" ;
+		sr30_swd_Irr_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_Irr_Avg:percent_missing = 0. ;
+		sr30_swd_Irr_Avg:missing_value = -9999. ;
+	double sr30_swd_Irr_Std(time) ;
+		sr30_swd_Irr_Std:units = "W/m2" ;
+		sr30_swd_Irr_Std:long_name = "standard deviation of the irradiance of the upward-facing sensor during the 1 min averaging interval" ;
+		sr30_swd_Irr_Std:instrument = "Hukseflux SR30" ;
+		sr30_swd_Irr_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swd_Irr_Std:height = "2.8 m" ;
+		sr30_swd_Irr_Std:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_Irr_Std:percent_missing = 0. ;
+		sr30_swd_Irr_Std:missing_value = -9999. ;
+	double sr30_swd_IrrC_Avg(time) ;
+		sr30_swd_IrrC_Avg:units = "W/m2" ;
+		sr30_swd_IrrC_Avg:long_name = "average irradiance of the upward-facing sensor during the 1 min averaging interval" ;
+		sr30_swd_IrrC_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swd_IrrC_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swd_IrrC_Avg:height = "2.8 m" ;
+		sr30_swd_IrrC_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_IrrC_Avg:percent_missing = 0. ;
+		sr30_swd_IrrC_Avg:missing_value = -9999. ;
+	double sr30_swd_IrrC_Std(time) ;
+		sr30_swd_IrrC_Std:units = "W/m2" ;
+		sr30_swd_IrrC_Std:long_name = "standard deviation of the temperature-corrected irradiance of the upward-facing sensor during the 1 min averaging interval" ;
+		sr30_swd_IrrC_Std:instrument = "Hukseflux SR30" ;
+		sr30_swd_IrrC_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+		sr30_swd_IrrC_Std:height = "2.8 m" ;
+		sr30_swd_IrrC_Std:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_IrrC_Std:percent_missing = 0. ;
+		sr30_swd_IrrC_Std:missing_value = -9999. ;
+	double apogee_body_T_Avg(time) ;
+		apogee_body_T_Avg:units = "degC" ;
+		apogee_body_T_Avg:long_name = "average of the sensor body temperature during the 1 min averaging interval" ;
+		apogee_body_T_Avg:instrument = "Apogee SI-4H1-SS IRT" ;
+		apogee_body_T_Avg:methods = "infrared thermometer; SDI-12 protocol" ;
+		apogee_body_T_Avg:height = "2.8 m" ;
+		apogee_body_T_Avg:location = "SLEIGH boom (top of station)" ;
+		apogee_body_T_Avg:percent_missing = 0. ;
+		apogee_body_T_Avg:missing_value = -9999. ;
+	double apogee_body_T_Std(time) ;
+		apogee_body_T_Std:units = "degC" ;
+		apogee_body_T_Std:long_name = "standard deviation of the infrared thermometer body temperature during the 1 min averaging interval" ;
+		apogee_body_T_Std:instrument = "Apogee SI-4H1-SS IRT" ;
+		apogee_body_T_Std:methods = "infrared thermometer; SDI-12 protocol" ;
+		apogee_body_T_Std:height = "2.8 m" ;
+		apogee_body_T_Std:location = "SLEIGH boom (top of station)" ;
+		apogee_body_T_Std:percent_missing = 0. ;
+		apogee_body_T_Std:missing_value = -9999. ;
+	double apogee_targ_T_Avg(time) ;
+		apogee_targ_T_Avg:units = "degC" ;
+		apogee_targ_T_Avg:long_name = "average of the sensor target 8-14 micron brightness temperature during the 1 min averaging interval" ;
+		apogee_targ_T_Avg:instrument = "Apogee SI-4H1-SS IRT" ;
+		apogee_targ_T_Avg:methods = "thermopile infrared thermometer; SDI-12 protocol" ;
+		apogee_targ_T_Avg:height = "surface" ;
+		apogee_targ_T_Avg:location = "SLEIGH boom (top of station)" ;
+		apogee_targ_T_Avg:percent_missing = 0. ;
+		apogee_targ_T_Avg:missing_value = -9999. ;
+	double apogee_targ_T_Std(time) ;
+		apogee_targ_T_Std:units = "degC" ;
+		apogee_targ_T_Std:long_name = "standard deviation of the the sensor target 8-14 micron brightness temperature during the 1 min averaging interval" ;
+		apogee_targ_T_Std:instrument = "Apogee SI-4H1-SS IRT" ;
+		apogee_targ_T_Std:methods = "thermopile infrared thermometer; SDI-12 protocol" ;
+		apogee_targ_T_Std:height = "surface" ;
+		apogee_targ_T_Std:location = "SLEIGH boom (top of station)" ;
+		apogee_targ_T_Std:percent_missing = 0. ;
+		apogee_targ_T_Std:missing_value = -9999. ;
+	double sr50_dist_Avg(time) ;
+		sr50_dist_Avg:units = "m" ;
+		sr50_dist_Avg:long_name = "average of the uncorrected distance between the sensor and the surface during the 1 min averaging interval" ;
+		sr50_dist_Avg:instrument = "SR50A" ;
+		sr50_dist_Avg:methods = "acoustic ranger; SDI-12 protocol" ;
+		sr50_dist_Avg:height = "surface" ;
+		sr50_dist_Avg:location = "SLEIGH boom (top of station)" ;
+		sr50_dist_Avg:percent_missing = 0. ;
+		sr50_dist_Avg:missing_value = -9999. ;
+	double sr50_dist_Std(time) ;
+		sr50_dist_Std:units = "m" ;
+		sr50_dist_Std:long_name = "standard deviation of the uncorrected distance between the sensor and the surface during the 1 min averaging interval" ;
+		sr50_dist_Std:instrument = "SR50A" ;
+		sr50_dist_Std:methods = "acoustic ranger; SDI-12 protocol" ;
+		sr50_dist_Std:height = "surface" ;
+		sr50_dist_Std:location = "SLEIGH boom (top of station)" ;
+		sr50_dist_Std:percent_missing = 0. ;
+		sr50_dist_Std:missing_value = -9999. ;
+	double sr50_qc_Avg(time) ;
+		sr50_qc_Avg:units = "unitless" ;
+		sr50_qc_Avg:long_name = "quality number of the distance measurement" ;
+		sr50_qc_Avg:instrument = "SR50A" ;
+		sr50_qc_Avg:methods = "acoustic ranger; SDI-12 protocol" ;
+		sr50_qc_Avg:height = "surface" ;
+		sr50_qc_Avg:location = "SLEIGH boom (top of station)" ;
+		sr50_qc_Avg:percent_missing = 0. ;
+		sr50_qc_Avg:missing_value = -9999. ;
+	double vaisala_RH_Avg(time) ;
+		vaisala_RH_Avg:units = "%" ;
+		vaisala_RH_Avg:long_name = "average of the relative humidity during the 1 min averaging interval" ;
+		vaisala_RH_Avg:instrument = "Vaisala PTU300" ;
+		vaisala_RH_Avg:methods = "meteorology sensor, heated capacitive thin-film polymer; RS-485 protocol" ;
+		vaisala_RH_Avg:height = "2.60 m" ;
+		vaisala_RH_Avg:location = "SLEIGH boom (top of station)" ;
+		vaisala_RH_Avg:percent_missing = 0. ;
+		vaisala_RH_Avg:missing_value = -9999. ;
+	double vaisala_RH_Std(time) ;
+		vaisala_RH_Std:units = "%" ;
+		vaisala_RH_Std:long_name = "standard deviation of the relative humidity during the 1 min averaging interval" ;
+		vaisala_RH_Std:instrument = "Vaisala PTU300" ;
+		vaisala_RH_Std:methods = "meteorology sensor, heated capacitive thin-film polymer; RS-485 protocol" ;
+		vaisala_RH_Std:height = "2.60 m" ;
+		vaisala_RH_Std:location = "SLEIGH boom (top of station)" ;
+		vaisala_RH_Std:percent_missing = 0. ;
+		vaisala_RH_Std:missing_value = -9999. ;
+	double vaisala_T_Avg(time) ;
+		vaisala_T_Avg:units = "degC" ;
+		vaisala_T_Avg:long_name = "average of the air temperature during the 1 min averaging interval" ;
+		vaisala_T_Avg:instrument = "Vaisala PTU300" ;
+		vaisala_T_Avg:methods = "meteorology sensor, PT100 RTD; RS-485 protocol" ;
+		vaisala_T_Avg:height = "2.89 m" ;
+		vaisala_T_Avg:location = "SLEIGH boom (top of station)" ;
+		vaisala_T_Avg:percent_missing = 0. ;
+		vaisala_T_Avg:missing_value = -9999. ;
+	double vaisala_T_Std(time) ;
+		vaisala_T_Std:units = "degC" ;
+		vaisala_T_Std:long_name = "standard deviation of the air temperature during the 1 min averaging interval" ;
+		vaisala_T_Std:instrument = "Vaisala PTU300" ;
+		vaisala_T_Std:methods = "meteorology sensor, PT100 RTD; RS-485 protocol" ;
+		vaisala_T_Std:height = "2.89 m" ;
+		vaisala_T_Std:location = "SLEIGH boom (top of station)" ;
+		vaisala_T_Std:percent_missing = 0. ;
+		vaisala_T_Std:missing_value = -9999. ;
+	double vaisala_P_Avg(time) ;
+		vaisala_P_Avg:units = "hPa" ;
+		vaisala_P_Avg:long_name = "average of the atmospheric pressure during the 1 min averaging interval" ;
+		vaisala_P_Avg:instrument = "Vaisala PTU300" ;
+		vaisala_P_Avg:methods = "meteorology sensor; RS-485 protocol" ;
+		vaisala_P_Avg:height = "2.68 m" ;
+		vaisala_P_Avg:location = "SLEIGH boom (top of station)" ;
+		vaisala_P_Avg:percent_missing = 0. ;
+		vaisala_P_Avg:missing_value = -9999. ;
+	double vaisala_P_Std(time) ;
+		vaisala_P_Std:units = "hPa" ;
+		vaisala_P_Std:long_name = "standard deviation of the atmospheric pressure during the 1 min averaging interval" ;
+		vaisala_P_Std:instrument = "Vaisala PTU300" ;
+		vaisala_P_Std:methods = "meteorology sensor; RS-485 protocol" ;
+		vaisala_P_Std:height = "2.68 m" ;
+		vaisala_P_Std:location = "SLEIGH boom (top of station)" ;
+		vaisala_P_Std:percent_missing = 0. ;
+		vaisala_P_Std:missing_value = -9999. ;
+	double ir20_lwu_mV_Avg(time) ;
+		ir20_lwu_mV_Avg:units = "mV" ;
+		ir20_lwu_mV_Avg:long_name = "average thermopile voltage of the downward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwu_mV_Avg:instrument = "Hukseflux IR20" ;
+		ir20_lwu_mV_Avg:methods = "thermopile pyrgeometer; analog; differential voltage" ;
+		ir20_lwu_mV_Avg:height = "2.8 m" ;
+		ir20_lwu_mV_Avg:location = "SLEIGH boom (top of station)" ;
+		ir20_lwu_mV_Avg:percent_missing = 0. ;
+		ir20_lwu_mV_Avg:missing_value = -9999. ;
+	double ir20_lwu_mV_Std(time) ;
+		ir20_lwu_mV_Std:units = "mV" ;
+		ir20_lwu_mV_Std:long_name = "standard deviation of the thermopile voltage of the downward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwu_mV_Std:instrument = "Hukseflux IR20" ;
+		ir20_lwu_mV_Std:methods = "thermopile pyrgeometer; analog; differential voltage" ;
+		ir20_lwu_mV_Std:height = "2.8 m" ;
+		ir20_lwu_mV_Std:location = "SLEIGH boom (top of station)" ;
+		ir20_lwu_mV_Std:percent_missing = 0. ;
+		ir20_lwu_mV_Std:missing_value = -9999. ;
+	double ir20_lwu_DegC_Avg(time) ;
+		ir20_lwu_DegC_Avg:units = "degC" ;
+		ir20_lwu_DegC_Avg:long_name = "average case temperature of the downward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwu_DegC_Avg:instrument = "Hukseflux IR20" ;
+		ir20_lwu_DegC_Avg:methods = "thermopile pyrgeometer; analog; half-bridge, 100kOhm 0.01% ref resistor; Steinhart-Hart A=0.0010295, B=0.0002391, C=0.0000001568" ;
+		ir20_lwu_DegC_Avg:height = "2.8 m" ;
+		ir20_lwu_DegC_Avg:location = "SLEIGH boom (top of station)" ;
+		ir20_lwu_DegC_Avg:percent_missing = 0. ;
+		ir20_lwu_DegC_Avg:missing_value = -9999. ;
+	double ir20_lwu_DegC_Std(time) ;
+		ir20_lwu_DegC_Std:units = "degC" ;
+		ir20_lwu_DegC_Std:long_name = "standard deviation of the case temperature of the downward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwu_DegC_Std:instrument = "Hukseflux IR20" ;
+		ir20_lwu_DegC_Std:methods = "thermopile pyrgeometer; analog; half-bridge, 100kOhm 0.01% ref resistor; Steinhart-Hart A=0.0010295, B=0.0002391, C=0.0000001568" ;
+		ir20_lwu_DegC_Std:height = "2.8 m" ;
+		ir20_lwu_DegC_Std:location = "SLEIGH boom (top of station)" ;
+		ir20_lwu_DegC_Std:percent_missing = 0. ;
+		ir20_lwu_DegC_Std:missing_value = -9999. ;
+	double ir20_lwu_Wm2_Avg(time) ;
+		ir20_lwu_Wm2_Avg:units = "W/m2" ;
+		ir20_lwu_Wm2_Avg:long_name = "average flux from the downward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwu_Wm2_Avg:instrument = "Hukseflux IR20" ;
+		ir20_lwu_Wm2_Avg:methods = "thermopile pyrgeometer; preliminary calibration: uses thermopile sensitvity but not temperature dependence" ;
+		ir20_lwu_Wm2_Avg:height = "2.8 m" ;
+		ir20_lwu_Wm2_Avg:location = "SLEIGH boom (top of station)" ;
+		ir20_lwu_Wm2_Avg:percent_missing = 0. ;
+		ir20_lwu_Wm2_Avg:missing_value = -9999. ;
+	double ir20_lwu_Wm2_Std(time) ;
+		ir20_lwu_Wm2_Std:units = "W/m2" ;
+		ir20_lwu_Wm2_Std:long_name = "standard deviation of the flux from the downward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwu_Wm2_Std:instrument = "Hukseflux IR20" ;
+		ir20_lwu_Wm2_Std:methods = "thermopile pyrgeometer; preliminary calibration: uses thermopile sensitvity but not temperature dependence" ;
+		ir20_lwu_Wm2_Std:height = "2.8 m" ;
+		ir20_lwu_Wm2_Std:location = "SLEIGH boom (top of station)" ;
+		ir20_lwu_Wm2_Std:percent_missing = 0. ;
+		ir20_lwu_Wm2_Std:missing_value = -9999. ;
+	double ir20_lwd_mV_Avg(time) ;
+		ir20_lwd_mV_Avg:units = "mV" ;
+		ir20_lwd_mV_Avg:long_name = "average thermopile voltage of the upward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwd_mV_Avg:instrument = "Hukseflux IR20" ;
+		ir20_lwd_mV_Avg:methods = "thermopile pyrgeometer; analog; differential voltage" ;
+		ir20_lwd_mV_Avg:height = "2.8 m" ;
+		ir20_lwd_mV_Avg:location = "SLEIGH boom (top of station)" ;
+		ir20_lwd_mV_Avg:percent_missing = 0. ;
+		ir20_lwd_mV_Avg:missing_value = -9999. ;
+	double ir20_lwd_mV_Std(time) ;
+		ir20_lwd_mV_Std:units = "mV" ;
+		ir20_lwd_mV_Std:long_name = "standard deviation of the thermopile voltage of the upward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwd_mV_Std:instrument = "Hukseflux IR20" ;
+		ir20_lwd_mV_Std:methods = "thermopile pyrgeometer; analog; differential voltage" ;
+		ir20_lwd_mV_Std:height = "2.8 m" ;
+		ir20_lwd_mV_Std:location = "SLEIGH boom (top of station)" ;
+		ir20_lwd_mV_Std:percent_missing = 0. ;
+		ir20_lwd_mV_Std:missing_value = -9999. ;
+	double ir20_lwd_DegC_Avg(time) ;
+		ir20_lwd_DegC_Avg:units = "degC" ;
+		ir20_lwd_DegC_Avg:long_name = "average case temperature of the upward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwd_DegC_Avg:instrument = "Hukseflux IR20" ;
+		ir20_lwd_DegC_Avg:methods = "thermopile pyrgeometer; analog; half-bridge, 100kOhm 0.01% ref resistor; Steinhart-Hart A=0.0010295, B=0.0002391, C=0.0000001568" ;
+		ir20_lwd_DegC_Avg:height = "2.8 m" ;
+		ir20_lwd_DegC_Avg:location = "SLEIGH boom (top of station)" ;
+		ir20_lwd_DegC_Avg:percent_missing = 0. ;
+		ir20_lwd_DegC_Avg:missing_value = -9999. ;
+	double ir20_lwd_DegC_Std(time) ;
+		ir20_lwd_DegC_Std:units = "degC" ;
+		ir20_lwd_DegC_Std:long_name = "standard deviation of the case temperature of the upward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwd_DegC_Std:instrument = "Hukseflux IR20" ;
+		ir20_lwd_DegC_Std:methods = "thermopile pyrgeometer; analog; half-bridge, 100kOhm 0.01% ref resistor; Steinhart-Hart A=0.0010295, B=0.0002391, C=0.0000001568" ;
+		ir20_lwd_DegC_Std:height = "2.8 m" ;
+		ir20_lwd_DegC_Std:location = "SLEIGH boom (top of station)" ;
+		ir20_lwd_DegC_Std:percent_missing = 0. ;
+		ir20_lwd_DegC_Std:missing_value = -9999. ;
+	double ir20_lwd_Wm2_Avg(time) ;
+		ir20_lwd_Wm2_Avg:units = "W/m2" ;
+		ir20_lwd_Wm2_Avg:long_name = "average flux from the upward-facing sensor during the 1 min averaging interval" ;
+		ir20_lwd_Wm2_Avg:instrument = "Hukseflux IR20" ;
+		ir20_lwd_Wm2_Avg:methods = "thermopile pyrgeometer; preliminary calibration: uses thermopile sensitvity but not temperature dependence" ;
+		ir20_lwd_Wm2_Avg:height = "2.8 m" ;
+		ir20_lwd_Wm2_Avg:location = "SLEIGH boom (top of station)" ;
+		ir20_lwd_Wm2_Avg:percent_missing = 0. ;
+		ir20_lwd_Wm2_Avg:missing_value = -9999. ;
+	double ir20_lwd_Wm2_Std(time) ;
+		ir20_lwd_Wm2_Std:units = "W/m2" ;
+		ir20_lwd_Wm2_Std:long_name = "standard deviation of the flux from the sensor pyrgeometer during the 1 min averaging interval" ;
+		ir20_lwd_Wm2_Std:instrument = "Hukseflux IR20" ;
+		ir20_lwd_Wm2_Std:methods = "thermopile pyrgeometer; preliminary calibration: uses thermopile sensitvity but not temperature dependence" ;
+		ir20_lwd_Wm2_Std:height = "2.8 m" ;
+		ir20_lwd_Wm2_Std:location = "SLEIGH boom (top of station)" ;
+		ir20_lwd_Wm2_Std:percent_missing = 0. ;
+		ir20_lwd_Wm2_Std:missing_value = -9999. ;
+	double fp_A_mV_Avg(time) ;
+		fp_A_mV_Avg:units = "mV" ;
+		fp_A_mV_Avg:long_name = "average thermopile voltage during 1 min averaging interval" ;
+		fp_A_mV_Avg:instrument = "Hukseflux HFP01" ;
+		fp_A_mV_Avg:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+		fp_A_mV_Avg:height = "subsurface, -5 cm" ;
+		fp_A_mV_Avg:location = "soil" ;
+		fp_A_mV_Avg:percent_missing = 0. ;
+		fp_A_mV_Avg:missing_value = -9999. ;
+	double fp_A_mV_Std(time) ;
+		fp_A_mV_Std:units = "mV" ;
+		fp_A_mV_Std:long_name = "standard deviation of the thermopile voltage during 1 min averaging interval" ;
+		fp_A_mV_Std:instrument = "Hukseflux HFP01" ;
+		fp_A_mV_Std:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+		fp_A_mV_Std:height = "subsurface, -5 cm" ;
+		fp_A_mV_Std:location = "soil" ;
+		fp_A_mV_Std:percent_missing = 0. ;
+		fp_A_mV_Std:missing_value = -9999. ;
+	double fp_A_Wm2_Avg(time) ;
+		fp_A_Wm2_Avg:units = "W/m2" ;
+		fp_A_Wm2_Avg:long_name = "average flux during 1 min averaging interval" ;
+		fp_A_Wm2_Avg:instrument = "Hukseflux HFP01" ;
+		fp_A_Wm2_Avg:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+		fp_A_Wm2_Avg:height = "subsurface, -5 cm" ;
+		fp_A_Wm2_Avg:location = "soil" ;
+		fp_A_Wm2_Avg:percent_missing = 0. ;
+		fp_A_Wm2_Avg:missing_value = -9999. ;
+	double fp_A_Wm2_Std(time) ;
+		fp_A_Wm2_Std:units = "W/m2" ;
+		fp_A_Wm2_Std:long_name = "standard deviation of the flux during 1 min averaging interval" ;
+		fp_A_Wm2_Std:instrument = "Hukseflux HFP01" ;
+		fp_A_Wm2_Std:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+		fp_A_Wm2_Std:height = "subsurface, -5 cm" ;
+		fp_A_Wm2_Std:location = "soil" ;
+		fp_A_Wm2_Std:percent_missing = 0. ;
+		fp_A_Wm2_Std:missing_value = -9999. ;
+	double fp_B_mV_Avg(time) ;
+		fp_B_mV_Avg:units = "mV" ;
+		fp_B_mV_Avg:long_name = "average thermopile voltage during 1 min averaging interval" ;
+		fp_B_mV_Avg:instrument = "Hukseflux HFP01" ;
+		fp_B_mV_Avg:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+		fp_B_mV_Avg:height = "subsurface, -5 cm" ;
+		fp_B_mV_Avg:location = "soil" ;
+		fp_B_mV_Avg:percent_missing = 0. ;
+		fp_B_mV_Avg:missing_value = -9999. ;
+	double fp_B_mV_Std(time) ;
+		fp_B_mV_Std:units = "mV" ;
+		fp_B_mV_Std:long_name = "standard deviation of the thermopile voltage during 1 min averaging interval" ;
+		fp_B_mV_Std:instrument = "Hukseflux HFP01" ;
+		fp_B_mV_Std:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+		fp_B_mV_Std:height = "subsurface, -5 cm" ;
+		fp_B_mV_Std:location = "soil" ;
+		fp_B_mV_Std:percent_missing = 0. ;
+		fp_B_mV_Std:missing_value = -9999. ;
+	double fp_B_Wm2_Avg(time) ;
+		fp_B_Wm2_Avg:units = "W/m2" ;
+		fp_B_Wm2_Avg:long_name = "average flux during 1 min averaging interval" ;
+		fp_B_Wm2_Avg:instrument = "Hukseflux HFP01" ;
+		fp_B_Wm2_Avg:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+		fp_B_Wm2_Avg:height = "subsurface, -5 cm" ;
+		fp_B_Wm2_Avg:location = "soil" ;
+		fp_B_Wm2_Avg:percent_missing = 0. ;
+		fp_B_Wm2_Avg:missing_value = -9999. ;
+	double fp_B_Wm2_Std(time) ;
+		fp_B_Wm2_Std:units = "W/m2" ;
+		fp_B_Wm2_Std:long_name = "standard deviation of the flux during 1 min averaging interval" ;
+		fp_B_Wm2_Std:instrument = "Hukseflux HFP01" ;
+		fp_B_Wm2_Std:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+		fp_B_Wm2_Std:height = "subsurface, -5 cm" ;
+		fp_B_Wm2_Std:location = "soil" ;
+		fp_B_Wm2_Std:percent_missing = 0. ;
+		fp_B_Wm2_Std:missing_value = -9999. ;
+	double licor_co2_str_out_Avg(time) ;
+		licor_co2_str_out_Avg:units = "%" ;
+		licor_co2_str_out_Avg:long_name = "average CO2 signal strength diagnostic during 1 min averaging interval" ;
+		licor_co2_str_out_Avg:instrument = "Licor 7500-DS" ;
+		licor_co2_str_out_Avg:methods = "open-path optical gas analyzer, source data reported at 20 Hz; protocol TCP/IP" ;
+		licor_co2_str_out_Avg:height = "4.4 m" ;
+		licor_co2_str_out_Avg:location = "SLEIGH mast" ;
+		licor_co2_str_out_Avg:percent_missing = 0. ;
+		licor_co2_str_out_Avg:missing_value = -9999. ;
+	double licor_co2_str_out_Std(time) ;
+		licor_co2_str_out_Std:units = "%" ;
+		licor_co2_str_out_Std:long_name = "standard deviation of the CO2 signal strength diagnostic during 1 min averaging interval" ;
+		licor_co2_str_out_Std:instrument = "Licor 7500-DS" ;
+		licor_co2_str_out_Std:methods = "open-path optical gas analyzer, source data reported at 20 Hz; protocol TCP/IP" ;
+		licor_co2_str_out_Std:height = "4.4 m" ;
+		licor_co2_str_out_Std:location = "SLEIGH mast" ;
+		licor_co2_str_out_Std:percent_missing = 0. ;
+		licor_co2_str_out_Std:missing_value = -9999. ;
+	double sr30_swu_fantach_Avg(time) ;
+		sr30_swu_fantach_Avg:units = "Hz" ;
+		sr30_swu_fantach_Avg:long_name = "average fan speed of the downward-facing (SWU) pyranometer during 1 min averaging period" ;
+		sr30_swu_fantach_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swu_fantach_Avg:methods = "thermopile pyranometer case fan; RS-485" ;
+		sr30_swu_fantach_Avg:height = "2.8 m" ;
+		sr30_swu_fantach_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_fantach_Avg:percent_missing = 0. ;
+		sr30_swu_fantach_Avg:missing_value = -9999. ;
+	double sr30_swu_heatA_Avg(time) ;
+		sr30_swu_heatA_Avg:units = "mA" ;
+		sr30_swu_heatA_Avg:long_name = "average case heating current of the downward-facing sensor during 1 min averaging period" ;
+		sr30_swu_heatA_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swu_heatA_Avg:methods = "thermopile pyranometer case heater; RS-485 protocol" ;
+		sr30_swu_heatA_Avg:height = "2.8 m" ;
+		sr30_swu_heatA_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_heatA_Avg:percent_missing = 0. ;
+		sr30_swu_heatA_Avg:missing_value = -9999. ;
+	double sr30_swd_fantach_Avg(time) ;
+		sr30_swd_fantach_Avg:units = "Hz" ;
+		sr30_swd_fantach_Avg:long_name = "average fan speed of the upward-facing sensor during 1 min averaging period" ;
+		sr30_swd_fantach_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swd_fantach_Avg:methods = "thermopile pyranometer case fan; RS-485 protocol" ;
+		sr30_swd_fantach_Avg:height = "2.8 m" ;
+		sr30_swd_fantach_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_fantach_Avg:percent_missing = 0. ;
+		sr30_swd_fantach_Avg:missing_value = -9999. ;
+	double sr30_swd_heatA_Avg(time) ;
+		sr30_swd_heatA_Avg:units = "mA" ;
+		sr30_swd_heatA_Avg:long_name = "average case heating current of the upward-facing sensor during 1 min averaging period" ;
+		sr30_swd_heatA_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swd_heatA_Avg:methods = "thermopile pyranometer case heater; RS-485 protocol" ;
+		sr30_swd_heatA_Avg:height = "2.8 m" ;
+		sr30_swd_heatA_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_heatA_Avg:percent_missing = 0. ;
+		sr30_swd_heatA_Avg:missing_value = -9999. ;
+	double ir20_lwu_fan_Avg(time) ;
+		ir20_lwu_fan_Avg:units = "mV" ;
+		ir20_lwu_fan_Avg:long_name = "average fan voltage status signal of the downward-facing ventilator during the 1 min averaging period" ;
+		ir20_lwu_fan_Avg:instrument = "Hukseflux VU01" ;
+		ir20_lwu_fan_Avg:methods = "ventilator fan; analog" ;
+		ir20_lwu_fan_Avg:height = "2.8 m" ;
+		ir20_lwu_fan_Avg:location = "SLEIGH boom (top of station)" ;
+		ir20_lwu_fan_Avg:percent_missing = 0. ;
+		ir20_lwu_fan_Avg:missing_value = -9999. ;
+	double ir20_lwd_fan_Avg(time) ;
+		ir20_lwd_fan_Avg:units = "mV" ;
+		ir20_lwd_fan_Avg:long_name = "average fan voltage status signal of the upward-facing ventilator during the 1 min averaging period" ;
+		ir20_lwd_fan_Avg:instrument = "Hukseflux VU01" ;
+		ir20_lwd_fan_Avg:methods = "ventilator fan; analog" ;
+		ir20_lwd_fan_Avg:height = "2.8 m" ;
+		ir20_lwd_fan_Avg:location = "SLEIGH boom (top of station)" ;
+		ir20_lwd_fan_Avg:percent_missing = 0. ;
+		ir20_lwd_fan_Avg:missing_value = -9999. ;
+	double sr30_swu_tilt_Avg(time) ;
+		sr30_swu_tilt_Avg:units = "deg" ;
+		sr30_swu_tilt_Avg:long_name = "horizontal tilt of the downward-facing sensor" ;
+		sr30_swu_tilt_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swu_tilt_Avg:methods = "thermopile pyranometer case level; RS-485 protocol; level defined as 180 deg" ;
+		sr30_swu_tilt_Avg:height = "2.8 m" ;
+		sr30_swu_tilt_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swu_tilt_Avg:percent_missing = 0. ;
+		sr30_swu_tilt_Avg:missing_value = -9999. ;
+	double sr30_swd_tilt_Avg(time) ;
+		sr30_swd_tilt_Avg:units = "deg" ;
+		sr30_swd_tilt_Avg:long_name = "horizontal tilt of the upward-facing sensor" ;
+		sr30_swd_tilt_Avg:instrument = "Hukseflux SR30" ;
+		sr30_swd_tilt_Avg:methods = "thermopile pyranometer case level; RS-485 protocol; level defined as 0 deg" ;
+		sr30_swd_tilt_Avg:height = "2.8 m" ;
+		sr30_swd_tilt_Avg:location = "SLEIGH boom (top of station)" ;
+		sr30_swd_tilt_Avg:percent_missing = 0. ;
+		sr30_swd_tilt_Avg:missing_value = -9999. ;
+	double wspd_u_mean(time) ;
+		wspd_u_mean:units = "m/s" ;
+		wspd_u_mean:long_name = "Metek u-component" ;
+		wspd_u_mean:cf_name = "eastward_wind" ;
+		wspd_u_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+		wspd_u_mean:methods = "v defined positive west-to-east" ;
+		wspd_u_mean:height = "4.62 m" ;
+		wspd_u_mean:location = "SLEIGH mast" ;
+		wspd_u_mean:percent_missing = 0. ;
+		wspd_u_mean:missing_value = -9999. ;
+	double wspd_v_mean(time) ;
+		wspd_v_mean:units = "m/s" ;
+		wspd_v_mean:long_name = "Metek v-component" ;
+		wspd_v_mean:cf_name = "northward_wind" ;
+		wspd_v_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+		wspd_v_mean:methods = "v defined positive south-to-north" ;
+		wspd_v_mean:height = "4.62 m" ;
+		wspd_v_mean:location = "SLEIGH mast" ;
+		wspd_v_mean:percent_missing = 0. ;
+		wspd_v_mean:missing_value = -9999. ;
+	double wspd_w_mean(time) ;
+		wspd_w_mean:units = "m/s" ;
+		wspd_w_mean:long_name = "Metek w-component" ;
+		wspd_w_mean:cf_name = "" ;
+		wspd_w_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+		wspd_w_mean:methods = "w defined positive up" ;
+		wspd_w_mean:height = "4.62 m" ;
+		wspd_w_mean:location = "SLEIGH mast" ;
+		wspd_w_mean:percent_missing = 0. ;
+		wspd_w_mean:missing_value = -9999. ;
+	double wspd_vec_mean(time) ;
+		wspd_vec_mean:units = "m/s" ;
+		wspd_vec_mean:long_name = "average metek wind speed" ;
+		wspd_vec_mean:cf_name = "" ;
+		wspd_vec_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+		wspd_vec_mean:methods = "derived from horizontal wind components after coordinate transformation from body to earth reference frame" ;
+		wspd_vec_mean:height = "4.62 m" ;
+		wspd_vec_mean:location = "SLEIGH mast" ;
+		wspd_vec_mean:percent_missing = 0. ;
+		wspd_vec_mean:missing_value = -9999. ;
+	double wdir_vec_mean(time) ;
+		wdir_vec_mean:units = "degrees" ;
+		wdir_vec_mean:long_name = "average metek wind direction" ;
+		wdir_vec_mean:cf_name = "" ;
+		wdir_vec_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+		wdir_vec_mean:methods = "derived from horizontal wind components after coordinate transformation from body to earth reference frame" ;
+		wdir_vec_mean:height = "4.62 m" ;
+		wdir_vec_mean:location = "SLEIGH mast" ;
+		wdir_vec_mean:percent_missing = 0. ;
+		wdir_vec_mean:missing_value = -9999. ;
+
+// global attributes:
+		:date_created = "Fri Mar 15 06:09:04 2024" ;
+		:title = "Integrated Characterization of Energy, Clouds, Atmospheric and Precipitation States in the Greenland Melt-zone (ICECAPS-Melt)" ;
+		:institution = "CIRES/University of Colorado and NOAA Physical Sciences Laboratory (PSL)" ;
+		:file_creator = "Michael R. Gallagher; Christopher J. Cox" ;
+		:creator_email = "michael.r.gallagher@noaa.gov; christopher.j.cox@noaa.gov" ;
+		:Funding = "Funding sources: National Science Foundation Award Number #############; NOAA Physical Science Laboratory and Arctic Research Program" ;
+		:source = "Observations made by SLEIGH at camp Raven, Greenland" ;
+		:system = "melt-sleighsfs" ;
+		:references = "" ;
+		:keywords = "Greenland, Atmosphere, Flux, Observations, Energy, Heat, Firn, Snow, Hydrology" ;
+		:conventions = "cf convention variable naming as attribute whenever possible" ;
+		:history = "processed data based on level 1 ingest files" ;
+		:version = "1.0, 1/1/2024" ;
+		:quality_control = "This Level 1 product is for archival purposes and has undergone minimal data processing and quality control, please contact the authors/PI if you would like to know more." ;
+}
+```
+
+:::
+
+## ASFS -- legacy
 
 The ASFS comes in tabularised `.dat` formats, and in two data streams, `fast` and `sci`. The head of two equivalent files for each datastream can be seen below.
 
