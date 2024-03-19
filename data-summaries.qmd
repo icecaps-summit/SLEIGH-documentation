@@ -1819,6 +1819,147 @@ variables:
 :::
 
 
+## GPR
+
+### Location
+
+```
+data
+├── gpr
+    ├── level0
+    |   ├── 5Ghz/...
+    |   ├── 7Ghz/...
+	|
+    ├── level1
+        ├── GPR_5Ghz_YYYYmmdd.nc
+        ├── GPR_7Ghz_YYYYmmdd.nc
+```
+
+### Dimensions
+
+| dimension | resolution | length |
+|-----------|------------|--------|
+| time | variable, $>30$ minutes | variable |
+| step | 1 | 1280 |
+| step' | 40 | 32 |
+: {.striped .bordered}
+
+### 5 GHz
+#### Variables
+
+| var | dims | new_dims | fn | units | details |
+|-|-|-|-|-|------|
+| DM | step, time | step', time | mean std | ? | ? |
+| f | time | time | mean, std | ? | ? |
+: {.striped .bordered}
+
+
+#### ncdump
+
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+
+```
+ncdump -h gpr/level1/GPR_5Ghz_20240318.nc
+
+
+
+
+netcdf GPR_5Ghz_20240318 {
+dimensions:
+	step = 1280 ;
+	time = 88 ;
+variables:
+	double DM(step, time) ;
+		DM:_FillValue = NaN ;
+	float f(time) ;
+		f:_FillValue = NaNf ;
+	int64 step(step) ;
+	int64 time(time) ;
+		time:units = "seconds since 2024-03-18 00:00:06" ;
+		time:calendar = "proleptic_gregorian" ;
+
+// global attributes:
+		:magic = 4278067520U ;
+		:cape = "Ancho" ;
+		:ver = 0UB ;
+		:DACMin = 2000U ;
+		:DACMax = 7000U ;
+		:DACStep = 32U ;
+		:Iterations = 200U ;
+		:PulsesPerStep = 24U ;
+		:FrameStitch = 5U ;
+		:PGSelect = 5U ;
+		:SamplingRate = 1U ;
+		:SamplersPerFrame = 1280U ;
+		:OffsetDistanceFromReference = 0.f ;
+		:SampleDelayToReference = 3.867e-09f ;
+		:SamplesPerSecond = 3.738591e+10f ;
+		:SampleDelay = 3.867e-09f ;
+		:TXVoltage = 1.2f ;
+		:NumTrials = 10U ;
+		:FrameSize = 1292LL ;
+		:NumFrames = 10LL ;
+}
+
+```
+
+:::
+
+
+### 7 GHz
+#### Variables
+
+#### ncdump
+
+::: {.callout-note collapse='true' appearance='minimal' title='ncdump'}
+
+```
+ncdump -h gpr/level1/GPR_7Ghz_20240318.nc
+
+
+
+
+netcdf GPR_7Ghz_20240318 {
+dimensions:
+	step = 1280 ;
+	time = 22 ;
+variables:
+	double DM(step, time) ;
+		DM:_FillValue = NaN ;
+	float f(time) ;
+		f:_FillValue = NaNf ;
+	int64 step(step) ;
+	int64 time(time) ;
+		time:units = "seconds since 2024-03-18 01:03:08" ;
+		time:calendar = "proleptic_gregorian" ;
+
+// global attributes:
+		:magic = 4278067520U ;
+		:cape = "Ancho" ;
+		:ver = 0UB ;
+		:DACMin = 2000U ;
+		:DACMax = 7000U ;
+		:DACStep = 32U ;
+		:Iterations = 200U ;
+		:PulsesPerStep = 24U ;
+		:FrameStitch = 5U ;
+		:PGSelect = 5U ;
+		:SamplingRate = 7U ;
+		:SamplersPerFrame = 1280U ;
+		:OffsetDistanceFromReference = 0.f ;
+		:SampleDelayToReference = 3.867e-09f ;
+		:SamplesPerSecond = 3.738667e+10f ;
+		:SampleDelay = 3.867e-09f ;
+		:TXVoltage = 1.f ;
+		:NumTrials = 10U ;
+		:FrameSize = 1292LL ;
+		:NumFrames = 10LL ;
+}
+
+
+```
+
+:::
 
 
 ## blesensors
