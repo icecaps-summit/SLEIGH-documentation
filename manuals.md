@@ -28,6 +28,14 @@
 
 ## MVP
 
+## Snow Science Manuals and Overview
+- [Lyte Probe Manual](LyteProbeManual_ICECAPS-MELT2024.pdf)
+- [SLF infrasnow SSA sensor](InfraSnow_User_Manual_version_2.0.pdf)
+- [SLF SnowPro LWC and Density](manuals/SLF_SnowPro_UserManual.pdf) 
+- [Snow Weather and Avalanche Guide - you probably want CH2](manuals/SnowWeatherAvalancheGuide) 
+- [ICECAPS-MELT Snow Science Overview](ravenSnowScience_ICECAPS-MELT2024.pdf)
+
+
 ### Orange Pi
 
 ### Batteries
