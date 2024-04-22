@@ -3,4 +3,6 @@ You can view weekly composite images of 'cloud masked' brightness temperature ov
 
 The images have also been compiled into a [movie](./images/iceMeltNow/greenlandMelt.mp4) of brightness temperatures since 2014.
 
-Interpret 'white' colors as melting, and dark colors as below 0oC temperatures.
+Interpret 'white' as melting, and anything gray or darker as temperatures below freezing.
+
+*NOTE*: these are composite images *and* cloud mask is not perfect. So, there are some inconsistencies that the viewer will have to filter themselves.
