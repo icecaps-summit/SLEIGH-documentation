@@ -45,8 +45,8 @@ The instrument platform uses an APC internet-enabled power strip to turn certain
 |  1   |                  |
 |  2   |                  |
 |  3   |  MWR power       |
-|  4   |  MWR heater      |
+|  4   |  MWR blower      |
 |  5   |  MRR heater      |
 |  6   |  MRR power       |
-|  7   |                  |
+|  7   |  MWR heater      |
 |  8   |  CL61 power      |

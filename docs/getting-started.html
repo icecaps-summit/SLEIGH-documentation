@@ -144,6 +144,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./snow-science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Snow Science</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./data-summaries.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Summaries</span></a>
   </div>
@@ -152,6 +158,18 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./santa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SANTA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Website</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data dashboard</span></a>
   </div>
 </li>
     </ul>
@@ -349,66 +367,95 @@ Note
 </section>
 <section id="internal-network" class="level2">
 <h2 class="anchored" data-anchor-id="internal-network">Internal Network</h2>
-<p>Once you’re logged onto the Cincoze computer, you can connect to other instruments using the IP addresses listed below:</p>
+<p>Once you’re logged onto the Cincoze computer (iceman), you can connect to other instruments using the IP addresses listed below. Note that these addresses are defined in /etc/hosts on iceman.</p>
 <table class="table">
 <thead>
 <tr class="header">
 <th>Device</th>
 <th>Local IP</th>
+<th>IP name</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Cincoze Computer</td>
 <td>192.168.1.10</td>
+<td>cincoze</td>
 </tr>
 <tr class="even">
 <td>Skylink Certus Modem</td>
 <td>192.168.111.1</td>
+<td>certus</td>
 </tr>
 <tr class="odd">
 <td>Windows VM</td>
 <td>192.168.1.166</td>
+<td>vm</td>
 </tr>
 <tr class="even">
 <td>CR1000X Logger</td>
 <td>192.168.1.120</td>
+<td>logger</td>
 </tr>
 <tr class="odd">
 <td>Licor 7500DS Gas Analyzer</td>
 <td>192.168.1.15</td>
+<td>licor</td>
 </tr>
 <tr class="even">
 <td>Smart Flux</td>
 <td>192.168.1.221</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>Phoenix EEM-MA370 Energy Meter</td>
 <td>192.168.1.32</td>
+<td>energymeter</td>
 </tr>
 <tr class="even">
 <td>MODBUS relay for logger reboot</td>
 <td>192.168.1.97</td>
+<td>mvpmodbus</td>
 </tr>
 <tr class="odd">
 <td>APC power supply</td>
 <td>192.168.1.11</td>
+<td>apc</td>
 </tr>
 <tr class="even">
 <td>Ground Penetrating Radar</td>
 <td>192.168.1.161</td>
+<td>gpr</td>
 </tr>
 <tr class="odd">
 <td>Metek MRR-Pro</td>
 <td>192.168.1.20</td>
+<td>mrr</td>
 </tr>
 <tr class="even">
 <td>Vaisala CL61 data</td>
 <td>192.168.1.111</td>
+<td>ceilodata</td>
 </tr>
 <tr class="odd">
 <td>Vaisala CL61 maintenance</td>
 <td>172.17.0.2</td>
+<td>ceiloadmin</td>
+</tr>
+<tr class="even">
+<td>Cerbo GX controller</td>
+<td>192.168.1.3</td>
+<td>cerbo</td>
+</tr>
+<tr class="odd">
+<td>MVP Orange Pi computer</td>
+<td>192.168.1.199</td>
+<td>mvpi</td>
+</tr>
+<tr class="even">
+<td>RPG MW Radiometer (MWR)</td>
+<td>192.168.1.77</td>
+<td>mwr</td>
 </tr>
 </tbody>
 </table>
@@ -461,6 +508,9 @@ Note
 │   |   |   |    |   |   ├── YYMMDDHH.MET.NC
 │   |   |   |    ├── vmdata
 
+│   |   |   ├── ogre
+│   |   |   |    ├── ?????????????????????????
+
 │   |   |   ├── pics
 │   |   |   |    ├── Allsky
 │   |   |   |    |   ├── SKY_YYYYMMDD_HHMMSS.jpg
@@ -481,7 +531,10 @@ Note
 
 │   |   |   ├── power
 │   |   |   |    ├── level1
-│   |   |   |    |   ├── victron_cerbo_data_YYYYMMDD.csv</code></pre>
+│   |   |   |    |   ├── victron_cerbo_data_YYYYMMDD.csv
+
+|   |   |   ├── simba
+|   |   |   |    ├── SAMS_SIMBA_RawStream_SummitSled_YYYYmmdd.HHMMSS.dat</code></pre>
 <hr>
 <p>To sychronize data from the Cincoze computer to your local computer, one can use the Linux <code>rsync</code> command.</p>
 <pre><code># Example for syncing the entire CL61 data

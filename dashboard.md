@@ -1,6 +1,6 @@
 # Data dashboard {.unnumbered}
 
-The data dashboard for the ICECAPS MELT deployment can be found at [icecapsmelt.org/dashboard](http://www.icecapsmelt.org/dashboard).
+The data dashboard for the ICECAPS MELT deployment can be found at [https://icecapsmelt.org/data/](https://icecapsmelt.org/data/).
 
 
 ## Code structure

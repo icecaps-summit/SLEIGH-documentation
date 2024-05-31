@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./website.html" rel="next">
 <link href="./data-summaries.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -143,6 +178,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./snow-science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Snow Science</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./data-summaries.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Summaries</span></a>
   </div>
@@ -151,6 +192,18 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./santa.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">SANTA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Website</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data dashboard</span></a>
   </div>
 </li>
     </ul>
@@ -163,12 +216,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#access" id="toc-access" class="nav-link active" data-scroll-target="#access">Access</a></li>
-  <li><a href="#data-storage" id="toc-data-storage" class="nav-link" data-scroll-target="#data-storage">Data Storage</a></li>
-  <li><a href="#data-transfer" id="toc-data-transfer" class="nav-link" data-scroll-target="#data-transfer">Data Transfer</a></li>
+  <li><a href="#user-mamba-install" id="toc-user-mamba-install" class="nav-link active" data-scroll-target="#user-mamba-install">User mamba install</a></li>
+  <li><a href="#data-transfer" id="toc-data-transfer" class="nav-link" data-scroll-target="#data-transfer">Data Transfer</a>
+  <ul class="collapse">
+  <li><a href="#pre-deployment" id="toc-pre-deployment" class="nav-link" data-scroll-target="#pre-deployment">pre-deployment</a></li>
+  <li><a href="#file-compression-and-chunking-sleigh" id="toc-file-compression-and-chunking-sleigh" class="nav-link" data-scroll-target="#file-compression-and-chunking-sleigh">File compression and chunking [SLEIGH]</a></li>
+  <li><a href="#file-merging-and-uncompression-santa" id="toc-file-merging-and-uncompression-santa" class="nav-link" data-scroll-target="#file-merging-and-uncompression-santa">File merging and uncompression [SANTA]</a></li>
+  </ul></li>
   <li><a href="#website-hosting" id="toc-website-hosting" class="nav-link" data-scroll-target="#website-hosting">Website Hosting</a>
   <ul class="collapse">
-  <li><a href="#dashboard-update-pipeline" id="toc-dashboard-update-pipeline" class="nav-link" data-scroll-target="#dashboard-update-pipeline">Dashboard Update Pipeline</a></li>
+  <li><a href="#preliminary-dashboard-update-pipeline" id="toc-preliminary-dashboard-update-pipeline" class="nav-link" data-scroll-target="#preliminary-dashboard-update-pipeline">[PRELIMINARY] Dashboard Update Pipeline</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -196,20 +253,44 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The <strong>S</strong>leigh <strong>A</strong>ccess <strong>N</strong>ode for data <strong>T</strong>ransfer and <strong>A</strong>nalysis (SANTA) is a VM set up as part of the ICECAPS external tenancy on the NERC’s JASMIN computer.</p>
-<section id="access" class="level2">
-<h2 class="anchored" data-anchor-id="access">Access</h2>
-</section>
-<section id="data-storage" class="level2">
-<h2 class="anchored" data-anchor-id="data-storage">Data Storage</h2>
+<p>SANTA can be accessed at the ip address <code>192.171.169.156</code>, please ensure that you have an account with a specified ssh key setup beforehand. In order to set this up, please contact Andrew Martin, or Ryan Neely.</p>
+<section id="user-mamba-install" class="level2">
+<h2 class="anchored" data-anchor-id="user-mamba-install">User mamba install</h2>
+<p>By default, users have no installed version of conda. You can install a personal version of the miniforge mamba installation via the command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> /home/Miniforge3-Linux-x86_64.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-transfer" class="level2">
 <h2 class="anchored" data-anchor-id="data-transfer">Data Transfer</h2>
+<section id="pre-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="pre-deployment">pre-deployment</h3>
+<p>Currently, data transfer happens from the SLEIGH to SANTA from the MVPi, and after the daily summaries have been created, tarred and subsequently chunked.</p>
+</section>
+<section id="file-compression-and-chunking-sleigh" class="level3">
+<h3 class="anchored" data-anchor-id="file-compression-and-chunking-sleigh">File compression and chunking [SLEIGH]</h3>
+<p>Prior to being sent, the summarised <code>.nc</code> files and summary log <code>.txt</code> files are tarred together using the <code>tar</code> utility. The specific command used to achieve this is:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">txzc</span><span class="op">=</span><span class="va">$(</span><span class="fu">tar</span> <span class="at">-c</span> <span class="at">-I</span> <span class="st">"xz -9 -T0"</span> <span class="at">-f</span> <span class="va">$argv</span><span class="pp">[</span><span class="ss">1</span><span class="pp">]</span> <span class="va">$argv</span><span class="pp">[</span><span class="ss">2..</span><span class="pp">-</span><span class="ss">1</span><span class="pp">]</span><span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This runs the tar compression using the <code>xz</code> compression algoriithm, with the highest compression flag (<code>-9</code>). The file provided as the first argument to <code>txzc</code> will be the created archive, and the folloowing arguments are the files to be tarred.</p>
+<p>The <code>split</code> utility is then used to reduce the file size further so that any individual file sent is only 5 KiB in size:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">split</span> <span class="at">--suffix-length</span><span class="op">=</span>3 <span class="at">--bytes</span><span class="op">=</span>5K <span class="va">$argv</span><span class="pp">[</span><span class="ss">1</span><span class="pp">]</span> split/<span class="va">$argv</span><span class="pp">[</span><span class="ss">1</span><span class="pp">]</span>. <span class="at">--verbose</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will create 5 KiB files of the name <code>split/$argv[1].[aaa-zzz]</code>, incrementing the three character suffix until enough files have been created to contain all the data present in the orginal data.</p>
+<p>The files are then ready to be transferred to SANTA, either via rsync (pre-deployment) or via <strong>[INSERT METHOD HERE FOR IRIDIUM TRANSFER]</strong></p>
+</section>
+<section id="file-merging-and-uncompression-santa" class="level3">
+<h3 class="anchored" data-anchor-id="file-merging-and-uncompression-santa">File merging and uncompression [SANTA]</h3>
+<p>Once the files have arrived on SANTA, they can be found in the directory <code>/data/daily_summaries/YYYYMMDD/split</code>. In order to obtain the original summary files, two commands must be used.</p>
+<p>Firstly, the files need to be merged to create the original tar archive:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /data/daily_summaries/YYYYMMDD</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> split/<span class="pp">*</span> <span class="op">&gt;</span> summary.tar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Next, the decompression algorithm needs to be performed, specifically using the same compression dictionary settings as were provided in the <code>txzc</code> compression command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-x</span> <span class="at">-I</span> <span class="st">"xz -9 -T0"</span> <span class="at">-f</span> summary.tar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This should produce the original files and place them in the directory <code>/data/daily_summaries/YYYYMMDD</code>. From here, they can be moved to the appropritae directories for the data dashobard to access.</p>
+</section>
 </section>
 <section id="website-hosting" class="level2">
 <h2 class="anchored" data-anchor-id="website-hosting">Website Hosting</h2>
 <p>We have a website! <a href="http://www.icecapsmelt.org">http://www.icecapsmelt.org</a></p>
-<section id="dashboard-update-pipeline" class="level3">
-<h3 class="anchored" data-anchor-id="dashboard-update-pipeline">Dashboard Update Pipeline</h3>
+<section id="preliminary-dashboard-update-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="preliminary-dashboard-update-pipeline">[PRELIMINARY] Dashboard Update Pipeline</h3>
 <ol type="1">
 <li>Perform <code>git pull</code> on dashboard repo to obtain the latest data visualisation code.</li>
 <li>Ensure that a <code>data_dir.txt</code> file in the root of the repo exists, and is contained in the repo’s <code>.gitignore</code>. This will allow different users of the repository to securely link to locally stored data.</li>
@@ -636,6 +717,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./website.html" class="pagination-link" aria-label="Website">
+        <span class="nav-page-text">Website</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

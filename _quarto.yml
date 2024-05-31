@@ -12,7 +12,7 @@ book:
     - getting-started.md
     - services.md
     - configuration.md
-    - remote.md
+    - connections.md
     - manuals.md
     - snow-science.md
     - data-summaries.qmd
