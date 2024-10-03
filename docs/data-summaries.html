@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>SLEIGH Documentation - Data Summaries</title>
+<title>Data Summaries – SLEIGH Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -107,13 +107,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-summaries.html">Data Summaries</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -161,8 +161,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./remote.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Remote Connection</span></a>
+  <a href="./connections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connections</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -239,32 +239,40 @@ window.Quarto = {
   <li><a href="#variables-3" id="toc-variables-3" class="nav-link" data-scroll-target="#variables-3">Variables</a></li>
   <li><a href="#ncdump-5" id="toc-ncdump-5" class="nav-link" data-scroll-target="#ncdump-5">ncdump</a></li>
   </ul></li>
-  <li><a href="#asfs" id="toc-asfs" class="nav-link" data-scroll-target="#asfs">ASFS</a>
+  <li><a href="#asfs-new" id="toc-asfs-new" class="nav-link" data-scroll-target="#asfs-new">ASFS – NEW</a>
   <ul class="collapse">
   <li><a href="#location-4" id="toc-location-4" class="nav-link" data-scroll-target="#location-4">Location</a></li>
   <li><a href="#dimensions-4" id="toc-dimensions-4" class="nav-link" data-scroll-target="#dimensions-4">Dimensions</a></li>
   <li><a href="#variables-4" id="toc-variables-4" class="nav-link" data-scroll-target="#variables-4">Variables</a></li>
+  <li><a href="#ncdump-6" id="toc-ncdump-6" class="nav-link" data-scroll-target="#ncdump-6">ncdump</a></li>
   </ul></li>
-  <li><a href="#blesensors" id="toc-blesensors" class="nav-link" data-scroll-target="#blesensors">blesensors</a>
+  <li><a href="#gpr" id="toc-gpr" class="nav-link" data-scroll-target="#gpr">GPR</a>
   <ul class="collapse">
   <li><a href="#location-5" id="toc-location-5" class="nav-link" data-scroll-target="#location-5">Location</a></li>
   <li><a href="#dimensions-5" id="toc-dimensions-5" class="nav-link" data-scroll-target="#dimensions-5">Dimensions</a></li>
-  <li><a href="#variables-5" id="toc-variables-5" class="nav-link" data-scroll-target="#variables-5">Variables</a></li>
-  <li><a href="#head-2" id="toc-head-2" class="nav-link" data-scroll-target="#head-2">head</a></li>
+  <li><a href="#ghz" id="toc-ghz" class="nav-link" data-scroll-target="#ghz">5 GHz</a></li>
+  <li><a href="#ghz-1" id="toc-ghz-1" class="nav-link" data-scroll-target="#ghz-1">7 GHz</a></li>
   </ul></li>
-  <li><a href="#ogre" id="toc-ogre" class="nav-link" data-scroll-target="#ogre">OGRE</a>
+  <li><a href="#blesensors" id="toc-blesensors" class="nav-link" data-scroll-target="#blesensors">blesensors</a>
   <ul class="collapse">
   <li><a href="#location-6" id="toc-location-6" class="nav-link" data-scroll-target="#location-6">Location</a></li>
   <li><a href="#dimensions-6" id="toc-dimensions-6" class="nav-link" data-scroll-target="#dimensions-6">Dimensions</a></li>
-  <li><a href="#variables-6" id="toc-variables-6" class="nav-link" data-scroll-target="#variables-6">Variables</a></li>
-  <li><a href="#ncdump-6" id="toc-ncdump-6" class="nav-link" data-scroll-target="#ncdump-6">ncdump</a></li>
+  <li><a href="#variables-7" id="toc-variables-7" class="nav-link" data-scroll-target="#variables-7">Variables</a></li>
+  <li><a href="#head" id="toc-head" class="nav-link" data-scroll-target="#head">head</a></li>
   </ul></li>
-  <li><a href="#simba" id="toc-simba" class="nav-link" data-scroll-target="#simba">SIMBA</a>
+  <li><a href="#ogre" id="toc-ogre" class="nav-link" data-scroll-target="#ogre">OGRE</a>
   <ul class="collapse">
   <li><a href="#location-7" id="toc-location-7" class="nav-link" data-scroll-target="#location-7">Location</a></li>
   <li><a href="#dimensions-7" id="toc-dimensions-7" class="nav-link" data-scroll-target="#dimensions-7">Dimensions</a></li>
-  <li><a href="#variables-7" id="toc-variables-7" class="nav-link" data-scroll-target="#variables-7">Variables</a></li>
-  <li><a href="#ncdump-7" id="toc-ncdump-7" class="nav-link" data-scroll-target="#ncdump-7">ncdump</a></li>
+  <li><a href="#variables-8" id="toc-variables-8" class="nav-link" data-scroll-target="#variables-8">Variables</a></li>
+  <li><a href="#ncdump-9" id="toc-ncdump-9" class="nav-link" data-scroll-target="#ncdump-9">ncdump</a></li>
+  </ul></li>
+  <li><a href="#simba" id="toc-simba" class="nav-link" data-scroll-target="#simba">SIMBA</a>
+  <ul class="collapse">
+  <li><a href="#location-8" id="toc-location-8" class="nav-link" data-scroll-target="#location-8">Location</a></li>
+  <li><a href="#dimensions-8" id="toc-dimensions-8" class="nav-link" data-scroll-target="#dimensions-8">Dimensions</a></li>
+  <li><a href="#variables-9" id="toc-variables-9" class="nav-link" data-scroll-target="#variables-9">Variables</a></li>
+  <li><a href="#ncdump-10" id="toc-ncdump-10" class="nav-link" data-scroll-target="#ncdump-10">ncdump</a></li>
   </ul></li>
   <li><a href="#end" id="toc-end" class="nav-link" data-scroll-target="#end">end</a></li>
   </ul>
@@ -316,7 +324,7 @@ window.Quarto = {
 </section>
 <section id="dimensions" class="level3">
 <h3 class="anchored" data-anchor-id="dimensions">Dimensions</h3>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <thead>
 <tr class="header">
 <th>dimension</th>
@@ -345,7 +353,7 @@ window.Quarto = {
 </section>
 <section id="variables" class="level3">
 <h3 class="anchored" data-anchor-id="variables">Variables</h3>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <colgroup>
 <col style="width: 9%">
 <col style="width: 9%">
@@ -821,7 +829,7 @@ group: status {
 </section>
 <section id="dimensions-1" class="level3">
 <h3 class="anchored" data-anchor-id="dimensions-1">Dimensions</h3>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <thead>
 <tr class="header">
 <th>dimension</th>
@@ -852,7 +860,7 @@ group: status {
 <h3 class="anchored" data-anchor-id="variables-1">Variables</h3>
 <section id="brt" class="level4">
 <h4 class="anchored" data-anchor-id="brt">BRT</h4>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -978,7 +986,7 @@ variables:
 </section>
 <section id="hkd" class="level4">
 <h4 class="anchored" data-anchor-id="hkd">HKD</h4>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -1161,7 +1169,7 @@ variables:
 </section>
 <section id="met" class="level4">
 <h4 class="anchored" data-anchor-id="met">MET</h4>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -1321,7 +1329,7 @@ variables:
 </section>
 <section id="dimensions-2" class="level3">
 <h3 class="anchored" data-anchor-id="dimensions-2">Dimensions</h3>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <thead>
 <tr class="header">
 <th>dimension</th>
@@ -1345,7 +1353,7 @@ variables:
 </section>
 <section id="variables-2" class="level3">
 <h3 class="anchored" data-anchor-id="variables-2">Variables</h3>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <colgroup>
 <col style="width: 9%">
 <col style="width: 9%">
@@ -1489,7 +1497,7 @@ variables:
 </section>
 <section id="dimensions-3" class="level3">
 <h3 class="anchored" data-anchor-id="dimensions-3">Dimensions</h3>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <thead>
 <tr class="header">
 <th>dimension</th>
@@ -1523,7 +1531,7 @@ variables:
 </section>
 <section id="variables-3" class="level3">
 <h3 class="anchored" data-anchor-id="variables-3">Variables</h3>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <colgroup>
 <col style="width: 9%">
 <col style="width: 9%">
@@ -1851,21 +1859,24 @@ variables:
 </div>
 </section>
 </section>
-<section id="asfs" class="level2">
-<h2 class="anchored" data-anchor-id="asfs">ASFS</h2>
-<p>The ASFS comes in tabularised <code>.dat</code> formats, and in two data streams, <code>fast</code> and <code>sci</code>. The head of two equivalent files for each datastream can be seen below.</p>
+<section id="asfs-new" class="level2">
+<h2 class="anchored" data-anchor-id="asfs-new">ASFS – NEW</h2>
+<p>This is a summary of the ASFS files created by MG, level1 processed .nc files (yay for binary formats).</p>
 <section id="location-4" class="level3">
 <h3 class="anchored" data-anchor-id="location-4">Location</h3>
 <pre><code>data
 ├── asfs
-    ├── raw
-        ├── crd
-            ├── icecaps_asfs_fast_YYYYmmddHHMM.dat 
-            ├── icecaps_asfs_sci_YYYYmmddHHMM.dat </code></pre>
+    ├── level0
+    |   ├── ...
+    |
+    ├── level1
+    |   ├── slow.level1.melt-sleighsfs.YYYYmmdd.HHMMSS.nc
+    |
+    ├── raw/crd/...</code></pre>
 </section>
 <section id="dimensions-4" class="level3">
 <h3 class="anchored" data-anchor-id="dimensions-4">Dimensions</h3>
-<table class="table-striped table-bordered table">
+<table class="table-striped table-bordered caption-top table">
 <thead>
 <tr class="header">
 <th>dimension</th>
@@ -1875,16 +1886,11 @@ variables:
 </thead>
 <tbody>
 <tr class="odd">
-<td>time - sci</td>
+<td>time</td>
 <td>1 Minute</td>
-<td>(unlimitted)</td>
+<td>1440 per day</td>
 </tr>
 <tr class="even">
-<td>time - fast</td>
-<td>10 seconds</td>
-<td>(unlimitted)</td>
-</tr>
-<tr class="odd">
 <td>time’</td>
 <td>15 minutes</td>
 <td>96 per day</td>
@@ -1894,9 +1900,20 @@ variables:
 </section>
 <section id="variables-4" class="level3">
 <h3 class="anchored" data-anchor-id="variables-4">Variables</h3>
-<section id="fast" class="level4">
-<h4 class="anchored" data-anchor-id="fast">Fast</h4>
-<table class="table-striped table-bordered table">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All of the variables in the .nc files are described below. However, only the _Avg values are considered (currently) in the summarisation process.</p>
+</div>
+</div>
+<table class="table-striped table-bordered caption-top table">
 <colgroup>
 <col style="width: 9%">
 <col style="width: 9%">
@@ -1917,132 +1934,1266 @@ variables:
 </thead>
 <tbody>
 <tr class="odd">
-<td>TIMESTAMP</td>
+<td>time</td>
 <td>time</td>
 <td>time’</td>
 <td>count</td>
 <td>1</td>
-<td>Number of data records per 15 minute period, proxy for instrument uptime</td>
+<td>number of data records made in 15 minute period</td>
 </tr>
 <tr class="even">
-<td>metek_x_out</td>
-<td>time</td>
-<td>time’</td>
+<td>metek_InclX_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>deg</td>
+<td>sensor inclinometer pitch angle</td>
+</tr>
+<tr class="odd">
+<td>metek_InclY_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>deg</td>
+<td>sensor inclinometer roll angle</td>
+</tr>
+<tr class="even">
+<td>PTemp_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>logger electronics panel temperature</td>
+</tr>
+<tr class="odd">
+<td>batt_volt_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>V</td>
+<td>voltage of the power source supplying the logger</td>
+</tr>
+<tr class="even">
+<td>sr30_swu_DegC_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>average case temperature of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>sr30_swu_Irr_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>average irradiance of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>sr30_swu_IrrC_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>average irradiance of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>sr30_swd_DegC_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>average case temperature of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>sr30_swd_Irr_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>average irradiance of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>sr30_swd_IrrC_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>average irradiance of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>apogee_body_T_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>average of the sensor body temperature during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>apogee_targ_T_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>average of the sensor target 8-14 micron brightness temperature during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>sr50_dist_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>m</td>
+<td>average of the uncorrected distance between the sensor and the surface during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>sr50_qc_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>unitless</td>
+<td>quality number of the distance measurement</td>
+</tr>
+<tr class="even">
+<td>vaisala_RH_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>%</td>
+<td>average of the relative humidity during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>vaisala_T_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>average of the air temperature during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>vaisala_P_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>hPa</td>
+<td>average of the atmospheric pressure during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>ir20_lwu_mV_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>average thermopile voltage of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>ir20_lwu_DegC_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>average case temperature of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>ir20_lwu_Wm2_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>average flux from the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>ir20_lwd_mV_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>average thermopile voltage of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>ir20_lwd_DegC_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>average case temperature of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>ir20_lwd_Wm2_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>average flux from the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>fp_A_mV_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>average thermopile voltage during 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>fp_A_Wm2_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>average flux during 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>fp_B_mV_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>average thermopile voltage during 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>fp_B_Wm2_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>average flux during 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>licor_co2_str_out_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>%</td>
+<td>average CO2 signal strength diagnostic during 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>sr30_swu_fantach_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>Hz</td>
+<td>average fan speed of the downward-facing (SWU) pyranometer during 1 min averaging period</td>
+</tr>
+<tr class="odd">
+<td>sr30_swu_heatA_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mA</td>
+<td>average case heating current of the downward-facing sensor during 1 min averaging period</td>
+</tr>
+<tr class="even">
+<td>sr30_swd_fantach_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>Hz</td>
+<td>average fan speed of the upward-facing sensor during 1 min averaging period</td>
+</tr>
+<tr class="odd">
+<td>sr30_swd_heatA_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mA</td>
+<td>average case heating current of the upward-facing sensor during 1 min averaging period</td>
+</tr>
+<tr class="even">
+<td>ir20_lwu_fan_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>average fan voltage status signal of the downward-facing ventilator during the 1 min averaging period</td>
+</tr>
+<tr class="odd">
+<td>ir20_lwd_fan_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>average fan voltage status signal of the upward-facing ventilator during the 1 min averaging period</td>
+</tr>
+<tr class="even">
+<td>sr30_swu_tilt_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>deg</td>
+<td>horizontal tilt of the downward-facing sensor</td>
+</tr>
+<tr class="odd">
+<td>sr30_swd_tilt_Avg</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>deg</td>
+<td>horizontal tilt of the upward-facing sensor</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>sr30_swu_DegC_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>standard deviation of the case of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>sr30_swu_Irr_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>standard deviation of the irradiance of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>sr30_swu_IrrC_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>standard deviation of the temperature-corrected irradiance of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>sr30_swd_DegC_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>standard deviation of the case of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>sr30_swd_Irr_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>standard deviation of the irradiance of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>sr30_swd_IrrC_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>standard deviation of the temperature-corrected irradiance of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>apogee_body_T_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>standard deviation of the infrared thermometer body temperature during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>apogee_targ_T_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>standard deviation of the the sensor target 8-14 micron brightness temperature during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>sr50_dist_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>m</td>
+<td>standard deviation of the uncorrected distance between the sensor and the surface during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>vaisala_RH_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>%</td>
+<td>standard deviation of the relative humidity during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>vaisala_T_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>standard deviation of the air temperature during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>vaisala_P_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>hPa</td>
+<td>standard deviation of the atmospheric pressure during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>ir20_lwu_mV_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>standard deviation of the thermopile voltage of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>ir20_lwu_DegC_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>standard deviation of the case temperature of the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>ir20_lwu_Wm2_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>standard deviation of the flux from the downward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>ir20_lwd_mV_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>standard deviation of the thermopile voltage of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>ir20_lwd_DegC_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>degC</td>
+<td>standard deviation of the case temperature of the upward-facing sensor during the 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>ir20_lwd_Wm2_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>standard deviation of the flux from the sensor pyrgeometer during the 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>fp_A_mV_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>standard deviation of the thermopile voltage during 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>fp_A_Wm2_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>standard deviation of the flux during 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>fp_B_mV_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>mV</td>
+<td>standard deviation of the thermopile voltage during 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>fp_B_Wm2_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>W/m2</td>
+<td>standard deviation of the flux during 1 min averaging interval</td>
+</tr>
+<tr class="even">
+<td>licor_co2_str_out_Std</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>%</td>
+<td>standard deviation of the CO2 signal strength diagnostic during 1 min averaging interval</td>
+</tr>
+<tr class="odd">
+<td>wspd_u_mean</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
 <td>mean, std</td>
 <td>m/s</td>
-<td>x-component of wind speed</td>
+<td>Metek u-component</td>
 </tr>
-<tr class="odd">
-<td>metek_y_out</td>
-<td>time</td>
-<td>time’</td>
+<tr class="even">
+<td>wspd_v_mean</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
 <td>mean, std</td>
 <td>m/s</td>
-<td>y-component of wind speed</td>
+<td>Metek v-component</td>
 </tr>
-<tr class="even">
-<td>metek_z_out</td>
-<td>time</td>
-<td>time’</td>
+<tr class="odd">
+<td>wspd_w_mean</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
 <td>mean, std</td>
 <td>m/s</td>
-<td>z-component of wind speed</td>
-</tr>
-<tr class="odd">
-<td>metek_T_out</td>
-<td>time</td>
-<td>time’</td>
-<td>mean, std</td>
-<td>°C</td>
-<td>temperature recorded by metek</td>
+<td>Metek w-component</td>
 </tr>
 <tr class="even">
-<td>metek_senspathstate_out</td>
-<td>time</td>
-<td>time’</td>
-<td>mean, min, max</td>
-<td>1</td>
-<td></td>
+<td>wspd_vec_mean</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
+<td>mean, std</td>
+<td>m/s</td>
+<td>average metek wind speed</td>
 </tr>
 <tr class="odd">
-<td>licor_co2_out</td>
-<td>time</td>
-<td>time’</td>
+<td>wdir_vec_mean</td>
+<td>(‘time’,)</td>
+<td>(‘time’,)’</td>
 <td>mean, std</td>
-<td>mg/m3</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>licor_h2o_out</td>
-<td>time</td>
-<td>time’</td>
-<td>mean, std</td>
-<td>g/m3</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>licor_pr_out</td>
-<td>time</td>
-<td>time’</td>
-<td>mean, std</td>
-<td>Pa</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>licor_diag_out</td>
-<td>time</td>
-<td>time’</td>
-<td>mean, min, max</td>
-<td>1</td>
-<td></td>
+<td>degrees</td>
+<td>average metek wind direction</td>
 </tr>
 </tbody>
 </table>
-<section id="head" class="level5">
-<h5 class="anchored" data-anchor-id="head">head</h5>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="head">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+</section>
+<section id="ncdump-6" class="level3">
+<h3 class="anchored" data-anchor-id="ncdump-6">ncdump</h3>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="ncdump">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-head
+ncdump
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>head -n 6 data/asfs/raw/crd/icecaps_asfs_fast_202307292200.dat 
+<pre><code>ncdump -h asfs/level1/slow.level1.melt-sleighsfs.20240315.000000.nc
 
 
-"TOA5","44341","CR1000X","44341","CR1000X.Std.06.01","CPU:ICECAPS-MELT.CR1X","60711","fast"
-"TIMESTAMP","metek_x_out","metek_y_out","metek_z_out","metek_T_out","metek_senspathstate_out","licor_co2_out","licor_h2o_out","licor_pr_out","licor_diag_out"
-"TS","m/s","m/s","m/s","degC","N","mg/m3","g/m3","Pa","code"
-"","Smp","Smp","Smp","Smp","Smp","Smp","Smp","Smp","Smp"
-"2023-07-29 21:21:40",-9.319,-5.822,4.278,-18.775,0,557.718,2.06314,67.9762,255
-"2023-07-29 21:21:50",-4.601,-1.652,0.196,-22.591,0,557.718,2.06314,67.9762,255</code></pre>
+
+
+
+netcdf slow.level1.melt-sleighsfs.20240315.000000 {
+dimensions:
+    time = UNLIMITED ; // (1440 currently)
+variables:
+    int base_time ;
+        base_time:string = "2024-03-15T00:00:00.000000" ;
+        base_time:long_name = "Base time since Epoch" ;
+        base_time:units = "seconds since 1970-01-01T00:00:00.000000" ;
+        base_time:ancillary_variables = "time_offset" ;
+    double time(time) ;
+        time:units = "seconds since 2024-03-15T00:00:00.000000" ;
+        time:delta_t = "0000-00-00 00:01:00" ;
+        time:long_name = "Time offset from midnight" ;
+        time:calendar = "standard" ;
+    double time_offset(time) ;
+        time_offset:units = "seconds since 2024-03-15T00:00:00.000000" ;
+        time_offset:delta_t = "0000-00-00 00:01:00" ;
+        time_offset:long_name = "Time offset from base_time" ;
+        time_offset:calendar = "standard" ;
+    double metek_InclX_Avg(time) ;
+        metek_InclX_Avg:units = "deg" ;
+        metek_InclX_Avg:long_name = "sensor inclinometer pitch angle" ;
+        metek_InclX_Avg:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+        metek_InclX_Avg:methods = "inclination sensor embedded in anemometer sensor head; postive is anticlockwise about sonic east-west axis when viewing east to west; protocol RS-422" ;
+        metek_InclX_Avg:height = "4.62 m" ;
+        metek_InclX_Avg:location = "SLEIGH mast" ;
+        metek_InclX_Avg:percent_missing = 0. ;
+        metek_InclX_Avg:missing_value = -9999. ;
+    double metek_InclY_Avg(time) ;
+        metek_InclY_Avg:units = "deg" ;
+        metek_InclY_Avg:long_name = "sensor inclinometer roll angle" ;
+        metek_InclY_Avg:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+        metek_InclY_Avg:methods = "inclination sensor embedded in anemometer sensor head; postive is anticlockwise about sonic south-north axis when viewing south to north; protocol RS-422" ;
+        metek_InclY_Avg:height = "4.62 m" ;
+        metek_InclY_Avg:location = "SLEIGH mast" ;
+        metek_InclY_Avg:percent_missing = 0. ;
+        metek_InclY_Avg:missing_value = -9999. ;
+    double PTemp_Avg(time) ;
+        PTemp_Avg:units = "degC" ;
+        PTemp_Avg:long_name = "logger electronics panel temperature" ;
+        PTemp_Avg:instrument = "Campbell CR1000X" ;
+        PTemp_Avg:methods = "" ;
+        PTemp_Avg:height = "N/A" ;
+        PTemp_Avg:location = "logger box" ;
+        PTemp_Avg:percent_missing = 0. ;
+        PTemp_Avg:missing_value = -9999. ;
+    double batt_volt_Avg(time) ;
+        batt_volt_Avg:units = "V" ;
+        batt_volt_Avg:long_name = "voltage of the power source supplying the logger" ;
+        batt_volt_Avg:instrument = "CCampbell CR1000X" ;
+        batt_volt_Avg:methods = "" ;
+        batt_volt_Avg:height = "N/A" ;
+        batt_volt_Avg:location = "logger box" ;
+        batt_volt_Avg:percent_missing = 0. ;
+        batt_volt_Avg:missing_value = -9999. ;
+    double sr30_swu_DegC_Avg(time) ;
+        sr30_swu_DegC_Avg:units = "degC" ;
+        sr30_swu_DegC_Avg:long_name = "average case temperature of the downward-facing sensor during the 1 min averaging interval" ;
+        sr30_swu_DegC_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swu_DegC_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swu_DegC_Avg:height = "2.8 m" ;
+        sr30_swu_DegC_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_DegC_Avg:percent_missing = 0. ;
+        sr30_swu_DegC_Avg:missing_value = -9999. ;
+    double sr30_swu_DegC_Std(time) ;
+        sr30_swu_DegC_Std:units = "degC" ;
+        sr30_swu_DegC_Std:long_name = "standard deviation of the case of the downward-facing sensor during the 1 min averaging interval" ;
+        sr30_swu_DegC_Std:instrument = "Hukseflux SR30" ;
+        sr30_swu_DegC_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swu_DegC_Std:height = "2.8 m" ;
+        sr30_swu_DegC_Std:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_DegC_Std:percent_missing = 0. ;
+        sr30_swu_DegC_Std:missing_value = -9999. ;
+    double sr30_swu_Irr_Avg(time) ;
+        sr30_swu_Irr_Avg:units = "W/m2" ;
+        sr30_swu_Irr_Avg:long_name = "average irradiance of the downward-facing sensor during the 1 min averaging interval" ;
+        sr30_swu_Irr_Avg:instrument = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swu_Irr_Avg:methods = "RS-485" ;
+        sr30_swu_Irr_Avg:height = "2.8 m" ;
+        sr30_swu_Irr_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_Irr_Avg:percent_missing = 0. ;
+        sr30_swu_Irr_Avg:missing_value = -9999. ;
+    double sr30_swu_Irr_Std(time) ;
+        sr30_swu_Irr_Std:units = "W/m2" ;
+        sr30_swu_Irr_Std:long_name = "standard deviation of the irradiance of the downward-facing sensor during the 1 min averaging interval" ;
+        sr30_swu_Irr_Std:instrument = "Hukseflux SR30" ;
+        sr30_swu_Irr_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swu_Irr_Std:height = "2.8 m" ;
+        sr30_swu_Irr_Std:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_Irr_Std:percent_missing = 0. ;
+        sr30_swu_Irr_Std:missing_value = -9999. ;
+    double sr30_swu_IrrC_Avg(time) ;
+        sr30_swu_IrrC_Avg:units = "W/m2" ;
+        sr30_swu_IrrC_Avg:long_name = "average irradiance of the downward-facing sensor during the 1 min averaging interval" ;
+        sr30_swu_IrrC_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swu_IrrC_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swu_IrrC_Avg:height = "2.8 m" ;
+        sr30_swu_IrrC_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_IrrC_Avg:percent_missing = 0. ;
+        sr30_swu_IrrC_Avg:missing_value = -9999. ;
+    double sr30_swu_IrrC_Std(time) ;
+        sr30_swu_IrrC_Std:units = "W/m2" ;
+        sr30_swu_IrrC_Std:long_name = "standard deviation of the temperature-corrected irradiance of the downward-facing sensor during the 1 min averaging interval" ;
+        sr30_swu_IrrC_Std:instrument = "Hukseflux SR30" ;
+        sr30_swu_IrrC_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swu_IrrC_Std:height = "2.8 m" ;
+        sr30_swu_IrrC_Std:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_IrrC_Std:percent_missing = 0. ;
+        sr30_swu_IrrC_Std:missing_value = -9999. ;
+    double sr30_swd_DegC_Avg(time) ;
+        sr30_swd_DegC_Avg:units = "degC" ;
+        sr30_swd_DegC_Avg:long_name = "average case temperature of the upward-facing sensor during the 1 min averaging interval" ;
+        sr30_swd_DegC_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swd_DegC_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swd_DegC_Avg:height = "2.8 m" ;
+        sr30_swd_DegC_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_DegC_Avg:percent_missing = 0. ;
+        sr30_swd_DegC_Avg:missing_value = -9999. ;
+    double sr30_swd_DegC_Std(time) ;
+        sr30_swd_DegC_Std:units = "degC" ;
+        sr30_swd_DegC_Std:long_name = "standard deviation of the case of the upward-facing sensor during the 1 min averaging interval" ;
+        sr30_swd_DegC_Std:instrument = "Hukseflux SR30" ;
+        sr30_swd_DegC_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swd_DegC_Std:height = "2.8 m" ;
+        sr30_swd_DegC_Std:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_DegC_Std:percent_missing = 0. ;
+        sr30_swd_DegC_Std:missing_value = -9999. ;
+    double sr30_swd_Irr_Avg(time) ;
+        sr30_swd_Irr_Avg:units = "W/m2" ;
+        sr30_swd_Irr_Avg:long_name = "average irradiance of the upward-facing sensor during the 1 min averaging interval" ;
+        sr30_swd_Irr_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swd_Irr_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swd_Irr_Avg:height = "2.8 m" ;
+        sr30_swd_Irr_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_Irr_Avg:percent_missing = 0. ;
+        sr30_swd_Irr_Avg:missing_value = -9999. ;
+    double sr30_swd_Irr_Std(time) ;
+        sr30_swd_Irr_Std:units = "W/m2" ;
+        sr30_swd_Irr_Std:long_name = "standard deviation of the irradiance of the upward-facing sensor during the 1 min averaging interval" ;
+        sr30_swd_Irr_Std:instrument = "Hukseflux SR30" ;
+        sr30_swd_Irr_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swd_Irr_Std:height = "2.8 m" ;
+        sr30_swd_Irr_Std:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_Irr_Std:percent_missing = 0. ;
+        sr30_swd_Irr_Std:missing_value = -9999. ;
+    double sr30_swd_IrrC_Avg(time) ;
+        sr30_swd_IrrC_Avg:units = "W/m2" ;
+        sr30_swd_IrrC_Avg:long_name = "average irradiance of the upward-facing sensor during the 1 min averaging interval" ;
+        sr30_swd_IrrC_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swd_IrrC_Avg:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swd_IrrC_Avg:height = "2.8 m" ;
+        sr30_swd_IrrC_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_IrrC_Avg:percent_missing = 0. ;
+        sr30_swd_IrrC_Avg:missing_value = -9999. ;
+    double sr30_swd_IrrC_Std(time) ;
+        sr30_swd_IrrC_Std:units = "W/m2" ;
+        sr30_swd_IrrC_Std:long_name = "standard deviation of the temperature-corrected irradiance of the upward-facing sensor during the 1 min averaging interval" ;
+        sr30_swd_IrrC_Std:instrument = "Hukseflux SR30" ;
+        sr30_swd_IrrC_Std:methods = "thermopile pyranometer; RS-485 protocol" ;
+        sr30_swd_IrrC_Std:height = "2.8 m" ;
+        sr30_swd_IrrC_Std:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_IrrC_Std:percent_missing = 0. ;
+        sr30_swd_IrrC_Std:missing_value = -9999. ;
+    double apogee_body_T_Avg(time) ;
+        apogee_body_T_Avg:units = "degC" ;
+        apogee_body_T_Avg:long_name = "average of the sensor body temperature during the 1 min averaging interval" ;
+        apogee_body_T_Avg:instrument = "Apogee SI-4H1-SS IRT" ;
+        apogee_body_T_Avg:methods = "infrared thermometer; SDI-12 protocol" ;
+        apogee_body_T_Avg:height = "2.8 m" ;
+        apogee_body_T_Avg:location = "SLEIGH boom (top of station)" ;
+        apogee_body_T_Avg:percent_missing = 0. ;
+        apogee_body_T_Avg:missing_value = -9999. ;
+    double apogee_body_T_Std(time) ;
+        apogee_body_T_Std:units = "degC" ;
+        apogee_body_T_Std:long_name = "standard deviation of the infrared thermometer body temperature during the 1 min averaging interval" ;
+        apogee_body_T_Std:instrument = "Apogee SI-4H1-SS IRT" ;
+        apogee_body_T_Std:methods = "infrared thermometer; SDI-12 protocol" ;
+        apogee_body_T_Std:height = "2.8 m" ;
+        apogee_body_T_Std:location = "SLEIGH boom (top of station)" ;
+        apogee_body_T_Std:percent_missing = 0. ;
+        apogee_body_T_Std:missing_value = -9999. ;
+    double apogee_targ_T_Avg(time) ;
+        apogee_targ_T_Avg:units = "degC" ;
+        apogee_targ_T_Avg:long_name = "average of the sensor target 8-14 micron brightness temperature during the 1 min averaging interval" ;
+        apogee_targ_T_Avg:instrument = "Apogee SI-4H1-SS IRT" ;
+        apogee_targ_T_Avg:methods = "thermopile infrared thermometer; SDI-12 protocol" ;
+        apogee_targ_T_Avg:height = "surface" ;
+        apogee_targ_T_Avg:location = "SLEIGH boom (top of station)" ;
+        apogee_targ_T_Avg:percent_missing = 0. ;
+        apogee_targ_T_Avg:missing_value = -9999. ;
+    double apogee_targ_T_Std(time) ;
+        apogee_targ_T_Std:units = "degC" ;
+        apogee_targ_T_Std:long_name = "standard deviation of the the sensor target 8-14 micron brightness temperature during the 1 min averaging interval" ;
+        apogee_targ_T_Std:instrument = "Apogee SI-4H1-SS IRT" ;
+        apogee_targ_T_Std:methods = "thermopile infrared thermometer; SDI-12 protocol" ;
+        apogee_targ_T_Std:height = "surface" ;
+        apogee_targ_T_Std:location = "SLEIGH boom (top of station)" ;
+        apogee_targ_T_Std:percent_missing = 0. ;
+        apogee_targ_T_Std:missing_value = -9999. ;
+    double sr50_dist_Avg(time) ;
+        sr50_dist_Avg:units = "m" ;
+        sr50_dist_Avg:long_name = "average of the uncorrected distance between the sensor and the surface during the 1 min averaging interval" ;
+        sr50_dist_Avg:instrument = "SR50A" ;
+        sr50_dist_Avg:methods = "acoustic ranger; SDI-12 protocol" ;
+        sr50_dist_Avg:height = "surface" ;
+        sr50_dist_Avg:location = "SLEIGH boom (top of station)" ;
+        sr50_dist_Avg:percent_missing = 0. ;
+        sr50_dist_Avg:missing_value = -9999. ;
+    double sr50_dist_Std(time) ;
+        sr50_dist_Std:units = "m" ;
+        sr50_dist_Std:long_name = "standard deviation of the uncorrected distance between the sensor and the surface during the 1 min averaging interval" ;
+        sr50_dist_Std:instrument = "SR50A" ;
+        sr50_dist_Std:methods = "acoustic ranger; SDI-12 protocol" ;
+        sr50_dist_Std:height = "surface" ;
+        sr50_dist_Std:location = "SLEIGH boom (top of station)" ;
+        sr50_dist_Std:percent_missing = 0. ;
+        sr50_dist_Std:missing_value = -9999. ;
+    double sr50_qc_Avg(time) ;
+        sr50_qc_Avg:units = "unitless" ;
+        sr50_qc_Avg:long_name = "quality number of the distance measurement" ;
+        sr50_qc_Avg:instrument = "SR50A" ;
+        sr50_qc_Avg:methods = "acoustic ranger; SDI-12 protocol" ;
+        sr50_qc_Avg:height = "surface" ;
+        sr50_qc_Avg:location = "SLEIGH boom (top of station)" ;
+        sr50_qc_Avg:percent_missing = 0. ;
+        sr50_qc_Avg:missing_value = -9999. ;
+    double vaisala_RH_Avg(time) ;
+        vaisala_RH_Avg:units = "%" ;
+        vaisala_RH_Avg:long_name = "average of the relative humidity during the 1 min averaging interval" ;
+        vaisala_RH_Avg:instrument = "Vaisala PTU300" ;
+        vaisala_RH_Avg:methods = "meteorology sensor, heated capacitive thin-film polymer; RS-485 protocol" ;
+        vaisala_RH_Avg:height = "2.60 m" ;
+        vaisala_RH_Avg:location = "SLEIGH boom (top of station)" ;
+        vaisala_RH_Avg:percent_missing = 0. ;
+        vaisala_RH_Avg:missing_value = -9999. ;
+    double vaisala_RH_Std(time) ;
+        vaisala_RH_Std:units = "%" ;
+        vaisala_RH_Std:long_name = "standard deviation of the relative humidity during the 1 min averaging interval" ;
+        vaisala_RH_Std:instrument = "Vaisala PTU300" ;
+        vaisala_RH_Std:methods = "meteorology sensor, heated capacitive thin-film polymer; RS-485 protocol" ;
+        vaisala_RH_Std:height = "2.60 m" ;
+        vaisala_RH_Std:location = "SLEIGH boom (top of station)" ;
+        vaisala_RH_Std:percent_missing = 0. ;
+        vaisala_RH_Std:missing_value = -9999. ;
+    double vaisala_T_Avg(time) ;
+        vaisala_T_Avg:units = "degC" ;
+        vaisala_T_Avg:long_name = "average of the air temperature during the 1 min averaging interval" ;
+        vaisala_T_Avg:instrument = "Vaisala PTU300" ;
+        vaisala_T_Avg:methods = "meteorology sensor, PT100 RTD; RS-485 protocol" ;
+        vaisala_T_Avg:height = "2.89 m" ;
+        vaisala_T_Avg:location = "SLEIGH boom (top of station)" ;
+        vaisala_T_Avg:percent_missing = 0. ;
+        vaisala_T_Avg:missing_value = -9999. ;
+    double vaisala_T_Std(time) ;
+        vaisala_T_Std:units = "degC" ;
+        vaisala_T_Std:long_name = "standard deviation of the air temperature during the 1 min averaging interval" ;
+        vaisala_T_Std:instrument = "Vaisala PTU300" ;
+        vaisala_T_Std:methods = "meteorology sensor, PT100 RTD; RS-485 protocol" ;
+        vaisala_T_Std:height = "2.89 m" ;
+        vaisala_T_Std:location = "SLEIGH boom (top of station)" ;
+        vaisala_T_Std:percent_missing = 0. ;
+        vaisala_T_Std:missing_value = -9999. ;
+    double vaisala_P_Avg(time) ;
+        vaisala_P_Avg:units = "hPa" ;
+        vaisala_P_Avg:long_name = "average of the atmospheric pressure during the 1 min averaging interval" ;
+        vaisala_P_Avg:instrument = "Vaisala PTU300" ;
+        vaisala_P_Avg:methods = "meteorology sensor; RS-485 protocol" ;
+        vaisala_P_Avg:height = "2.68 m" ;
+        vaisala_P_Avg:location = "SLEIGH boom (top of station)" ;
+        vaisala_P_Avg:percent_missing = 0. ;
+        vaisala_P_Avg:missing_value = -9999. ;
+    double vaisala_P_Std(time) ;
+        vaisala_P_Std:units = "hPa" ;
+        vaisala_P_Std:long_name = "standard deviation of the atmospheric pressure during the 1 min averaging interval" ;
+        vaisala_P_Std:instrument = "Vaisala PTU300" ;
+        vaisala_P_Std:methods = "meteorology sensor; RS-485 protocol" ;
+        vaisala_P_Std:height = "2.68 m" ;
+        vaisala_P_Std:location = "SLEIGH boom (top of station)" ;
+        vaisala_P_Std:percent_missing = 0. ;
+        vaisala_P_Std:missing_value = -9999. ;
+    double ir20_lwu_mV_Avg(time) ;
+        ir20_lwu_mV_Avg:units = "mV" ;
+        ir20_lwu_mV_Avg:long_name = "average thermopile voltage of the downward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwu_mV_Avg:instrument = "Hukseflux IR20" ;
+        ir20_lwu_mV_Avg:methods = "thermopile pyrgeometer; analog; differential voltage" ;
+        ir20_lwu_mV_Avg:height = "2.8 m" ;
+        ir20_lwu_mV_Avg:location = "SLEIGH boom (top of station)" ;
+        ir20_lwu_mV_Avg:percent_missing = 0. ;
+        ir20_lwu_mV_Avg:missing_value = -9999. ;
+    double ir20_lwu_mV_Std(time) ;
+        ir20_lwu_mV_Std:units = "mV" ;
+        ir20_lwu_mV_Std:long_name = "standard deviation of the thermopile voltage of the downward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwu_mV_Std:instrument = "Hukseflux IR20" ;
+        ir20_lwu_mV_Std:methods = "thermopile pyrgeometer; analog; differential voltage" ;
+        ir20_lwu_mV_Std:height = "2.8 m" ;
+        ir20_lwu_mV_Std:location = "SLEIGH boom (top of station)" ;
+        ir20_lwu_mV_Std:percent_missing = 0. ;
+        ir20_lwu_mV_Std:missing_value = -9999. ;
+    double ir20_lwu_DegC_Avg(time) ;
+        ir20_lwu_DegC_Avg:units = "degC" ;
+        ir20_lwu_DegC_Avg:long_name = "average case temperature of the downward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwu_DegC_Avg:instrument = "Hukseflux IR20" ;
+        ir20_lwu_DegC_Avg:methods = "thermopile pyrgeometer; analog; half-bridge, 100kOhm 0.01% ref resistor; Steinhart-Hart A=0.0010295, B=0.0002391, C=0.0000001568" ;
+        ir20_lwu_DegC_Avg:height = "2.8 m" ;
+        ir20_lwu_DegC_Avg:location = "SLEIGH boom (top of station)" ;
+        ir20_lwu_DegC_Avg:percent_missing = 0. ;
+        ir20_lwu_DegC_Avg:missing_value = -9999. ;
+    double ir20_lwu_DegC_Std(time) ;
+        ir20_lwu_DegC_Std:units = "degC" ;
+        ir20_lwu_DegC_Std:long_name = "standard deviation of the case temperature of the downward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwu_DegC_Std:instrument = "Hukseflux IR20" ;
+        ir20_lwu_DegC_Std:methods = "thermopile pyrgeometer; analog; half-bridge, 100kOhm 0.01% ref resistor; Steinhart-Hart A=0.0010295, B=0.0002391, C=0.0000001568" ;
+        ir20_lwu_DegC_Std:height = "2.8 m" ;
+        ir20_lwu_DegC_Std:location = "SLEIGH boom (top of station)" ;
+        ir20_lwu_DegC_Std:percent_missing = 0. ;
+        ir20_lwu_DegC_Std:missing_value = -9999. ;
+    double ir20_lwu_Wm2_Avg(time) ;
+        ir20_lwu_Wm2_Avg:units = "W/m2" ;
+        ir20_lwu_Wm2_Avg:long_name = "average flux from the downward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwu_Wm2_Avg:instrument = "Hukseflux IR20" ;
+        ir20_lwu_Wm2_Avg:methods = "thermopile pyrgeometer; preliminary calibration: uses thermopile sensitvity but not temperature dependence" ;
+        ir20_lwu_Wm2_Avg:height = "2.8 m" ;
+        ir20_lwu_Wm2_Avg:location = "SLEIGH boom (top of station)" ;
+        ir20_lwu_Wm2_Avg:percent_missing = 0. ;
+        ir20_lwu_Wm2_Avg:missing_value = -9999. ;
+    double ir20_lwu_Wm2_Std(time) ;
+        ir20_lwu_Wm2_Std:units = "W/m2" ;
+        ir20_lwu_Wm2_Std:long_name = "standard deviation of the flux from the downward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwu_Wm2_Std:instrument = "Hukseflux IR20" ;
+        ir20_lwu_Wm2_Std:methods = "thermopile pyrgeometer; preliminary calibration: uses thermopile sensitvity but not temperature dependence" ;
+        ir20_lwu_Wm2_Std:height = "2.8 m" ;
+        ir20_lwu_Wm2_Std:location = "SLEIGH boom (top of station)" ;
+        ir20_lwu_Wm2_Std:percent_missing = 0. ;
+        ir20_lwu_Wm2_Std:missing_value = -9999. ;
+    double ir20_lwd_mV_Avg(time) ;
+        ir20_lwd_mV_Avg:units = "mV" ;
+        ir20_lwd_mV_Avg:long_name = "average thermopile voltage of the upward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwd_mV_Avg:instrument = "Hukseflux IR20" ;
+        ir20_lwd_mV_Avg:methods = "thermopile pyrgeometer; analog; differential voltage" ;
+        ir20_lwd_mV_Avg:height = "2.8 m" ;
+        ir20_lwd_mV_Avg:location = "SLEIGH boom (top of station)" ;
+        ir20_lwd_mV_Avg:percent_missing = 0. ;
+        ir20_lwd_mV_Avg:missing_value = -9999. ;
+    double ir20_lwd_mV_Std(time) ;
+        ir20_lwd_mV_Std:units = "mV" ;
+        ir20_lwd_mV_Std:long_name = "standard deviation of the thermopile voltage of the upward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwd_mV_Std:instrument = "Hukseflux IR20" ;
+        ir20_lwd_mV_Std:methods = "thermopile pyrgeometer; analog; differential voltage" ;
+        ir20_lwd_mV_Std:height = "2.8 m" ;
+        ir20_lwd_mV_Std:location = "SLEIGH boom (top of station)" ;
+        ir20_lwd_mV_Std:percent_missing = 0. ;
+        ir20_lwd_mV_Std:missing_value = -9999. ;
+    double ir20_lwd_DegC_Avg(time) ;
+        ir20_lwd_DegC_Avg:units = "degC" ;
+        ir20_lwd_DegC_Avg:long_name = "average case temperature of the upward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwd_DegC_Avg:instrument = "Hukseflux IR20" ;
+        ir20_lwd_DegC_Avg:methods = "thermopile pyrgeometer; analog; half-bridge, 100kOhm 0.01% ref resistor; Steinhart-Hart A=0.0010295, B=0.0002391, C=0.0000001568" ;
+        ir20_lwd_DegC_Avg:height = "2.8 m" ;
+        ir20_lwd_DegC_Avg:location = "SLEIGH boom (top of station)" ;
+        ir20_lwd_DegC_Avg:percent_missing = 0. ;
+        ir20_lwd_DegC_Avg:missing_value = -9999. ;
+    double ir20_lwd_DegC_Std(time) ;
+        ir20_lwd_DegC_Std:units = "degC" ;
+        ir20_lwd_DegC_Std:long_name = "standard deviation of the case temperature of the upward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwd_DegC_Std:instrument = "Hukseflux IR20" ;
+        ir20_lwd_DegC_Std:methods = "thermopile pyrgeometer; analog; half-bridge, 100kOhm 0.01% ref resistor; Steinhart-Hart A=0.0010295, B=0.0002391, C=0.0000001568" ;
+        ir20_lwd_DegC_Std:height = "2.8 m" ;
+        ir20_lwd_DegC_Std:location = "SLEIGH boom (top of station)" ;
+        ir20_lwd_DegC_Std:percent_missing = 0. ;
+        ir20_lwd_DegC_Std:missing_value = -9999. ;
+    double ir20_lwd_Wm2_Avg(time) ;
+        ir20_lwd_Wm2_Avg:units = "W/m2" ;
+        ir20_lwd_Wm2_Avg:long_name = "average flux from the upward-facing sensor during the 1 min averaging interval" ;
+        ir20_lwd_Wm2_Avg:instrument = "Hukseflux IR20" ;
+        ir20_lwd_Wm2_Avg:methods = "thermopile pyrgeometer; preliminary calibration: uses thermopile sensitvity but not temperature dependence" ;
+        ir20_lwd_Wm2_Avg:height = "2.8 m" ;
+        ir20_lwd_Wm2_Avg:location = "SLEIGH boom (top of station)" ;
+        ir20_lwd_Wm2_Avg:percent_missing = 0. ;
+        ir20_lwd_Wm2_Avg:missing_value = -9999. ;
+    double ir20_lwd_Wm2_Std(time) ;
+        ir20_lwd_Wm2_Std:units = "W/m2" ;
+        ir20_lwd_Wm2_Std:long_name = "standard deviation of the flux from the sensor pyrgeometer during the 1 min averaging interval" ;
+        ir20_lwd_Wm2_Std:instrument = "Hukseflux IR20" ;
+        ir20_lwd_Wm2_Std:methods = "thermopile pyrgeometer; preliminary calibration: uses thermopile sensitvity but not temperature dependence" ;
+        ir20_lwd_Wm2_Std:height = "2.8 m" ;
+        ir20_lwd_Wm2_Std:location = "SLEIGH boom (top of station)" ;
+        ir20_lwd_Wm2_Std:percent_missing = 0. ;
+        ir20_lwd_Wm2_Std:missing_value = -9999. ;
+    double fp_A_mV_Avg(time) ;
+        fp_A_mV_Avg:units = "mV" ;
+        fp_A_mV_Avg:long_name = "average thermopile voltage during 1 min averaging interval" ;
+        fp_A_mV_Avg:instrument = "Hukseflux HFP01" ;
+        fp_A_mV_Avg:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+        fp_A_mV_Avg:height = "subsurface, -5 cm" ;
+        fp_A_mV_Avg:location = "soil" ;
+        fp_A_mV_Avg:percent_missing = 0. ;
+        fp_A_mV_Avg:missing_value = -9999. ;
+    double fp_A_mV_Std(time) ;
+        fp_A_mV_Std:units = "mV" ;
+        fp_A_mV_Std:long_name = "standard deviation of the thermopile voltage during 1 min averaging interval" ;
+        fp_A_mV_Std:instrument = "Hukseflux HFP01" ;
+        fp_A_mV_Std:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+        fp_A_mV_Std:height = "subsurface, -5 cm" ;
+        fp_A_mV_Std:location = "soil" ;
+        fp_A_mV_Std:percent_missing = 0. ;
+        fp_A_mV_Std:missing_value = -9999. ;
+    double fp_A_Wm2_Avg(time) ;
+        fp_A_Wm2_Avg:units = "W/m2" ;
+        fp_A_Wm2_Avg:long_name = "average flux during 1 min averaging interval" ;
+        fp_A_Wm2_Avg:instrument = "Hukseflux HFP01" ;
+        fp_A_Wm2_Avg:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+        fp_A_Wm2_Avg:height = "subsurface, -5 cm" ;
+        fp_A_Wm2_Avg:location = "soil" ;
+        fp_A_Wm2_Avg:percent_missing = 0. ;
+        fp_A_Wm2_Avg:missing_value = -9999. ;
+    double fp_A_Wm2_Std(time) ;
+        fp_A_Wm2_Std:units = "W/m2" ;
+        fp_A_Wm2_Std:long_name = "standard deviation of the flux during 1 min averaging interval" ;
+        fp_A_Wm2_Std:instrument = "Hukseflux HFP01" ;
+        fp_A_Wm2_Std:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+        fp_A_Wm2_Std:height = "subsurface, -5 cm" ;
+        fp_A_Wm2_Std:location = "soil" ;
+        fp_A_Wm2_Std:percent_missing = 0. ;
+        fp_A_Wm2_Std:missing_value = -9999. ;
+    double fp_B_mV_Avg(time) ;
+        fp_B_mV_Avg:units = "mV" ;
+        fp_B_mV_Avg:long_name = "average thermopile voltage during 1 min averaging interval" ;
+        fp_B_mV_Avg:instrument = "Hukseflux HFP01" ;
+        fp_B_mV_Avg:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+        fp_B_mV_Avg:height = "subsurface, -5 cm" ;
+        fp_B_mV_Avg:location = "soil" ;
+        fp_B_mV_Avg:percent_missing = 0. ;
+        fp_B_mV_Avg:missing_value = -9999. ;
+    double fp_B_mV_Std(time) ;
+        fp_B_mV_Std:units = "mV" ;
+        fp_B_mV_Std:long_name = "standard deviation of the thermopile voltage during 1 min averaging interval" ;
+        fp_B_mV_Std:instrument = "Hukseflux HFP01" ;
+        fp_B_mV_Std:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+        fp_B_mV_Std:height = "subsurface, -5 cm" ;
+        fp_B_mV_Std:location = "soil" ;
+        fp_B_mV_Std:percent_missing = 0. ;
+        fp_B_mV_Std:missing_value = -9999. ;
+    double fp_B_Wm2_Avg(time) ;
+        fp_B_Wm2_Avg:units = "W/m2" ;
+        fp_B_Wm2_Avg:long_name = "average flux during 1 min averaging interval" ;
+        fp_B_Wm2_Avg:instrument = "Hukseflux HFP01" ;
+        fp_B_Wm2_Avg:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+        fp_B_Wm2_Avg:height = "subsurface, -5 cm" ;
+        fp_B_Wm2_Avg:location = "soil" ;
+        fp_B_Wm2_Avg:percent_missing = 0. ;
+        fp_B_Wm2_Avg:missing_value = -9999. ;
+    double fp_B_Wm2_Std(time) ;
+        fp_B_Wm2_Std:units = "W/m2" ;
+        fp_B_Wm2_Std:long_name = "standard deviation of the flux during 1 min averaging interval" ;
+        fp_B_Wm2_Std:instrument = "Hukseflux HFP01" ;
+        fp_B_Wm2_Std:methods = "thermopile conductive flux plate; analog; differential voltage" ;
+        fp_B_Wm2_Std:height = "subsurface, -5 cm" ;
+        fp_B_Wm2_Std:location = "soil" ;
+        fp_B_Wm2_Std:percent_missing = 0. ;
+        fp_B_Wm2_Std:missing_value = -9999. ;
+    double licor_co2_str_out_Avg(time) ;
+        licor_co2_str_out_Avg:units = "%" ;
+        licor_co2_str_out_Avg:long_name = "average CO2 signal strength diagnostic during 1 min averaging interval" ;
+        licor_co2_str_out_Avg:instrument = "Licor 7500-DS" ;
+        licor_co2_str_out_Avg:methods = "open-path optical gas analyzer, source data reported at 20 Hz; protocol TCP/IP" ;
+        licor_co2_str_out_Avg:height = "4.4 m" ;
+        licor_co2_str_out_Avg:location = "SLEIGH mast" ;
+        licor_co2_str_out_Avg:percent_missing = 0. ;
+        licor_co2_str_out_Avg:missing_value = -9999. ;
+    double licor_co2_str_out_Std(time) ;
+        licor_co2_str_out_Std:units = "%" ;
+        licor_co2_str_out_Std:long_name = "standard deviation of the CO2 signal strength diagnostic during 1 min averaging interval" ;
+        licor_co2_str_out_Std:instrument = "Licor 7500-DS" ;
+        licor_co2_str_out_Std:methods = "open-path optical gas analyzer, source data reported at 20 Hz; protocol TCP/IP" ;
+        licor_co2_str_out_Std:height = "4.4 m" ;
+        licor_co2_str_out_Std:location = "SLEIGH mast" ;
+        licor_co2_str_out_Std:percent_missing = 0. ;
+        licor_co2_str_out_Std:missing_value = -9999. ;
+    double sr30_swu_fantach_Avg(time) ;
+        sr30_swu_fantach_Avg:units = "Hz" ;
+        sr30_swu_fantach_Avg:long_name = "average fan speed of the downward-facing (SWU) pyranometer during 1 min averaging period" ;
+        sr30_swu_fantach_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swu_fantach_Avg:methods = "thermopile pyranometer case fan; RS-485" ;
+        sr30_swu_fantach_Avg:height = "2.8 m" ;
+        sr30_swu_fantach_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_fantach_Avg:percent_missing = 0. ;
+        sr30_swu_fantach_Avg:missing_value = -9999. ;
+    double sr30_swu_heatA_Avg(time) ;
+        sr30_swu_heatA_Avg:units = "mA" ;
+        sr30_swu_heatA_Avg:long_name = "average case heating current of the downward-facing sensor during 1 min averaging period" ;
+        sr30_swu_heatA_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swu_heatA_Avg:methods = "thermopile pyranometer case heater; RS-485 protocol" ;
+        sr30_swu_heatA_Avg:height = "2.8 m" ;
+        sr30_swu_heatA_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_heatA_Avg:percent_missing = 0. ;
+        sr30_swu_heatA_Avg:missing_value = -9999. ;
+    double sr30_swd_fantach_Avg(time) ;
+        sr30_swd_fantach_Avg:units = "Hz" ;
+        sr30_swd_fantach_Avg:long_name = "average fan speed of the upward-facing sensor during 1 min averaging period" ;
+        sr30_swd_fantach_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swd_fantach_Avg:methods = "thermopile pyranometer case fan; RS-485 protocol" ;
+        sr30_swd_fantach_Avg:height = "2.8 m" ;
+        sr30_swd_fantach_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_fantach_Avg:percent_missing = 0. ;
+        sr30_swd_fantach_Avg:missing_value = -9999. ;
+    double sr30_swd_heatA_Avg(time) ;
+        sr30_swd_heatA_Avg:units = "mA" ;
+        sr30_swd_heatA_Avg:long_name = "average case heating current of the upward-facing sensor during 1 min averaging period" ;
+        sr30_swd_heatA_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swd_heatA_Avg:methods = "thermopile pyranometer case heater; RS-485 protocol" ;
+        sr30_swd_heatA_Avg:height = "2.8 m" ;
+        sr30_swd_heatA_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_heatA_Avg:percent_missing = 0. ;
+        sr30_swd_heatA_Avg:missing_value = -9999. ;
+    double ir20_lwu_fan_Avg(time) ;
+        ir20_lwu_fan_Avg:units = "mV" ;
+        ir20_lwu_fan_Avg:long_name = "average fan voltage status signal of the downward-facing ventilator during the 1 min averaging period" ;
+        ir20_lwu_fan_Avg:instrument = "Hukseflux VU01" ;
+        ir20_lwu_fan_Avg:methods = "ventilator fan; analog" ;
+        ir20_lwu_fan_Avg:height = "2.8 m" ;
+        ir20_lwu_fan_Avg:location = "SLEIGH boom (top of station)" ;
+        ir20_lwu_fan_Avg:percent_missing = 0. ;
+        ir20_lwu_fan_Avg:missing_value = -9999. ;
+    double ir20_lwd_fan_Avg(time) ;
+        ir20_lwd_fan_Avg:units = "mV" ;
+        ir20_lwd_fan_Avg:long_name = "average fan voltage status signal of the upward-facing ventilator during the 1 min averaging period" ;
+        ir20_lwd_fan_Avg:instrument = "Hukseflux VU01" ;
+        ir20_lwd_fan_Avg:methods = "ventilator fan; analog" ;
+        ir20_lwd_fan_Avg:height = "2.8 m" ;
+        ir20_lwd_fan_Avg:location = "SLEIGH boom (top of station)" ;
+        ir20_lwd_fan_Avg:percent_missing = 0. ;
+        ir20_lwd_fan_Avg:missing_value = -9999. ;
+    double sr30_swu_tilt_Avg(time) ;
+        sr30_swu_tilt_Avg:units = "deg" ;
+        sr30_swu_tilt_Avg:long_name = "horizontal tilt of the downward-facing sensor" ;
+        sr30_swu_tilt_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swu_tilt_Avg:methods = "thermopile pyranometer case level; RS-485 protocol; level defined as 180 deg" ;
+        sr30_swu_tilt_Avg:height = "2.8 m" ;
+        sr30_swu_tilt_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swu_tilt_Avg:percent_missing = 0. ;
+        sr30_swu_tilt_Avg:missing_value = -9999. ;
+    double sr30_swd_tilt_Avg(time) ;
+        sr30_swd_tilt_Avg:units = "deg" ;
+        sr30_swd_tilt_Avg:long_name = "horizontal tilt of the upward-facing sensor" ;
+        sr30_swd_tilt_Avg:instrument = "Hukseflux SR30" ;
+        sr30_swd_tilt_Avg:methods = "thermopile pyranometer case level; RS-485 protocol; level defined as 0 deg" ;
+        sr30_swd_tilt_Avg:height = "2.8 m" ;
+        sr30_swd_tilt_Avg:location = "SLEIGH boom (top of station)" ;
+        sr30_swd_tilt_Avg:percent_missing = 0. ;
+        sr30_swd_tilt_Avg:missing_value = -9999. ;
+    double wspd_u_mean(time) ;
+        wspd_u_mean:units = "m/s" ;
+        wspd_u_mean:long_name = "Metek u-component" ;
+        wspd_u_mean:cf_name = "eastward_wind" ;
+        wspd_u_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+        wspd_u_mean:methods = "v defined positive west-to-east" ;
+        wspd_u_mean:height = "4.62 m" ;
+        wspd_u_mean:location = "SLEIGH mast" ;
+        wspd_u_mean:percent_missing = 0. ;
+        wspd_u_mean:missing_value = -9999. ;
+    double wspd_v_mean(time) ;
+        wspd_v_mean:units = "m/s" ;
+        wspd_v_mean:long_name = "Metek v-component" ;
+        wspd_v_mean:cf_name = "northward_wind" ;
+        wspd_v_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+        wspd_v_mean:methods = "v defined positive south-to-north" ;
+        wspd_v_mean:height = "4.62 m" ;
+        wspd_v_mean:location = "SLEIGH mast" ;
+        wspd_v_mean:percent_missing = 0. ;
+        wspd_v_mean:missing_value = -9999. ;
+    double wspd_w_mean(time) ;
+        wspd_w_mean:units = "m/s" ;
+        wspd_w_mean:long_name = "Metek w-component" ;
+        wspd_w_mean:cf_name = "" ;
+        wspd_w_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+        wspd_w_mean:methods = "w defined positive up" ;
+        wspd_w_mean:height = "4.62 m" ;
+        wspd_w_mean:location = "SLEIGH mast" ;
+        wspd_w_mean:percent_missing = 0. ;
+        wspd_w_mean:missing_value = -9999. ;
+    double wspd_vec_mean(time) ;
+        wspd_vec_mean:units = "m/s" ;
+        wspd_vec_mean:long_name = "average metek wind speed" ;
+        wspd_vec_mean:cf_name = "" ;
+        wspd_vec_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+        wspd_vec_mean:methods = "derived from horizontal wind components after coordinate transformation from body to earth reference frame" ;
+        wspd_vec_mean:height = "4.62 m" ;
+        wspd_vec_mean:location = "SLEIGH mast" ;
+        wspd_vec_mean:percent_missing = 0. ;
+        wspd_vec_mean:missing_value = -9999. ;
+    double wdir_vec_mean(time) ;
+        wdir_vec_mean:units = "degrees" ;
+        wdir_vec_mean:long_name = "average metek wind direction" ;
+        wdir_vec_mean:cf_name = "" ;
+        wdir_vec_mean:instrument = "Metek uSonic-Cage MP sonic anemometer" ;
+        wdir_vec_mean:methods = "derived from horizontal wind components after coordinate transformation from body to earth reference frame" ;
+        wdir_vec_mean:height = "4.62 m" ;
+        wdir_vec_mean:location = "SLEIGH mast" ;
+        wdir_vec_mean:percent_missing = 0. ;
+        wdir_vec_mean:missing_value = -9999. ;
+
+// global attributes:
+        :date_created = "Fri Mar 15 06:09:04 2024" ;
+        :title = "Integrated Characterization of Energy, Clouds, Atmospheric and Precipitation States in the Greenland Melt-zone (ICECAPS-Melt)" ;
+        :institution = "CIRES/University of Colorado and NOAA Physical Sciences Laboratory (PSL)" ;
+        :file_creator = "Michael R. Gallagher; Christopher J. Cox" ;
+        :creator_email = "michael.r.gallagher@noaa.gov; christopher.j.cox@noaa.gov" ;
+        :Funding = "Funding sources: National Science Foundation Award Number #############; NOAA Physical Science Laboratory and Arctic Research Program" ;
+        :source = "Observations made by SLEIGH at camp Raven, Greenland" ;
+        :system = "melt-sleighsfs" ;
+        :references = "" ;
+        :keywords = "Greenland, Atmosphere, Flux, Observations, Energy, Heat, Firn, Snow, Hydrology" ;
+        :conventions = "cf convention variable naming as attribute whenever possible" ;
+        :history = "processed data based on level 1 ingest files" ;
+        :version = "1.0, 1/1/2024" ;
+        :quality_control = "This Level 1 product is for archival purposes and has undergone minimal data processing and quality control, please contact the authors/PI if you would like to know more." ;
+}</code></pre>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="sci" class="level4">
-<h4 class="anchored" data-anchor-id="sci">Sci</h4>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As of writing this, the manual is’t on <a href="http://www.icecapsmelt.org/documentation/manuals.html">Manuals</a>, so I have little idea what all of these variables do. For the sake of convenience, I’m going to start by summarising all of them, and if we need to cut it down we can then start discussing which variables to remove.</p>
-</div>
-</div>
-<p>enjoy:</p>
-<table class="table-striped table-bordered table">
+<section id="gpr" class="level2">
+<h2 class="anchored" data-anchor-id="gpr">GPR</h2>
+<section id="location-5" class="level3">
+<h3 class="anchored" data-anchor-id="location-5">Location</h3>
+<pre><code>data
+├── gpr
+    ├── level0
+    |   ├── 5Ghz/...
+    |   ├── 7Ghz/...
+    |
+    ├── level1
+        ├── GPR_5Ghz_YYYYmmdd.nc
+        ├── GPR_7Ghz_YYYYmmdd.nc</code></pre>
+</section>
+<section id="dimensions-5" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions-5">Dimensions</h3>
+<table class="table-striped table-bordered caption-top table">
+<thead>
+<tr class="header">
+<th>dimension</th>
+<th>resolution</th>
+<th>length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>time</td>
+<td>variable, <span class="math inline">\(&gt;30\)</span> minutes</td>
+<td>variable</td>
+</tr>
+<tr class="even">
+<td>step</td>
+<td>1</td>
+<td>1280</td>
+</tr>
+<tr class="odd">
+<td>step’</td>
+<td>40</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ghz" class="level3">
+<h3 class="anchored" data-anchor-id="ghz">5 GHz</h3>
+<section id="variables-5" class="level4">
+<h4 class="anchored" data-anchor-id="variables-5">Variables</h4>
+<table class="table-striped table-bordered caption-top table">
 <thead>
 <tr class="header">
 <th>var</th>
@@ -2055,710 +3206,146 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td>TIMESTAMP</td>
-<td>time</td>
-<td>time’</td>
-<td>count</td>
-<td>TS</td>
-<td></td>
+<td>DM</td>
+<td>step, time</td>
+<td>step’, time</td>
+<td>mean std</td>
+<td>?</td>
+<td>?</td>
 </tr>
 <tr class="even">
-<td>scantime</td>
+<td>f</td>
 <td>time</td>
-<td>time’</td>
+<td>time</td>
 <td>mean, std</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>PTemp_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>batt_volt_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>V</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>amp_meter_12vdc_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>A</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>watts_on_12vdc_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>W</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>vaisala_RH_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>%</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>vaisala_RH_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>%</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>vaisala_T_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>vaisala_T_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>vaisala_P_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>hPa</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>vaisala_P_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>hPa</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>metek_x_Avg(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>m/s</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>metek_x_Std(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>m/s</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>metek_y_Avg(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>m/s</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>metek_y_Std(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>m/s</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>metek_z_Avg(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>m/s</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>metek_z_Std(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>m/s</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>metek_T_Avg(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>metek_T_Std(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swu_DegC_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swu_DegC_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swu_IrrC_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swu_IrrC_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swu_Irr_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swu_Irr_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swd_DegC_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swd_DegC_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swd_IrrC_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swd_IrrC_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swd_Irr_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swd_Irr_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>spn1_tot_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>spn1_tot_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>spn1_dif_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>spn1_dif_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ir20_lwu_DegC_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>ir20_lwu_DegC_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ir20_lwu_Wm2_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>ir20_lwu_Wm2_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ir20_lwu_mV_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>ir20_lwu_mV_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ir20_lwd_DegC_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>ir20_lwd_DegC_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ir20_lwd_Wm2_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>ir20_lwd_Wm2_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ir20_lwd_mV_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>ir20_lwd_mV_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>snowd_current_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mA</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>snowd_current_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>mA</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>snowd_dist_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>m</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>snowd_dist_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>m</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>apogee_body_T_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>apogee_body_T_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>apogee_targ_T_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>apogee_targ_T_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>fp_A_mV_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>fp_A_mV_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>fp_A_Wm2_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>fp_A_Wm2_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>fp_B_mV_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>fp_B_mV_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>fp_B_Wm2_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>fp_B_Wm2_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>Wm2</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr50_dist_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>m</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr50_dist_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>m</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr50_qc_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>code</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>licor_co2_out_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mg/m3</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>licor_co2_out_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>mg/m3</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>licor_h2o_out_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>g/m3</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>licor_h2o_out_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>g/m3</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>licor_t_out_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>licor_t_out_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td>degC</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>licor_co2_str_out_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>licor_co2_str_out_Std</td>
-<td>time</td>
-<td>time’</td>
-<td>std</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>metek_InclX_Avg(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>deg</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>metek_InclY_Avg(1)</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>deg</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swd_tilt_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>deg</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swu_tilt_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>deg</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swu_fantach_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Hz</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swu_heatA_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mA</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>sr30_swd_fantach_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>Hz</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sr30_swd_heatA_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mA</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>ir20_lwu_fan_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mV</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>ir20_lwd_fan_Avg</td>
-<td>time</td>
-<td>time’</td>
-<td>mean</td>
-<td>mV</td>
-<td></td>
+<td>?</td>
+<td>?</td>
 </tr>
 </tbody>
 </table>
-<section id="head-1" class="level5">
-<h5 class="anchored" data-anchor-id="head-1">head</h5>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="head">
+</section>
+<section id="ncdump-7" class="level4">
+<h4 class="anchored" data-anchor-id="ncdump-7">ncdump</h4>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="ncdump">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-head
+ncdump
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>head -n 6 data/asfs/raw/crd/icecaps_asfs_sci_202307292200.dat
+<pre><code>ncdump -h gpr/level1/GPR_5Ghz_20240318.nc
 
 
-"TOA5","44341","CR1000X","44341","CR1000X.Std.06.01","CPU:ICECAPS-MELT.CR1X","60711","sci"
-"TIMESTAMP","scantime","PTemp_Avg","batt_volt_Avg","amp_meter_12vdc_Avg","watts_on_12vdc_Avg","vaisala_RH_Avg","vaisala_RH_Std","vaisala_T_Avg","vaisala_T_Std","vaisala_P_Avg","vaisala_P_Std","metek_x_Avg(1)","metek_x_Std(1)","metek_y_Avg(1)","metek_y_Std(1)","metek_z_Avg(1)","metek_z_Std(1)","metek_T_Avg(1)","metek_T_Std(1)","sr30_swu_DegC_Avg","sr30_swu_DegC_Std","sr30_swu_IrrC_Avg","sr30_swu_IrrC_Std","sr30_swu_Irr_Avg","sr30_swu_Irr_Std","sr30_swd_DegC_Avg","sr30_swd_DegC_Std","sr30_swd_IrrC_Avg","sr30_swd_IrrC_Std","sr30_swd_Irr_Avg","sr30_swd_Irr_Std","spn1_tot_Avg","spn1_tot_Std","spn1_dif_Avg","spn1_dif_Std","ir20_lwu_DegC_Avg","ir20_lwu_DegC_Std","ir20_lwu_Wm2_Avg","ir20_lwu_Wm2_Std","ir20_lwu_mV_Avg","ir20_lwu_mV_Std","ir20_lwd_DegC_Avg","ir20_lwd_DegC_Std","ir20_lwd_Wm2_Avg","ir20_lwd_Wm2_Std","ir20_lwd_mV_Avg","ir20_lwd_mV_Std","snowd_current_Avg","snowd_current_Std","snowd_dist_Avg","snowd_dist_Std","apogee_body_T_Avg","apogee_body_T_Std","apogee_targ_T_Avg","apogee_targ_T_Std","fp_A_mV_Avg","fp_A_mV_Std","fp_A_Wm2_Avg","fp_A_Wm2_Std","fp_B_mV_Avg","fp_B_mV_Std","fp_B_Wm2_Avg","fp_B_Wm2_Std","sr50_dist_Avg","sr50_dist_Std","sr50_qc_Avg","licor_co2_out_Avg","licor_co2_out_Std","licor_h2o_out_Avg","licor_h2o_out_Std","licor_t_out_Avg","licor_t_out_Std","licor_co2_str_out_Avg","licor_co2_str_out_Std","metek_InclX_Avg(1)","metek_InclY_Avg(1)","sr30_swd_tilt_Avg","sr30_swu_tilt_Avg","sr30_swu_fantach_Avg","sr30_swu_heatA_Avg","sr30_swd_fantach_Avg","sr30_swd_heatA_Avg","ir20_lwu_fan_Avg","ir20_lwd_fan_Avg"
-"TS","","degC","V","A","W","%","%","degC","degC","hPa","hPa","m/s","m/s","m/s","m/s","m/s","m/s","degC","degC","degC","degC","Wm2","Wm2","Wm2","Wm2","degC","degC","Wm2","Wm2","Wm2","Wm2","Wm2","Wm2","Wm2","Wm2","degC","degC","Wm2","Wm2","mV","mV","degC","degC","Wm2","Wm2","mV","mV","mA","mA","m","m","degC","degC","degC","degC","mV","mV","Wm2","Wm2","mV","mV","Wm2","Wm2","m","m","code","mg/m3","mg/m3","g/m3","g/m3","degC","degC","","","deg","deg","deg","deg","Hz","mA","Hz","mA","mV","mV"
-"","Smp","Avg","Avg","Avg","Avg","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Avg","Std","Avg","Std","Avg","Std","Avg","Std","Avg","Avg","Avg","Avg","Avg","Avg","Avg","Avg","Avg","Avg"
-"2023-07-29 21:01:00",14.41,6.935494,11.70801,4.341986,50.83603,98.23535,0,-7.350464,0,684.7656,0,-4.23525,0.575117,-2.962,2.000249,4.43675,0.1434857,-17.956,0.7307615,-0.64,0,-41732.35,0,210.32,0,-3.8575,0.008291554,178.9,0.8112605,178.085,0.8065498,173.9,0.9924726,173.9,0.9924726,-6.364723,0.006385083,267.9677,0.04929532,-0.2254042,0.0005941846,-6.203896,0.003369352,279.6591,0.06762667,-0.1018922,0.0009754039,38.7,0,0.172,0,-7.862974,0.001700423,-8.4747,0.04512452,-0.09071788,5.051676e-05,-1.404084,0.0007818579,-0.1122154,3.470092e-05,-1.747631,0.0005404226,1.539,0,176,555.94,0.4311571,2.03411,0.00896969,0.4050725,0.02676299,98.51522,0.005604946,0.709,2.50175,1.665,-0.64,0,-64,148,166.5,2235,127.3
-"2023-07-29 21:02:00",11.41,6.907502,11.72659,4.327452,50.74626,98.23535,0,-7.350464,0,684.7656,0,-5.8585,2.258687,-1.9315,2.032975,3.34525,1.865113,-18.59925,1.438861,-0.64,0,-41732.35,0,210.32,0,-3.87,0.02121329,176.87,0.5054182,176.0675,0.5041989,171.825,0.7790243,171.65,0.5024914,-6.364182,0.002079846,267.9661,0.0343087,-0.2254497,0.0003053064,-6.20681,0.00102231,279.6396,0.04843749,-0.1019784,0.0005464413,38.7,0,0.172,0,-7.87075,0.003015499,-8.433974,0.05453061,-0.09066153,4.689331e-05,-1.403212,0.0007257996,-0.1121028,5.78802e-05,-1.745877,0.0009013978,1.539,0,176,555.8422,0.1655255,2.039662,0.04259136,0.4151077,0.02753952,98.51058,0.002438122,0.7549999,2.4825,1.647,-0.64,0,-64,148.1,164.8,2236,126
+
+
+netcdf GPR_5Ghz_20240318 {
+dimensions:
+    step = 1280 ;
+    time = 88 ;
+variables:
+    double DM(step, time) ;
+        DM:_FillValue = NaN ;
+    float f(time) ;
+        f:_FillValue = NaNf ;
+    int64 step(step) ;
+    int64 time(time) ;
+        time:units = "seconds since 2024-03-18 00:00:06" ;
+        time:calendar = "proleptic_gregorian" ;
+
+// global attributes:
+        :magic = 4278067520U ;
+        :cape = "Ancho" ;
+        :ver = 0UB ;
+        :DACMin = 2000U ;
+        :DACMax = 7000U ;
+        :DACStep = 32U ;
+        :Iterations = 200U ;
+        :PulsesPerStep = 24U ;
+        :FrameStitch = 5U ;
+        :PGSelect = 5U ;
+        :SamplingRate = 1U ;
+        :SamplersPerFrame = 1280U ;
+        :OffsetDistanceFromReference = 0.f ;
+        :SampleDelayToReference = 3.867e-09f ;
+        :SamplesPerSecond = 3.738591e+10f ;
+        :SampleDelay = 3.867e-09f ;
+        :TXVoltage = 1.2f ;
+        :NumTrials = 10U ;
+        :FrameSize = 1292LL ;
+        :NumFrames = 10LL ;
+}
+</code></pre>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ghz-1" class="level3">
+<h3 class="anchored" data-anchor-id="ghz-1">7 GHz</h3>
+<section id="variables-6" class="level4">
+<h4 class="anchored" data-anchor-id="variables-6">Variables</h4>
+</section>
+<section id="ncdump-8" class="level4">
+<h4 class="anchored" data-anchor-id="ncdump-8">ncdump</h4>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="ncdump">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ncdump
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>ncdump -h gpr/level1/GPR_7Ghz_20240318.nc
+
+
+
+
+netcdf GPR_7Ghz_20240318 {
+dimensions:
+    step = 1280 ;
+    time = 22 ;
+variables:
+    double DM(step, time) ;
+        DM:_FillValue = NaN ;
+    float f(time) ;
+        f:_FillValue = NaNf ;
+    int64 step(step) ;
+    int64 time(time) ;
+        time:units = "seconds since 2024-03-18 01:03:08" ;
+        time:calendar = "proleptic_gregorian" ;
+
+// global attributes:
+        :magic = 4278067520U ;
+        :cape = "Ancho" ;
+        :ver = 0UB ;
+        :DACMin = 2000U ;
+        :DACMax = 7000U ;
+        :DACStep = 32U ;
+        :Iterations = 200U ;
+        :PulsesPerStep = 24U ;
+        :FrameStitch = 5U ;
+        :PGSelect = 5U ;
+        :SamplingRate = 7U ;
+        :SamplersPerFrame = 1280U ;
+        :OffsetDistanceFromReference = 0.f ;
+        :SampleDelayToReference = 3.867e-09f ;
+        :SamplesPerSecond = 3.738667e+10f ;
+        :SampleDelay = 3.867e-09f ;
+        :TXVoltage = 1.f ;
+        :NumTrials = 10U ;
+        :FrameSize = 1292LL ;
+        :NumFrames = 10LL ;
+}
+
 </code></pre>
 </div>
 </div>
@@ -2766,26 +3353,25 @@ head
 </section>
 </section>
 </section>
-</section>
 <section id="blesensors" class="level2">
 <h2 class="anchored" data-anchor-id="blesensors">blesensors</h2>
 <p>This instrument records data in a <code>.log</code> format where each line is a dictionary containing a timestamp, which “box” the measurement comes from and then the temperature, humidity and battery measurements. I don’t love this data format, but its a lot better than csv.</p>
-<section id="location-5" class="level3">
-<h3 class="anchored" data-anchor-id="location-5">Location</h3>
+<section id="location-6" class="level3">
+<h3 class="anchored" data-anchor-id="location-6">Location</h3>
 <pre><code>data
 ├── blesenseors
     ├── ble_temperatures_YYYYmmdd.log</code></pre>
 </section>
-<section id="dimensions-5" class="level3">
-<h3 class="anchored" data-anchor-id="dimensions-5">Dimensions</h3>
+<section id="dimensions-6" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions-6">Dimensions</h3>
 </section>
-<section id="variables-5" class="level3">
-<h3 class="anchored" data-anchor-id="variables-5">Variables</h3>
+<section id="variables-7" class="level3">
+<h3 class="anchored" data-anchor-id="variables-7">Variables</h3>
 </section>
-<section id="head-2" class="level3">
-<h3 class="anchored" data-anchor-id="head-2">head</h3>
+<section id="head" class="level3">
+<h3 class="anchored" data-anchor-id="head">head</h3>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="head">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2794,7 +3380,7 @@ head
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>head data/blesensors/ble_temperatures_20240306.log -n 9
 
@@ -2815,22 +3401,35 @@ head
 </section>
 <section id="ogre" class="level2">
 <h2 class="anchored" data-anchor-id="ogre">OGRE</h2>
-<section id="location-6" class="level3">
-<h3 class="anchored" data-anchor-id="location-6">Location</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="No data">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+No data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Currently, there is no available OGRE data. I will begin working on a data summary as soon as data is available on iceman.</p>
+</div>
+</div>
+<section id="location-7" class="level3">
+<h3 class="anchored" data-anchor-id="location-7">Location</h3>
 <pre><code>data
 ├── ogre
     ├── ????????</code></pre>
 </section>
-<section id="dimensions-6" class="level3">
-<h3 class="anchored" data-anchor-id="dimensions-6">Dimensions</h3>
+<section id="dimensions-7" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions-7">Dimensions</h3>
 </section>
-<section id="variables-6" class="level3">
-<h3 class="anchored" data-anchor-id="variables-6">Variables</h3>
+<section id="variables-8" class="level3">
+<h3 class="anchored" data-anchor-id="variables-8">Variables</h3>
 </section>
-<section id="ncdump-6" class="level3">
-<h3 class="anchored" data-anchor-id="ncdump-6">ncdump</h3>
+<section id="ncdump-9" class="level3">
+<h3 class="anchored" data-anchor-id="ncdump-9">ncdump</h3>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="ncdump">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2839,7 +3438,7 @@ ncdump
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>placeholder</code></pre>
 </div>
@@ -2849,22 +3448,35 @@ ncdump
 </section>
 <section id="simba" class="level2">
 <h2 class="anchored" data-anchor-id="simba">SIMBA</h2>
-<section id="location-7" class="level3">
-<h3 class="anchored" data-anchor-id="location-7">Location</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="No data">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+No data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Currently, there is no available SIMBA data. I will begin working on a data summary as soon as data is available on iceman.</p>
+</div>
+</div>
+<section id="location-8" class="level3">
+<h3 class="anchored" data-anchor-id="location-8">Location</h3>
 <pre><code>data
 ├── simba
     ├── SAMS_SIMBA_RawStream_SummitSled_YYYYmmdd.HHMMSS.dat</code></pre>
 </section>
-<section id="dimensions-7" class="level3">
-<h3 class="anchored" data-anchor-id="dimensions-7">Dimensions</h3>
+<section id="dimensions-8" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions-8">Dimensions</h3>
 </section>
-<section id="variables-7" class="level3">
-<h3 class="anchored" data-anchor-id="variables-7">Variables</h3>
+<section id="variables-9" class="level3">
+<h3 class="anchored" data-anchor-id="variables-9">Variables</h3>
 </section>
-<section id="ncdump-7" class="level3">
-<h3 class="anchored" data-anchor-id="ncdump-7">ncdump</h3>
+<section id="ncdump-10" class="level3">
+<h3 class="anchored" data-anchor-id="ncdump-10">ncdump</h3>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="ncdump">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2873,7 +3485,7 @@ ncdump
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>placeholder</code></pre>
 </div>
@@ -2941,18 +3553,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2984,7 +3585,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -3019,7 +3660,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -3295,7 +3940,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./snow-science.html" class="pagination-link  aria-label=" snow="" science"="">
+      <a href="./snow-science.html" class="pagination-link" aria-label="Snow Science">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Snow Science</span>
       </a>          
   </div>
